@@ -1,5 +1,12 @@
 # Dane's README
 
-Trying to get this up and working, fingers crossed!
+Hosted a React through GitHub Pages using these resources:
 
-Testing if it's deploy or commit.
+- https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
+- https://github.com/gitname/react-gh-pages
+
+Notes for Dane:
+```
+npm run deploy
+```
+to update site.

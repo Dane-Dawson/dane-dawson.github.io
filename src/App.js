@@ -1,22 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import rocketDane from './images/Rocket-Dane.png'
+import piConstruction from './images/pika-construction.gif'
+
+
 function App() {
+  const [pets, petPikachu] = useState( 0 );
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={rocketDane} className="rocket-dane" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to Dane's site!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          It's currently under construction. Click to pet the Pikachu while you wait.
+        </p>
+        <img src={piConstruction} 
+        onClick={()=>petPikachu(prev => prev + 1)}
+        className="construction-pika" 
+        alt="under construction" />
+          <p>
+          {pets} Pikachu pets. Well done.
+          </p>
       </header>
     </div>
   );
