@@ -3,10 +3,12 @@ import './App.css';
 
 import rocketDane from './images/Rocket-Dane.png'
 import piConstruction from './images/pika-construction.gif'
+import Terminal from './components/terminal/Terminal'
 
 
 function App() {
   const [pets, petPikachu] = useState( 0 );
+  const [terminalInput, setTerminalInput] = useState( '')
 
   return (
     <div className="App">
@@ -25,6 +27,7 @@ function App() {
           <p>
           {pets} Pikachu pets. Well done.
           </p>
+        <Terminal setTerminalInput={setTerminalInput} terminalInput={terminalInput}/>
       </header>
     </div>
   );

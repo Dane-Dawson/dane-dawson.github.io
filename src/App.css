@@ -29,10 +29,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -40,4 +36,96 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Terminal Styling */
+
+.terminal-div{
+  padding: 10px;
+  border: 3px solid #C8C8C8;
+  border-radius: 20px;
+  position: relative;
+  text-align: left;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 60vh;
+  width: 80vw;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
+
+.terminal-div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 60vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(black, 0.15),
+    rgba(black, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+.terminal-div::selection {
+  background: #0080FF;
+  text-shadow: none;
+}
+
+.terminal-input-div {
+  width: 100%;
+  height: 5vh;
+  position: absolute;
+    background-color:transparent;
+  bottom: 5px;
+  left: 0px;
+}
+
+.terminal-div p {
+  padding: 0px;
+  margin: 0px;
+}
+.terminal-file-path{
+  position: absolute;
+  bottom: 4px;
+  left: 5px;
+}
+
+.terminal-input{
+  position: absolute;
+  border:hidden;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  bottom: 4px;
+  left: 400px;
+  height: 20px;
+  width: 60%;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
+.terminal-input::placeholder{
+  animation: blinker 1s linear infinite;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
+@keyframes blinker {
+  0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
 }
