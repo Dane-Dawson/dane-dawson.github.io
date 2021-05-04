@@ -17,7 +17,10 @@ function Terminal(props) {
     const handleTerminalDisplay = () => {
         switch (terminalDisplay){
             case "help":
-                return <p className="terminal-display">I mean...I wish I could, I need some myself! Have you tried using Google?</p>;
+                return (<div>
+                <p className="terminal-display">I mean...I wish I could, I need some myself!</p>
+                <p className="terminal-display help-1">Have you tried using Google?</p>
+                </div>)
             case "clear":
                 return "";
             case "commands":
@@ -32,7 +35,10 @@ function Terminal(props) {
                     <p className="terminal-display limmerick-2">to a site engineered by a Dane.</p>
                     <p className="terminal-display limmerick-3">His work is unique</p>
                     <p className="terminal-display limmerick-4">and he's up for critique,</p>
-                    <p className="terminal-display limmerick-5">but be gentle to cause him no pain</p>
+                    <p className="terminal-display limmerick-5">but be gentle to cause him no pain.</p>
+                    <br/>
+                    <br/>
+                    <p className="terminal-display limmerick-6">...please?</p>
                 </div>)
         }
     }

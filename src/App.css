@@ -250,6 +250,7 @@
 
 /* single line type-writer terminal effect */
 .terminal-display {
+  width: 100%;
   visibility: hidden;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -261,7 +262,9 @@
 }
 
 /* terminal output timer delay sequences */
-
+.help-1{
+  animation-delay: 3000ms;
+}
 .limmerick-2{
   animation-delay: 2000ms;
 }
@@ -274,6 +277,9 @@
 .limmerick-5{
   animation-delay: 6300ms;
 }
+.limmerick-6{
+  animation-delay: 11300ms;
+}
 
 .commands-2{
   animation-delay: 2500ms;
@@ -281,7 +287,7 @@
 /* The typing effect */
 @keyframes typing {
   from { visibility: visible; width: 0 }
-  to { visibility: visible; width: 100% }
+  to { visibility: visible; width: 75% }
 }
 
 /* Blinking "click here" text animation */
