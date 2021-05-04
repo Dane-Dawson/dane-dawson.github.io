@@ -24,7 +24,7 @@ function App() {
         <p>
           Welcome to Dane's site! It's under construction, but enjoy what's published!
         </p>
-        <button className="show-terminal" onClick={()=>toggleTerminal(prev=>!prev)}>Open Terminal</button>
+        <button className="show-terminal" onClick={()=>toggleTerminal(prev=>!prev)}>{showTerminal ? "Close Terminal" : "Open Terminal"}</button>
         <br/>
         {renderTerminal()}
         {/* <p>

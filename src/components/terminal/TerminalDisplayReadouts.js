@@ -1,3 +1,21 @@
+// Input for handling commands, return is associated to the const created below associated with the recieved terminalDisplay
+
+export const handleTerminalDisplay = (terminalDisplay) => {
+    switch (terminalDisplay) {
+      case "clear":
+        return "";
+      case "help":
+        return help();
+      case "commands":
+        return commands();
+      case "limmerick":
+        return limmerick();
+    }
+  };
+
+
+//  !!   commands returns for the terminal
+
 export const commands = () => {
     return (<div>
         <p className="terminal-display commands-1">Seriously? Just look up like...2 lines.</p>
@@ -25,4 +43,42 @@ export const limmerick = () => {
                     <p className="terminal-display limmerick-6">...please?</p>
         </div>
     )
+}
+
+
+// Initial loading screen for the terminal
+
+export const terminalLoading = () => {
+    return (<span>
+  <p className="webpack-compiling">webpack: Compiling...</p>
+    <p className="webpack-compiled">webpack: Compiled successfully.</p>
+    <p className="terminal-hash">Hash: 8675309-4eva&42</p>
+    <p className="terminal-time">Time: 1337ms</p>
+    <p className="terminal-enter-commands">
+      Enter commands below to explore...
+    </p>
+    <p className="terminal-commands">
+      help || clear || commands || limmerick
+    </p>
+    </span>
+    )
+}
+
+
+//  Bottom row, terminal location and input
+
+export const terminalInput = (props, handleChange) => {
+    return (<div className="terminal-input-div">
+    <span className="terminal-file-path">
+      dane@Danes-Site dane-the-site %
+    </span>
+    <span className="terminal-input-placeholder">
+      {props.terminalInput ? null : "Click here to type a command..."}
+    </span>
+    <input
+      className="terminal-input"
+      onChange={(event) => handleChange(event)}
+      value={props.terminalInput}
+    />
+  </div>)
 }
