@@ -143,10 +143,19 @@
 }
 
 .terminal-input-placeholder{
-  animation: blinker 1s linear infinite;
+  animation: 
+    typing 3.5s steps(40, end),
+    blinker 1s linear infinite;
   position: absolute;
   bottom: 4px;
   left: 400px;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation-delay: 12500ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
 /* type effect delayed timer setting for initial terminal readout */
@@ -176,7 +185,6 @@
 }
 
 .terminal-hash {
-  transition: visibility;
   visibility: hidden;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -189,7 +197,6 @@
 }
 
 .terminal-time {
-  transition: visibility;
   visibility: hidden;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -202,7 +209,6 @@
 }
 
 .terminal-enter-commands {
-  transition: visibility;
   visibility: hidden;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -215,7 +221,6 @@
 }
 
 .terminal-commands {
-  transition: visibility;
   visibility: hidden;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -227,11 +232,24 @@
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
+.terminal-file-path {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .00em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 11000ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+
+
 /* End timer sequential loading delay */
 
 /* single line type-writer terminal effect */
 .terminal-display {
-  transition: visibility;
   visibility: hidden;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
