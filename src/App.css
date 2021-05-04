@@ -38,6 +38,25 @@
   }
 }
 
+/* buttons */
+
+.show-terminal{
+  padding: 10px;
+  border: 3px solid #c8c8c831;
+  border-radius: 20px;
+  position: relative;
+  text-align: left;
+  background-color: rgb(10, 15, 36);
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), rgb(12, 17, 41) 120%
+  );
+  /* height: 60vh;
+  width: 80vw; */
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
 /* Terminal Styling */
 
 .terminal-div{
@@ -46,9 +65,9 @@
   border-radius: 20px;
   position: relative;
   text-align: left;
-  background-color: black;
+  background-color: rgb(10, 15, 36);
   background-image: radial-gradient(
-    rgba(0, 150, 0, 0.75), black 120%
+    rgba(0, 150, 0, 0.75), rgb(12, 17, 41) 120%
   );
   height: 60vh;
   width: 80vw;
@@ -130,7 +149,7 @@
   left: 400px;
 }
 
-/* type effect loading per each p tag */
+/* type effect delayed timer setting for initial terminal readout */
 
 .webpack-compiling{
   visibility: hidden;
@@ -140,6 +159,7 @@
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
     typing 3.5s steps(40, end);
+    animation-delay: 100ms;
     -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
@@ -151,7 +171,7 @@
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
   typing 3.5s steps(40, end);
-  animation-delay: 2000ms;
+  animation-delay: 2500ms;
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
@@ -164,7 +184,7 @@
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
     typing 3.5s steps(40, end);
-  animation-delay: 3400ms;
+  animation-delay: 4400ms;
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
@@ -177,7 +197,7 @@
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
     typing 3.5s steps(40, end);
-  animation-delay: 4400ms;
+  animation-delay: 5800ms;
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
@@ -190,7 +210,7 @@
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
     typing 3.5s steps(40, end);
-  animation-delay: 5600ms;
+  animation-delay: 6800ms;
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
@@ -203,10 +223,13 @@
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
     typing 3.5s steps(40, end);
-  animation-delay: 7400ms;
+  animation-delay: 8800ms;
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
+/* End timer sequential loading delay */
+
+/* single line type-writer terminal effect */
 .terminal-display {
   transition: visibility;
   visibility: hidden;
@@ -215,16 +238,35 @@
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
-    typing 3.5s steps(40, end);
+  typing 3.5s steps(40, end);
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
+/* terminal output timer delay sequences */
+
+.limmerick-2{
+  animation-delay: 2000ms;
+}
+.limmerick-3{
+  animation-delay: 4000ms;
+}
+.limmerick-4{
+  animation-delay: 5000ms;
+}
+.limmerick-5{
+  animation-delay: 6300ms;
+}
+
+.commands-2{
+  animation-delay: 2500ms;
+}
 /* The typing effect */
 @keyframes typing {
   from { visibility: visible; width: 0 }
   to { visibility: visible; width: 100% }
 }
 
+/* Blinking "click here" text animation */
 @keyframes blinker {
   0%{     color: white;    }
     39%{    color: white; }

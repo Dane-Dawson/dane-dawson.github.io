@@ -21,14 +21,18 @@ function Terminal(props) {
             case "clear":
                 return "";
             case "commands":
-                return <p className="terminal-display">Seriously? Just look up like...2 lines. I know devs don't read documentation, but come on now.</p>;
+                return (<div>
+                <p className="terminal-display commands-1">Seriously? Just look up like...2 lines.</p>
+                <p className="terminal-display commands-2">I know devs don't read documentation, but come on now.</p>
+
+                </div>)
             case "limmerick":
                 return(<div>
-                    <p className="terminal-display">There once was a coder who came</p>
-                    <p className="terminal-display">to a site engineered by a Dane.</p>
-                    <p className="terminal-display">His work is unique</p>
-                    <p className="terminal-display">and he's up for critique,</p>
-                    <p className="terminal-display">But be gentle to cause him no pain</p>
+                    <p className="terminal-display limmerick-1">There once was a coder who came</p>
+                    <p className="terminal-display limmerick-2">to a site engineered by a Dane.</p>
+                    <p className="terminal-display limmerick-3">His work is unique</p>
+                    <p className="terminal-display limmerick-4">and he's up for critique,</p>
+                    <p className="terminal-display limmerick-5">but be gentle to cause him no pain</p>
                 </div>)
         }
     }

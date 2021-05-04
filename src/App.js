@@ -8,17 +8,26 @@ import Terminal from './components/terminal/Terminal'
 
 function App() {
   const [pets, petPikachu] = useState( 0 );
-  const [terminalInput, setTerminalInput] = useState( '')
+  const [terminalInput, setTerminalInput] = useState('')
+  const [showTerminal, toggleTerminal] = useState(false)
+
+  const renderTerminal = () => {
+    if (showTerminal){
+      return <Terminal setTerminalInput={setTerminalInput} terminalInput={terminalInput}/>
+    }
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={rocketDane} className="rocket-dane" alt="logo" />
+        {/* <img src={rocketDane} className="rocket-dane" alt="logo" /> */}
         <p>
-          Welcome to Dane's site!
+          Welcome to Dane's site! It's under construction, but enjoy what's published!
         </p>
-        <Terminal setTerminalInput={setTerminalInput} terminalInput={terminalInput}/>
-        <p>
+        <button className="show-terminal" onClick={()=>toggleTerminal(prev=>!prev)}>Open Terminal</button>
+        <br/>
+        {renderTerminal()}
+        {/* <p>
           It's currently under construction. Click to pet the Pikachu while you wait.
         </p>
         <img src={piConstruction} 
@@ -27,7 +36,7 @@ function App() {
         alt="under construction" />
           <p>
           {pets} Pikachu pets. Well done.
-          </p>
+          </p> */}
       </header>
     </div>
   );
