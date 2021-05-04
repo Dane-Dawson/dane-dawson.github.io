@@ -17,6 +17,7 @@ function App() {
         <p>
           Welcome to Dane's site!
         </p>
+        <Terminal setTerminalInput={setTerminalInput} terminalInput={terminalInput}/>
         <p>
           It's currently under construction. Click to pet the Pikachu while you wait.
         </p>
@@ -27,7 +28,6 @@ function App() {
           <p>
           {pets} Pikachu pets. Well done.
           </p>
-        <Terminal setTerminalInput={setTerminalInput} terminalInput={terminalInput}/>
       </header>
     </div>
   );

@@ -89,6 +89,7 @@
 }
 
 .terminal-div p {
+  overflow: hidden;
   padding: 0px;
   margin: 0px;
 }
@@ -116,16 +117,118 @@
 }
 
 .terminal-input::placeholder{
-  animation: blinker 1s linear infinite;
+
   color: white;
   font: 1.3rem Inconsolata, monospace;
   text-shadow: 0 0 5px #C8C8C8;
 }
 
+.terminal-input-placeholder{
+  animation: blinker 1s linear infinite;
+  position: absolute;
+  bottom: 4px;
+  left: 400px;
+}
+
+/* type effect loading per each p tag */
+
+.webpack-compiling{
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+    -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.webpack-compiled {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+  typing 3.5s steps(40, end);
+  animation-delay: 2000ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-hash {
+  transition: visibility;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 3400ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-time {
+  transition: visibility;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 4400ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-enter-commands {
+  transition: visibility;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 5600ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-commands {
+  transition: visibility;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 7400ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-display {
+  transition: visibility;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { visibility: visible; width: 0 }
+  to { visibility: visible; width: 100% }
+}
+
 @keyframes blinker {
-  0%{     color: #000;    }
-    49%{    color: #000; }
+  0%{     color: white;    }
+    39%{    color: white; }
     60%{    color: transparent; }
-    99%{    color:transparent;  }
-    100%{   color: #000;    }
+    79%{    color:transparent;  }
+    100%{   color: white;    }
 }
