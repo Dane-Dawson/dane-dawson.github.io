@@ -1,62 +1,51 @@
-import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import './App.css';
+import "./App.css";
 
-import rocketDane from './images/Rocket-Dane.png'
-import piConstruction from './images/pika-construction.gif'
-import Terminal from './components/terminal/Terminal'
-import Home from "./components/home/Home"
-
+import gitIcon from "./components/projects/images/git-icon.png";
+import rocketDane from "./images/Rocket-Dane.png";
+import piConstruction from "./images/pika-construction.gif";
+import Terminal from "./components/terminal/Terminal";
+import Home from "./components/home/Home";
+import Projects from "./components/projects/Projects";
 
 function App() {
-  const [pets, petPikachu] = useState( 0 );
-  const [terminalInput, setTerminalInput] = useState('')
-  const [showTerminal, toggleTerminal] = useState(false)
-
-  const renderTerminal = () => {
-    if (showTerminal){
-      return <Terminal setTerminalInput={setTerminalInput} />
-    }
-  }
+  const [pets, petPikachu] = useState(0);
 
   return (
     <div className="App">
-        {/* <img src={rocketDane} className="rocket-dane" alt="logo" /> */}
-        
-        <p>
-        Welcome to Dane's site! Although it's under construction, enjoy what he's done so far!!
-        </p>
-        <Router>
-      <div>
-        <nav>
-              <Link to="/">Home</Link>||
-              <Link className="show-terminal" to="/terminal">Terminal</Link>
-          
-        </nav>
-        <br/>
-        <br/>
+      {/* <img src={rocketDane} className="rocket-dane" alt="logo" /> */}
+      <br />
+      <Router>
+        <div>
+          <nav>
+            <Link className="home-link" to="/">Home</Link>||
+            <Link className="show-terminal" to="/terminal">
+              Terminal
+            </Link>
+            ||
+            <Link className="projects-link" to="/projects">
+              Pr<img src={gitIcon} className="icon git-1" />jects
+            </Link>
+          </nav>
+          <br />
+          <br />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/terminal">
-            <Terminal setTerminalInput={setTerminalInput} />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-        {/* <p>
-          It's currently under construction. Click to pet the Pikachu while you wait.
-        </p>
+          <Switch>
+            <Route path="/terminal">
+              <Terminal />
+            </Route>
+            <Route path="/projects">
+              <Projects />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+      {/* 
         <img src={piConstruction} 
         onClick={()=>petPikachu(prev => prev + 1)}
         className="construction-pika" 

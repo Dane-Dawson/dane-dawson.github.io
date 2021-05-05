@@ -38,12 +38,37 @@
 
 /* link styles */
 
+.home-link{
+  color: inherit;
+  text-decoration: inherit;
+  border: 3px solid #c8c8c831;
+  border-radius: 20px;
+  padding: 10px;
+  font: 1.3rem Inconsolata, monospace;
+  background-color: rgba(6, 11, 69, 0.596);
+}
+
+.projects-link{
+  color: inherit;
+  text-decoration: inherit;
+  border: 3px solid #c8c8c831;
+  border-radius: 20px;
+  padding: 10px;
+  font: 1.3rem Inconsolata, monospace;
+  background-color: rgba(128, 128, 128, 0.411);
+}
+.git-1{
+  height: 20px;
+  padding-left: 3px;
+  padding-right: 1px;
+}
+
 .show-terminal{
   /* these two lines remove previous styling for link */
   color: inherit;
-    text-decoration: inherit;
+  text-decoration: inherit;
     /* ^^ these two ^^ */
-    
+
   padding: 10px;
   border: 3px solid #c8c8c831;
   border-radius: 20px;
@@ -66,6 +91,7 @@
   border-radius: 20px;
   position: relative;
   text-align: left;
+  overflow-x: scroll;
   background-color: rgb(10, 15, 36);
   background-image: radial-gradient(
     rgba(0, 150, 0, 0.75), rgb(12, 17, 41) 120%
@@ -145,13 +171,14 @@
 
 .terminal-input-placeholder{
   animation: 
-    typing 3.5s steps(40, end),
+    typingplaceholder 3.5s steps(40, end),
     blinker 1s linear infinite;
   position: absolute;
   bottom: 4px;
   left: 400px;
   visibility: hidden;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  overflow: hidden;
+  overflow-x: scroll; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
@@ -241,7 +268,7 @@
   letter-spacing: .00em; /* Adjust as needed */
   animation: 
     typing 3.5s steps(40, end);
-  animation-delay: 11000ms;
+  animation-delay: 12000ms;
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 
@@ -293,6 +320,10 @@
 }
 /* The typing effect */
 @keyframes typing {
+  from { visibility: visible; width: 0 }
+  to { visibility: visible; width: 100% }
+}
+@keyframes typingplaceholder {
   from { visibility: visible; width: 0 }
   to { visibility: visible; width: 75% }
 }

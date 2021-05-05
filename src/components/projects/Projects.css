@@ -1,0 +1,28 @@
+.projects-main-div{
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.557);
+    border: 5px solid gray;
+    border-radius: 20px;
+    width: 80vw;
+    height: 60vh;
+}
+
+.projects-intro{
+    height: 15vh;
+}
+
+.projects-container{
+    position: absolute;
+    top: 15vh;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    overflow: scroll;
+}
+
+.project-card-main-div{
+    padding: 5px;
+    margin: 5px;
+    border: 5px solid gray;
+}
