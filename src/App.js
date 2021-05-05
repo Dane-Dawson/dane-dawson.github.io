@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import './App.css';
 
 import rocketDane from './images/Rocket-Dane.png'
 import piConstruction from './images/pika-construction.gif'
 import Terminal from './components/terminal/Terminal'
+import Home from "./components/home/Home"
 
 
 function App() {
@@ -24,9 +32,28 @@ function App() {
         <p>
         Welcome to Dane's site! Although it's under construction, enjoy what he's done so far!!
         </p>
-        <button className="show-terminal" onClick={()=>toggleTerminal(prev=>!prev)}>{showTerminal ? "Close Terminal" : "Open Terminal"}</button>
+        <Router>
+      <div>
+        <nav>
+              <Link to="/">Home</Link>||
+              <Link className="show-terminal" to="/terminal">Terminal</Link>
+          
+        </nav>
         <br/>
-        {renderTerminal()}
+        <br/>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/terminal">
+            <Terminal setTerminalInput={setTerminalInput} />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
         {/* <p>
           It's currently under construction. Click to pet the Pikachu while you wait.
         </p>
