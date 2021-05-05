@@ -13,16 +13,16 @@ function App() {
 
   const renderTerminal = () => {
     if (showTerminal){
-      return <Terminal setTerminalInput={setTerminalInput} terminalInput={terminalInput}/>
+      return <Terminal setTerminalInput={setTerminalInput} />
     }
   }
 
   return (
     <div className="App">
-      <header className="App-header">
         {/* <img src={rocketDane} className="rocket-dane" alt="logo" /> */}
+        
         <p>
-          Welcome to Dane's site! It's under construction, but enjoy what's published!
+        Welcome to Dane's site! Although it's under construction, enjoy what he's done so far!!
         </p>
         <button className="show-terminal" onClick={()=>toggleTerminal(prev=>!prev)}>{showTerminal ? "Close Terminal" : "Open Terminal"}</button>
         <br/>
@@ -37,7 +37,6 @@ function App() {
           <p>
           {pets} Pikachu pets. Well done.
           </p> */}
-      </header>
     </div>
   );
 }

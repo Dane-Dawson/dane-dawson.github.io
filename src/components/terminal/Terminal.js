@@ -1,27 +1,30 @@
 import "./Terminal.css";
 import React, { useState } from "react";
 
-import { handleTerminalDisplay, commands, help, limmerick, terminalLoading, terminalInput } from "./TerminalDisplayReadouts";
+import { handleTerminalDisplay, commandsArray, programsArray, terminalInput } from "./TerminalDisplayReadouts";
 
-function Terminal(props) {
-  const [terminalDisplay, setTerminalDisplay] = useState("");
+function Terminal() {
+  const [terminalDisplay, setTerminalDisplay] = useState("initialize");
+  const [commandLine, setCommandLine] = useState('')
+  const [program, setProgram] = useState('launch')
 
   const handleChange = (event) => {
-    props.setTerminalInput(event.target.value);
-    let commandArray = ["help", "commands", "clear", "limmerick"];
+    setCommandLine(event.target.value);
     let command = event.target.value.toLowerCase();
-    if (commandArray.includes(command)) {
+    if (commandsArray.includes(command)) {
       setTerminalDisplay(command);
-      props.setTerminalInput("");
+      setCommandLine("");
+    } else if (programsArray.includes(command)) {
+      setProgram(command);
+      setTerminalDisplay("initialize");
+      setCommandLine("");
     }
   };
 
   return (
     <div className="terminal-div">
-      {terminalLoading()}
-      <br />
-      {handleTerminalDisplay(terminalDisplay)}
-      {terminalInput(props, handleChange)}
+      {handleTerminalDisplay(terminalDisplay, program)}
+      {terminalInput(commandLine, handleChange)}
     </div>
   );
 }
