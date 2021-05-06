@@ -14,9 +14,9 @@ to update site.
 
 Tools used to make my site:
 
-https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/
+hooks useState review - https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/
 
-https://dev.to/philiphaines/beautify-your-github-40hh
+icons and tips - https://dev.to/philiphaines/beautify-your-github-40hh
 
 terminal component: 
 

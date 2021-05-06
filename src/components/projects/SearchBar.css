@@ -1,0 +1,11 @@
+.searchbar-main-div{
+
+    position: fixed;
+}
+
+.searchbar-input{
+    width: 30vw;
+    color: inherit;
+  text-decoration: inherit;
+    background-color: rgba(0, 0, 0, 0.557);
+}

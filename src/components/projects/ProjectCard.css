@@ -1,0 +1,68 @@
+.project-card-main-div{
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+    height: 30vh;
+    border-top: 2px solid gray;
+}
+
+.project-title{
+    position: absolute;
+    top: -2vh;
+    color: rgb(45, 151, 201);
+}
+
+.project-description{
+    position: absolute;
+    top: 5vh;
+    font-size: .5em;
+}
+
+.github-repo-link{
+    position:absolute;
+    bottom:-1vh;
+    right: 4vw;
+    font-size: .5em;
+}
+.tech-used{
+    position:absolute;
+    bottom: 0vh;
+}
+
+.project-github-link{
+    position: absolute;
+    bottom: 0vh;
+    right: 10vh;
+}
+/* General icon styling */
+
+.project-icon {
+    margin-right: 4px;
+    margin-left: 4px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+/* tech specific styling, mostly background coloring */
+
+.javascript{
+    background-color: #F7DF1E;
+}
+.react{
+    background-color: #61DAFB;
+}
+.json{
+    background-color: #dbd5d5;
+}
+.json-server{
+    background-color: #1f9c00d8;
+}
+
+.css{
+    background-color: #F43059;
+}
+.html{
+    background-color: #444343b7;
+}

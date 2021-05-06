@@ -1,6 +1,8 @@
 .projects-main-div{
     position: relative;
-    background-color: rgba(128, 128, 128, 0.557);
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.557);
     border: 5px solid gray;
     border-radius: 20px;
     width: 80vw;
@@ -9,45 +11,19 @@
 
 .projects-intro{
     height: 15vh;
+    width: 25vw;
 }
+.projects-and-searchbar-container{
 
+}
 .projects-container{
     position: absolute;
-    top: 15vh;
+    top: 5vh;
     height: 65vh;
+    width: 55vw;
+    float: right;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     overflow: scroll;
-}
-
-.project-card-main-div{
-    padding: 5px;
-    margin: 5px;
-    border: 5px solid gray;
-}
-
-/* General icon styling */
-
-.project-icon {
-    margin-right: 4px;
-    margin-left: 4px;
-    height: 20px;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-/* tech specific styling, mostly background coloring */
-
-.javascript{
-    background-color: #F7DF1E;
-}
-.react{
-    background-color: #61DAFB;
-}
-.json{
-    background-color: #dbd5d5;
-}
-.json-server{
-    background-color: #f7000071;
 }

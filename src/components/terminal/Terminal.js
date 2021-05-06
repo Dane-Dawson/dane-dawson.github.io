@@ -1,4 +1,4 @@
-import "./Terminal.css";
+// import "./Terminal.css";
 import React, { useState } from "react";
 
 import { handleTerminalDisplay, commandsArray, programsArray, terminalInput } from "./TerminalDisplayReadouts";
