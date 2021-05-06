@@ -1,24 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.ba210a95.chunk.css",
-    "main.js": "/static/js/main.afb2baa4.chunk.js",
-    "main.js.map": "/static/js/main.afb2baa4.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5c90957e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5c90957e.js.map",
-    "static/js/2.f31deb74.chunk.js": "/static/js/2.f31deb74.chunk.js",
-    "static/js/2.f31deb74.chunk.js.map": "/static/js/2.f31deb74.chunk.js.map",
-    "static/js/3.73365323.chunk.js": "/static/js/3.73365323.chunk.js",
-    "static/js/3.73365323.chunk.js.map": "/static/js/3.73365323.chunk.js.map",
+    "main.css": "/static/css/main.403e37e7.chunk.css",
+    "main.js": "/static/js/main.4850d790.chunk.js",
+    "main.js.map": "/static/js/main.4850d790.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.052e7db6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.052e7db6.js.map",
+    "static/js/2.1fe5be0c.chunk.js": "/static/js/2.1fe5be0c.chunk.js",
+    "static/js/2.1fe5be0c.chunk.js.map": "/static/js/2.1fe5be0c.chunk.js.map",
+    "static/js/3.2e01b82a.chunk.js": "/static/js/3.2e01b82a.chunk.js",
+    "static/js/3.2e01b82a.chunk.js.map": "/static/js/3.2e01b82a.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.ba210a95.chunk.css.map": "/static/css/main.ba210a95.chunk.css.map",
-    "static/js/2.f31deb74.chunk.js.LICENSE.txt": "/static/js/2.f31deb74.chunk.js.LICENSE.txt",
+    "static/css/main.403e37e7.chunk.css.map": "/static/css/main.403e37e7.chunk.css.map",
+    "static/js/2.1fe5be0c.chunk.js.LICENSE.txt": "/static/js/2.1fe5be0c.chunk.js.LICENSE.txt",
     "static/media/Rocket-Dane.3d2ba147.png": "/static/media/Rocket-Dane.3d2ba147.png",
-    "static/media/pika-construction.af5a0265.gif": "/static/media/pika-construction.af5a0265.gif"
+    "static/media/css.4228c3fe.svg": "/static/media/css.4228c3fe.svg",
+    "static/media/git-icon.c8007a9f.png": "/static/media/git-icon.c8007a9f.png",
+    "static/media/html.c5341754.png": "/static/media/html.c5341754.png",
+    "static/media/javascript.c981b611.svg": "/static/media/javascript.c981b611.svg",
+    "static/media/json.b41b34f9.svg": "/static/media/json.b41b34f9.svg",
+    "static/media/jsonserver.f732b9e0.png": "/static/media/jsonserver.f732b9e0.png",
+    "static/media/pika-construction.af5a0265.gif": "/static/media/pika-construction.af5a0265.gif",
+    "static/media/react.0c61afcf.svg": "/static/media/react.0c61afcf.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5c90957e.js",
-    "static/js/2.f31deb74.chunk.js",
-    "static/css/main.ba210a95.chunk.css",
-    "static/js/main.afb2baa4.chunk.js"
+    "static/js/runtime-main.052e7db6.js",
+    "static/js/2.1fe5be0c.chunk.js",
+    "static/css/main.403e37e7.chunk.css",
+    "static/js/main.4850d790.chunk.js"
   ]
 }
