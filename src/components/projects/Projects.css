@@ -4,7 +4,7 @@
     border: 5px solid gray;
     border-radius: 20px;
     width: 80vw;
-    height: 60vh;
+    height: 80vh;
 }
 
 .projects-intro{
@@ -14,7 +14,7 @@
 .projects-container{
     position: absolute;
     top: 15vh;
-    height: 45vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -25,4 +25,29 @@
     padding: 5px;
     margin: 5px;
     border: 5px solid gray;
+}
+
+/* General icon styling */
+
+.project-icon {
+    margin-right: 4px;
+    margin-left: 4px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* tech specific styling, mostly background coloring */
+
+.javascript{
+    background-color: #F7DF1E;
+}
+.react{
+    background-color: #61DAFB;
+}
+.json{
+    background-color: #dbd5d5;
+}
+.json-server{
+    background-color: #f7000071;
 }

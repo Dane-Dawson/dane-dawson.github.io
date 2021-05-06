@@ -12,7 +12,13 @@ npm run deploy
 to update site.
 
 
-Tools used to make my terminal component: 
+Tools used to make my site:
+
+https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/
+
+https://dev.to/philiphaines/beautify-your-github-40hh
+
+terminal component: 
 
 blinking text - https://html-online.com/articles/blinking-text-css-animation/
 
@@ -25,3 +31,12 @@ typewriter effect - https://css-tricks.com/snippets/css/typewriter-effect/
 staggering animations - https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/
 
 style change after animation - https://stackoverflow.com/questions/25794276/apply-style-after-css-animation-without-js
+
+
+Project component :
+
+react router setup - https://reactrouter.com/web/guides/quick-start
+
+guide to flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+href open in new window - https://www.rapidtables.com/web/html/link/html-link-new-window.html

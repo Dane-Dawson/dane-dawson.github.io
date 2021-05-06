@@ -45,8 +45,8 @@ function App() {
           </Switch>
         </div>
       </Router>
-      {/* 
-        <img src={piConstruction} 
+      
+        {/* <img src={piConstruction} 
         onClick={()=>petPikachu(prev => prev + 1)}
         className="construction-pika" 
         alt="under construction" />
