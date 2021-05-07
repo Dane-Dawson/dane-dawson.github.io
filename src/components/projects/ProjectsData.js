@@ -23,6 +23,11 @@ export const projectsArray = [
     name: "Login template - Backend",
     url: "https://github.com/Dane-Dawson/logintemp-backend",
     description: "Part of a two part repo collection to show an example of using a Ruby on Rails API for token authentication to a React front end",
-    tech: "react, css, html, json-server, javascript, ruby, rails"
-},
+    tech: "ruby, rails"
+},{
+    name: "Login template - Frontend",
+    url: "https://github.com/Dane-Dawson/logintemp-frontend",
+    description: "Part of a two part repo collection to show an example of using a Ruby on Rails API for token authentication to a React front end",
+    tech: "react, css, html, javascript, rails"
+}
 ]
