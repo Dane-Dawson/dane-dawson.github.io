@@ -182,7 +182,7 @@
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
-  animation-delay: 12500ms;
+  animation-delay: 13500ms;
   -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
 }
 

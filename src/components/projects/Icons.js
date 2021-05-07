@@ -4,6 +4,8 @@ import jsonIcon from "./images/json.svg";
 import jsonServerIcon from "./images/jsonserver.png"
 import cssIcon from "./images/css.svg"
 import htmlIcon from "./images/html.png"
+import rubyIcon from "./images/ruby.svg"
+import railsIcon from "./images/rubyonrails.svg"
 
 
 export const returnIcons = (techArray) => {
@@ -21,4 +23,6 @@ export const iconsArray = [
     <img className="json-server project-icon" src={jsonServerIcon} alt="json-server" key="json-server"/>,
     <img className="css project-icon" src={cssIcon} alt="css" key="css"/>,
     <img className="html project-icon" src={htmlIcon} alt="html" key="html"/>,
+    <img className="ruby project-icon" src={rubyIcon} alt="ruby" key="ruby"/>,
+    <img className="rails project-icon" src={railsIcon} alt="rails" key="rails"/>,
 ]

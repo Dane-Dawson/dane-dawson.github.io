@@ -14,5 +14,15 @@ export const projectsArray = [
     url: "https://github.com/Dane-Dawson/json-server-collection",
     description: "Accumulated data collections in JSON-server format.",
     tech: "json-server, javascript"
-}
+},{
+    name: "React mini coding checkpoints",
+    url: "https://github.com/Dane-Dawson/react-mini-coding-checkpoints",
+    description: "A series of playful and fun React projects designed to reinforce fondational React concepts",
+    tech: "react, css, html, json-server, javascript"
+},{
+    name: "Login template - Backend",
+    url: "https://github.com/Dane-Dawson/logintemp-backend",
+    description: "Part of a two part repo collection to show an example of using a Ruby on Rails API for token authentication to a React front end",
+    tech: "react, css, html, json-server, javascript, ruby, rails"
+},
 ]

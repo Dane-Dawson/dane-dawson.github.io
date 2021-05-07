@@ -2,7 +2,7 @@
     position: relative;
     padding: 5px;
     margin: 5px;
-    height: 30vh;
+    height: 150px;
     border-top: 2px solid gray;
 }
 
@@ -65,4 +65,10 @@
 }
 .html{
     background-color: #444343b7;
+}
+.ruby{
+    background-color: #CC342D;
+}
+.rails{
+    background-color: #CC0000;
 }

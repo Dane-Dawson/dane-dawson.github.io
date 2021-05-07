@@ -1,9 +1,10 @@
 .projects-main-div{
     position: relative;
     display: flex;
+    overflow: scroll;
     flex-direction: row;
     background-color: rgba(0, 0, 0, 0.557);
-    border: 5px solid gray;
+    border: 2px solid gray;
     border-radius: 20px;
     width: 80vw;
     height: 80vh;
@@ -18,8 +19,8 @@
 }
 .projects-container{
     position: absolute;
-    top: 5vh;
-    height: 65vh;
+    top: 8vh;
+    height-min: 65vh;
     width: 55vw;
     float: right;
     display: flex;
