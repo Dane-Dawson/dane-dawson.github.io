@@ -26,11 +26,9 @@ export default function Projects() {
 
       <div className="projects-intro">
       <p>
-
         A collection of projects I have made. Most are learning tools, some are
         collections I have built over time.
       </p>
-
       <p>
         This portion is also still under construction, but I hope you enjoy what's available for now!
       </p>
@@ -44,6 +42,7 @@ export default function Projects() {
         
         <select onChange={(e)=>setFilterTerm(e.target.value)} className="tech-dropdown">
         <option value="all">Tech utilized</option>
+        <option value="starred">Starred</option>
         <option value="javascript">JavaScript</option>
         <option value="react">React</option>
         <option value="json">JSON-Server</option>

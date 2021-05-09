@@ -91,7 +91,7 @@
   border-radius: 20px;
   position: relative;
   text-align: left;
-  overflow-x: scroll;
+  overflow-x: hidden;
   background-color: rgb(10, 15, 36);
   background-image: radial-gradient(
     rgba(0, 150, 0, 0.75), rgb(12, 17, 41) 120%
@@ -178,7 +178,7 @@
   left: 400px;
   visibility: hidden;
   overflow: hidden;
-  overflow-x: scroll; /* Ensures the content is not revealed until the animation */
+  overflow-x: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
