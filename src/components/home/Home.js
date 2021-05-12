@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Typist from "react-typist";
 
 import "./Home.css";
 
@@ -28,56 +29,91 @@ export default function Home() {
     "Piano Tuner (Self Employed)",
     "",
   ];
+
+  const techExperience = [
+    "SQL",
+    "Postgress",
+    "MongoDB",
+    "CSS/HTML",
+    "Ruby",
+    "Ruby On Rails",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "React Native",
+  ];
+
+  const renderTechExperience = () => {
+    return techExperience.map((tech) => {
+      return (
+        <span>
+          <Typist.Delay ms={500} />
+          <span>{tech}</span>
+          <Typist.Backspace count={tech.length} delay={tech.length * 100} />
+        </span>
+      );
+    });
+  };
   return (
     <div className="home-main-div">
       <p className="home-name">Dane Dawson</p>
 
       <div className="developer-info">
-        <p> Developer </p>
-        <p>Full-stack || JavaScript || React || Ruby || Ruby on Rails</p>
-        <span
-     class="txt-rotate"
-     data-period="2000"
-     data-rotate='[ "nerdy.", "simple.", "pure JS.", "pretty.", "fun!" ]'></span>
+        <span> Developer with experience in </span>
+        <div className="tech-experience-list">
+          <Typist
+            cursor={{ hideWhenDone: true, blink: true, hideWhenDoneDelay: 400 }}
+          >
+            {renderTechExperience()}
+            Full Stack Engineering
+          </Typist>
+        </div>
       </div>
+<hr className="hr-line"/>
 
-      <div className="experience-div">
-
-      <p>
-        Previous experience (all jobs I have previously held and recieved
-        payment for regularly)
-      </p>
-      <p>{jobs.join(" || ")} </p>
-      </div>
       <div className="general-info-div">
+        <p>
+          Born and raised in Austin, Texas, I have led a unique and entertaining
+          life thusfar (in my humble opinion). 
+          <br />
+          With a lifetime of diverse experiences, I've made the relatively recent career shift
+          <br/>
+           into 
+          tech with an initial focus on web development.
+        </p>
 
-      <p>
-        Born and raised in Austin, Texas, I have led a unique and entertaining
-        life thusfar (in my humble opinion).
-      </p>
-      <p>
-        Happily married with a 3 year old tornado for a daughter, I've made the
-        relatively recent career shift into programming and tech.
-      </p>
+        <p>
+          Most recently I have been employed by Flatiron School as a Software Engineer Coach.
 
-      <p>
-        Feel free to explore this portfolio that is a viewport into the chaos
-        that is my mind!
-      </p>
+          <br/>
 
-      <p>
-        This project was created with React using only hooks with custom CSS
-        throughout.
-      </p>
+          During that time it was my responsibility to guide and teach students in the fundamentals of programming using
+          <br/>
+           -- Ruby, Ruby on Rails, JavaScript, and React --
+           <br/>
+           as well as coordinate projects, troubleshoot, create materials and oversee cohort teamwork.
+        </p>
 
-      <p>
-        It also contains a potentially dangerous amount of my own sense of humor
-        and personality.
-      </p>
+        <p>
+          This project was created with React using hooks and custom CSS
+          throughout. A link to the repository is available in the "Projects" section above!
+        </p>
 
-      <p>
-        Check back regularly, as this site is consistently under construction.
-      </p>
+        <p>
+          It also contains a potentially dangerous amount of my own sense of
+          humor and personality.
+        </p>
+
+        <p>
+          Check back regularly, as this site is consistently under construction.
+        </p>
+      </div>
+      <div className="experience-div">
+        <p>
+          Previous experience (all jobs I have previously held and recieved
+          payment for regularly)
+        </p>
+        <p>{jobs.join(" || ")} </p>
       </div>
     </div>
   );

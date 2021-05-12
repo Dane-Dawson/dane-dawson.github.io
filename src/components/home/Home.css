@@ -5,23 +5,29 @@
   display: flex;
   /* overflow: scroll; */
   flex-direction: column;
-  background-color: rgba(6, 11, 69, 0.596);
+  background-image: radial-gradient(
+    rgba(6, 11, 69, 0.596), rgb(12, 17, 41) 120%
+  );
   border: 2px solid gray;
   border-radius: 20px;
   width: 80vw;
   height: 80vh;
   overflow: scroll;
 }
+.hr-line{
+    width: 70%;
+}
 
 .home-name {
-  position: absolute;
-  top: 20px;
+  /* position: absolute; */
+  top: 10px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px 78px;
+  /* transform: translate(-50%, -50%); */
+  /* padding: -10px -10px; */
+  margin: 3px;
   color: #ffffff;
-  /* background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%); */
-  background: linear-gradient(to left, rgba(6, 11, 69, 0.196) 0, rgb(2, 3, 19, .9) 50%, rgba(6, 11, 69, 0.196) 100%);
+  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  /* background: linear-gradient(to left, rgba(6, 11, 69, 0.196) 0, rgb(2, 3, 19, .9) 50%, rgba(6, 11, 69, 0.196) 100%); */
   background-position: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -29,7 +35,7 @@
   animation-fill-mode: forwards;
   -webkit-text-size-adjust: none;
   font-weight: 800;
-  font-size: 56px;
+  font-size: 86px;
   font-family: Monoton;
   text-decoration: none;
   white-space: nowrap;
@@ -37,25 +43,37 @@
 
 .developer-info{
     font-family: AnamaticSC;
-    position: absolute;
+    /* position: absolute; */
     font-size: 40px;
 
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
     left: 50%;
-    top: 200px;
+    top: 170px;
 }
 
+.general-info-div{
+    /* position: absolute; */
+    top: 200px;
+    left: 18%;
+    font-family: Oswald;
+    font-size: 15px;
+
+  /* transform: translate(-50%, -50%); */
+    align-items: center;
+    /* display: none; */
+
+}
 .experience-div{
- position: absolute;
+ /* position: absolute; */
  top: 300px;
  display: none;
 }
 
-.general-info-div{
-    display: none;
 
+@font-face {
+  font-family: "Oswald";
+  src: url("./fonts/Oswald-VariableFont_wght.ttf");
 }
-
 @font-face {
   font-family: "Monoton";
   src: url("./fonts/BungeeShade-Regular.ttf");
