@@ -20,12 +20,12 @@ function App() {
       <Router>
         <div>
           <nav>
-            <Link className="home-link" to="/">Home</Link>||
-            <Link className="show-terminal" to="/terminal">
+            <Link className="home-link link" to="/">Home</Link>||
+            <Link className="show-terminal link" to="/terminal">
               Terminal
             </Link>
             ||
-            <Link className="projects-link" to="/projects">
+            <Link className="projects-link link" to="/projects">
               Pr<img src={gitIcon} className="icon git-1" />jects
             </Link>
           </nav>

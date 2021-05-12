@@ -40,3 +40,7 @@ react router setup - https://reactrouter.com/web/guides/quick-start
 guide to flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 href open in new window - https://www.rapidtables.com/web/html/link/html-link-new-window.html
+
+About page:
+
+Name light scroll - https://codepen.io/avstorm/pen/WNrMqjG

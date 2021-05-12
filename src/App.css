@@ -38,9 +38,11 @@
 
 /* link styles */
 
-.home-link{
+.link {
   color: inherit;
   text-decoration: inherit;
+}
+.home-link{
   border: 3px solid #c8c8c831;
   border-radius: 20px;
   padding: 10px;
@@ -49,8 +51,6 @@
 }
 
 .projects-link{
-  color: inherit;
-  text-decoration: inherit;
   border: 3px solid #c8c8c831;
   border-radius: 20px;
   padding: 10px;

@@ -26,8 +26,7 @@ export default function Projects() {
 
       <div className="projects-intro">
       <p>
-        A collection of projects I have made. Most are learning tools, some are
-        collections I have built over time.
+        A collection of projects I have made. Most are learning tools, some are projects I've tinkered with.
       </p>
       <p>
         This portion is also still under construction, but I hope you enjoy what's available for now!
