@@ -1,5 +1,13 @@
 export const projectsArray = [
   {
+    name: "Dane Dawson: The Site",
+    url: "https://github.com/Dane-Dawson/dane-dawson.github.io",
+    description:
+      "This site here! Made using React, hooks, css and whatever creative madness my mind could conjure.",
+    tech: "javascript, react, css, html",
+    starred: true,
+  },
+  {
     name: "Proptipus",
     url: "https://github.com/Dane-Dawson/proptipus",
     description:

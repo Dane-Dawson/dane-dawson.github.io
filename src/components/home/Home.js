@@ -31,23 +31,18 @@ export default function Home() {
   ];
 
   const techExperience = [
-    "SQL",
-    "Postgress",
-    "MongoDB",
+    "SQL/Postrgress",
     "CSS/HTML",
-    "Ruby",
-    "Ruby On Rails",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "React Native",
+    "Ruby/Ruby On Rails",
+    "JavaScript/React",
   ];
 
   const renderTechExperience = () => {
     return techExperience.map((tech) => {
+        // Added a delay so that shorter tech didn't erase too quickly
       return (
         <span>
-          <Typist.Delay ms={500} />
+          <Typist.Delay ms={1000} />
           <span>{tech}</span>
           <Typist.Backspace count={tech.length} delay={tech.length * 100} />
         </span>
@@ -59,15 +54,14 @@ export default function Home() {
       <p className="home-name">Dane Dawson</p>
 
       <div className="developer-info">
-        <span> Developer with experience in </span>
-        <div className="tech-experience-list">
+        <span className="tech-experience-list">
           <Typist
             cursor={{ hideWhenDone: true, blink: true, hideWhenDoneDelay: 400 }}
           >
-            {renderTechExperience()}
+          Developer with experience in{' '} {renderTechExperience()}
             Full Stack Engineering
           </Typist>
-        </div>
+        </span>
       </div>
 <hr className="hr-line"/>
 

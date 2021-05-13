@@ -50,13 +50,15 @@
     left: 50%;
     top: 170px;
 }
-
+.tech-experience-list{
+    position: relative;
+}
 .general-info-div{
     /* position: absolute; */
     top: 200px;
     left: 18%;
     font-family: Oswald;
-    font-size: 15px;
+    font-size: 20px;
 
   /* transform: translate(-50%, -50%); */
     align-items: center;

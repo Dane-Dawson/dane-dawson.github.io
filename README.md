@@ -44,3 +44,9 @@ href open in new window - https://www.rapidtables.com/web/html/link/html-link-ne
 About page:
 
 Name light scroll - https://codepen.io/avstorm/pen/WNrMqjG
+
+Font for name - https://fonts.google.com/specimen/Monoton
+
+Font for the rest - https://fonts.google.com/specimen/Oswald?query=oswald
+
+React Typist - https://github.com/jstejada/react-typist
