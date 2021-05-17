@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import Typist from "react-typist";
 
 import "./Home.css";
+import skyline from "./images/austin-skyline.png"
+import flatiron from "./images/flatiron-logo.png"
+import projectTech from "./images/project-tech.png"
+
 
 export default function Home() {
+
+  const [jobDisplay, setJobDisplay] = useState("Click the text!!");
+  const [commentaryDisplay, setCommentaryDisplay] = useState("Then see a job and some deep, contemplative thoughts about it.");
+
   let jobs = [
     "Flatiron (Software Engineer Coach)",
     "Premier Family Physicians Phyiscal Medicine Department (Site Supervisor)",
@@ -27,8 +35,30 @@ export default function Home() {
     "Watson's Piano Works (Piano Repairman)",
     "TrekAmerica (Tour Guide)",
     "Piano Tuner (Self Employed)",
-    "",
   ];
+
+  let wittyBanter = [
+      "I did that!",
+      "I remember those days fondly...What a time!",
+      "Oh right...I still have a warrant out for that...",
+      "...no further comment.",
+      "You could consider me an expert!",
+      "Oh man...I forgot about that!",
+      "Surprised? You shouldn't be!",
+      "You read that right!",
+      "References available upon request!",
+      "You know, who doesn't have that on their resume?",
+      "I know, I know...EVERYONE does that, but still.",
+      "Can you believe it?!",
+      "Yes, of course you can ask me about it.",
+      "It wasn't too bad once you got used to it.",
+      "Harder than you'd think!",
+      "I mean, who hasn't wanted to try that?",
+      "Why yes, I *do* do contract work!",
+      "Unfortunately, legally I can't discuss this until the statute of limitations expires.",
+      "And that's how I ended up with this scar near my bellybutton.",
+      "Believe it or not, I was actually in charge!"
+  ]
 
   const techExperience = [
     "SQL/Postrgress",
@@ -39,7 +69,7 @@ export default function Home() {
 
   const renderTechExperience = () => {
     return techExperience.map((tech) => {
-        // Added a delay so that shorter tech didn't erase too quickly
+      // Added a delay so that shorter tech didn't erase too quickly
       return (
         <span>
           <Typist.Delay ms={1000} />
@@ -49,6 +79,14 @@ export default function Home() {
       );
     });
   };
+
+  const jobRandomizer = () => {
+    //   Randomly select a whole number between 0 and the length of the jobs array.
+      let random = Math.floor(Math.random() * jobs.length)
+      setJobDisplay(jobs[random])
+      random = Math.floor(Math.random() * wittyBanter.length)
+      setCommentaryDisplay(wittyBanter[random])
+  }
   return (
     <div className="home-main-div">
       <p className="home-name">Dane Dawson</p>
@@ -58,56 +96,66 @@ export default function Home() {
           <Typist
             cursor={{ hideWhenDone: true, blink: true, hideWhenDoneDelay: 400 }}
           >
-          Developer with experience in{' '} {renderTechExperience()}
+            Developer with experience in {renderTechExperience()}
             Full Stack Engineering
           </Typist>
         </span>
       </div>
-<hr className="hr-line"/>
+      <hr className="hr-line" />
 
       <div className="general-info-div">
-        <p>
-          Born and raised in Austin, Texas, I have led a unique and entertaining
-          life thusfar (in my humble opinion). 
-          <br />
-          With a lifetime of diverse experiences, I've made the relatively recent career shift
+
+        <div className="info-block">
+        <img className="info-image" src={skyline} />
+          <p className="info-blurb">
+            Born and raised in Austin, Texas, my life has been an adventurous forray into a myriad of experiences thusfar (at least, in my humble opinion). With a lifetime of diverse hobbies and jobs, many browsable below, I've made the recent career shift into tech. With initial experience at SignUp and then as I moved into teaching programming with Flatiron, I have been thankful for the opportnity to find a unique field that is a meeting point for creativity, problem solving, and communication.
+          </p>
+        </div>
+
+        <div className="info-block">
+          <p className="info-blurb">
+            Most recently I have been employed by Flatiron School as a Software Engineer Coach. During that time it was my responsibility to guide and teach students in the fundamentals of programming, with a primary focus in Ruby, Ruby on Rails, JavaScript, and React. I was also the scrum master and project manager for the cohorts, with duties including coordinating projects, troubleshooting and debugging code, creating materials and overseeing cohort teamwork and communication.
+          </p>
+          <div className="image-holder">
+
+          <img className="info-image" src={flatiron} />
+          </div>
+        </div>
+        
+        <div className="info-block">
+        <img className="info-image" src={projectTech} />
+          <p className="info-blurb">
+            This portfolio was created with React using hooks and custom CSS throughout.A link to the repository is available in the "Projects" section above, with notes in the readme on resources and libraries utilized.  I also am experimenting with some ideas and concepts of front end data manipulation, and have included some pet projects as part of the site, located within the buttons above. 
+            <br/>
+            <br/>
+            Be forwarned this site also contains a potentially dangerous amount of my own sense of
+            humor and personality, so proceed at your own risk (and preferably with an open, lighthearted mind).
+
+            <br/>
+            <br/>
+          
+            Please feel free to check back regularly, as this site is consistently under construction.
+          </p>
+        </div>
+
+      <div className="info-block">
+        <p className="info-blurb jobs-description">
+          A renaissance man of sorts, I have collected an assortment of varied work experience over the years. Click to see a randomly selected place I have actually worked, as well as the poisition I held there!
           <br/>
-           into 
-          tech with an initial focus on web development.
+        <p onClick={() => jobRandomizer()} > ➜Click on this text here to show me random job (and equally as randomly selected commentary on said job) to the right!</p>
         </p>
-
-        <p>
-          Most recently I have been employed by Flatiron School as a Software Engineer Coach.
-
-          <br/>
-
-          During that time it was my responsibility to guide and teach students in the fundamentals of programming using
-          <br/>
-           -- Ruby, Ruby on Rails, JavaScript, and React --
-           <br/>
-           as well as coordinate projects, troubleshoot, create materials and oversee cohort teamwork.
-        </p>
-
-        <p>
-          This project was created with React using hooks and custom CSS
-          throughout. A link to the repository is available in the "Projects" section above!
-        </p>
-
-        <p>
-          It also contains a potentially dangerous amount of my own sense of
-          humor and personality.
-        </p>
-
-        <p>
-          Check back regularly, as this site is consistently under construction.
-        </p>
+        
+      <div className="info-image jobs-show">
+        <br/>
+        <span className="job-name">
+        {jobDisplay}
+        </span>
+        <br/>
+        {commentaryDisplay}
       </div>
-      <div className="experience-div">
-        <p>
-          Previous experience (all jobs I have previously held and recieved
-          payment for regularly)
-        </p>
-        <p>{jobs.join(" || ")} </p>
+        </div>
+      
+
       </div>
     </div>
   );

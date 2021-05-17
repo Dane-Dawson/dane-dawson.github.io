@@ -56,21 +56,70 @@
 .general-info-div{
     /* position: absolute; */
     top: 200px;
-    left: 18%;
+    margin: 15px;
     font-family: Oswald;
     font-size: 20px;
 
   /* transform: translate(-50%, -50%); */
     align-items: center;
     /* display: none; */
+    display: flex;
+    flex-direction: column;
+}
 
+.info-block {
+    width: 99%;
+    /* border: 5px solid black; */
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+}
+
+/* vector images offset for each display div. */
+.info-image{
+    max-height: 250px;
+    height: auto;
+    padding: 2.5%;
+    align-self: center;
+    margin: auto;
+}
+.image-holder{
+    align-content: left;
+    width: 35%;
+    margin: auto;
+}
+
+.info-blurb{
+    text-align: justify;
+    min-width: 50%;
+    max-width: 60%;
+    margin: auto;
+
+}
+.tech-list{
+    margin: auto;
+    width: 70%;
 }
 .experience-div{
+
+    font-family: Oswald;
+    font-size: 20px;
  /* position: absolute; */
- top: 300px;
- display: none;
+ /* top: 300px; */
+ /* display: none; */
 }
 
+.jobs-description{
+    width: 50%;
+}
+
+.jobs-show{
+    width: 40%;
+}
+
+.job-name{
+    font-size: 36px;
+}
 
 @font-face {
   font-family: "Oswald";
