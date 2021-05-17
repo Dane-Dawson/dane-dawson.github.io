@@ -13,7 +13,10 @@ export default function Projects() {
   const filteredProjects = () => {
     let projects = projectsArray.filter(project => project.name.toLowerCase().includes(searchTerm))
 
-    if (filterTerm != "all"){
+    if (filterTerm==="starred"){
+      let filteredProjects = projects.filter(project => project.starred==true)
+      return filteredProjects
+    }else if (filterTerm != "all"){
       let filteredProjects = projects.filter(project => project.tech.includes(filterTerm))
       return filteredProjects
     }
