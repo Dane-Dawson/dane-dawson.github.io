@@ -90,7 +90,17 @@
 }
 
 .heart-icon {
+  position: absolute;
+  top: 40%;
+  right: 10%;
   width: 5vw;
+}
+
+.stereo-gif{
+  width:7vw;
+  position: absolute;
+   top: 40%;
+   left: 10%;
 }
 .another-castle {
   text-align: center;
@@ -142,6 +152,7 @@
   position: relative;
   background-image: url("./images/underwater-background-busy.gif");
   background-size: 80vh;
+  background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
   min-width: 40vw;
