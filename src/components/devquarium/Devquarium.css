@@ -1,6 +1,6 @@
-.devquarium-main-div{
-    display: flex;
-    flex-direction: row;
+.devquarium-main-div {
+  display: flex;
+  flex-direction: row;
   border-radius: 20px;
   position: relative;
   text-align: left;
@@ -10,361 +10,1061 @@
   height: 80vh;
   width: 80vw;
   font: 1.3rem Inconsolata, monospace;
-  text-shadow: 0 0 5px #C8C8C8;
+  text-shadow: 0 0 5px #c8c8c8;
   align-self: center;
 }
-.devquarium-side-panel{
-    align-content: center;
-    width: 25%;
-    font: 1.3rem Roboto Mono;
+.devquarium-side-panel {
+  position: relative;
+  align-content: center;
+  width: 25%;
+  font: 1.3rem Roboto Mono;
 }
-.welcome{
-    padding-top: 20%;
-    text-align: center;
-    margin: auto;
-    width: 90%;
+
+/* left side panel */
+.welcome {
+  padding-top: 20%;
+  text-align: center;
+  margin: auto;
+  width: 90%;
 }
-.welcome-title{
-    font-family: Atlantis;
-    font-size: 2.5vw;
+.welcome-title {
+  font-family: Atlantis;
+  font-size: 2.5vw;
+  width: 100%;
+}
+
+.project-intro {
+  padding-top: 20%;
+  margin: auto;
+  width: 80%;
+  text-align: justify;
+}
+
+.enjoy-message {
+  padding-top: 20%;
+  margin: auto;
+  width: 80%;
+  text-align: justify;
+}
+
+/* right side panel */
+.panel-1 {
+    justify-content: center;
+  height: 75%;
+  text-align: center;
+}
+
+.display-div{
+    justify-content: center;
     width: 100%;
+    text-align: center;
 }
 
-.project-intro{
-    padding-top: 20%;
-    margin: auto;
-    width: 80%;
-    text-align: justify;
+.display-name{
+    font-family: Atlantis;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+    font-size: 3vw;
 }
 
-.enjoy-message{
-    padding-top: 20%;
-    margin: auto;
-    width: 80%;
-    text-align: justify;
+.display-source{
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.3rem;
 }
 
-.devquarium-tank{
-    /* margin: 1.5%; */
-    position: relative;
-    background-image: url('./images/underwater-background-busy.gif');
-    /* background-position: center; */
-    background-size: 80vh;
-    background-repeat: no-repeat;
-    height: 80vh;
-    min-width: 40vw;
-    overflow: hidden;
+.actual-source{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    font-size: 1vw;
+}
+.another-castle {
+  text-align: center;
+  width: 85%;
+  font-family: Retro;
+  font-size: 1rem;
+}
+@font-face {
+  font-family: Retro;
+  src: url("./fonts/joystix\ monospace.ttf");
+}
+
+.mushroom {
+  position: absolute;
+  height: 10vh;
+  bottom: -20%;
+  left: 70%;
+  z-index: 15;
+  animation: mushroom, mushroom-idle;
+  animation-duration: 3s, 10s;
+  animation-delay: 92s, 95s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mushroom {
+  0% {
+    bottom: -20%;
+    left: 70%;
+  }
+  100% {
+    bottom: 0%;
+    left: 70%;
+  }
+}
+@keyframes mushroom-idle {
+    0% {
+        bottom: 0%;
+        left: 70%;
+      }
+    100% {
+      bottom: 0%;
+      left: 70%;
+    }
+  }
+
+/* actual fish tank */
+
+.devquarium-tank {
+  position: relative;
+  background-image: url("./images/underwater-background-busy.gif");
+  background-size: 80vh;
+  background-repeat: no-repeat;
+  height: 80vh;
+  min-width: 40vw;
+  overflow: hidden;
 }
 
 /* individiual gif styling */
-.border{
-    position: absolute;
-    top: -5vh;
-    left: -7vw;
-    height: 80vh;
-    width: 55vw;
-    background-position-y: top;
-    z-index: 1000;
-    /* width: 100%; */
-    /* transform: rotate(90deg) */
+
+.axolotl {
+  position: absolute;
+  width: 8vw;
+  top: -30vh;
+  z-index: 2;
+  animation-name: axolotl-swim-1, axolotl-swim-2, axolotl-swim-3;
+  animation-duration: 30s, 30s, 30s;
+  animation-delay: 0s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-.axolotl{
-    position: absolute;
-    width: 8vw;
-    z-index: 2;
-    animation-name: axolotl-swim-1, axolotl-swim-2, axolotl-swim-3;
-    animation-duration: 30s, 30s, 30s;
-    animation-delay: 0s, 30s, 60s;
-    animation-iteration-count: infinite;
+@keyframes axolotl-swim {
+  0% {
+    left: -20%;
+    top: 20%;
+  }
+  11% {
+    left: -20%;
+    top: 20%;
+  }
+  23% {
+    left: 65%;
+    top: 60%;
+  }
+  33% {
+    left: 140%;
+    top: 50%;
+  }
+  34% {
+    left: 110%;
+    top: 30%;
+    transform: scaleX(-1);
+  }
+  50% {
+    left: 60%;
+    top: 70%;
+    transform: scaleX(-1);
+  }
+  67% {
+    left: -20%;
+    top: 80%;
+    transform: scaleX(-1);
+  }
+  68% {
+    left: 40%;
+    top: 110%;
+    transform: scaleX(1);
+  }
+  76% {
+    left: 40%;
+    top: 70%;
+    transform: scaleX(1);
+  }
+  83% {
+    left: 60%;
+    top: 65%;
+    transform: scaleX(1);
+  }
+  86% {
+    left: 70%;
+    top: 60%;
+    transform: scaleX(1);
+  }
+  88% {
+    left: 90%;
+    top: 65%;
+    transform: scaleX(-1);
+  }
+  91% {
+    left: 85%;
+    top: 70%;
+    transform: scaleX(-1);
+  }
+  94% {
+    left: 75%;
+    top: 65%;
+    transform: scaleX(1);
+  }
+  97% {
+    left: 85%;
+    top: 70%;
+    transform: scaleX(1);
+  }
+  100% {
+    left: 130%;
+    top: 80%;
+    transform: scaleX(1);
+  }
 }
 
 @keyframes axolotl-swim-1 {
-    0% {left: -20%; top: 20%;}
-    30% {left: -20%; top: 20%;}
-    70% {left: 65%; top: 60%;}
-    100% {left: 140%; top: 50%;}
+  0% {
+    left: -20%;
+    top: 20%;
+  }
+  30% {
+    left: -20%;
+    top: 20%;
+  }
+  70% {
+    left: 65%;
+    top: 60%;
+  }
+  100% {
+    left: 140%;
+    top: 50%;
+  }
 }
 @keyframes axolotl-swim-2 {
-    0% {left: 110%; top: 30%; transform: scaleX(-1)}
-    50% {left: 60%; top: 70%; transform: scaleX(-1)}
-    100% {left: -20%; top: 80%;transform: scaleX(-1)}
+  0% {
+    left: 110%;
+    top: 30%;
+    transform: scaleX(-1);
+  }
+  50% {
+    left: 60%;
+    top: 70%;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: -20%;
+    top: 80%;
+    transform: scaleX(-1);
+  }
 }
 @keyframes axolotl-swim-3 {
-    0% {left: 40%; top: 110%; transform: scaleX(1);}
-    25% {left: 40%; top: 70%; transform: scaleX(1)}
-    50% {left: 60%; top: 65%; transform: scaleX(1)}
-    60% {left: 70%; top: 60%; transform: scaleX(1)}
-    65% {left: 90%; top: 65%; transform: scaleX(-1)}
-    70% {left: 85%; top: 70%; transform: scaleX(-1)}
-    75% {left: 75%; top: 65%; transform: scaleX(1)}
-    80% {left: 85%; top: 70%; transform: scaleX(1)}
-    100% {left: 130%; top: 80%;transform: scaleX(1)}
+  0% {
+    left: 40%;
+    top: 110%;
+    transform: scaleX(1);
+  }
+  25% {
+    left: 40%;
+    top: 70%;
+    transform: scaleX(1);
+  }
+  50% {
+    left: 60%;
+    top: 65%;
+    transform: scaleX(1);
+  }
+  60% {
+    left: 70%;
+    top: 60%;
+    transform: scaleX(1);
+  }
+  65% {
+    left: 90%;
+    top: 65%;
+    transform: scaleX(-1);
+  }
+  70% {
+    left: 85%;
+    top: 70%;
+    transform: scaleX(-1);
+  }
+  75% {
+    left: 75%;
+    top: 65%;
+    transform: scaleX(1);
+  }
+  80% {
+    left: 85%;
+    top: 70%;
+    transform: scaleX(1);
+  }
+  100% {
+    left: 130%;
+    top: 80%;
+    transform: scaleX(1);
+  }
 }
 
 .scary-fish {
-    position: absolute;
-    width: 20vw;
-    left: -20vw;
-    z-index: 100;
-    animation-name: scary-swim-1, scary-swim-2, scary-swim-3;
-    animation-duration: 7s, 30s, 30s;
-    animation-delay: 23s, 30s, 60s;
-    animation-iteration-count: infinite;
+  position: absolute;
+  width: 20vw;
+  top: -30vh;
+  left: -20vw;
+  z-index: 100;
+  animation-name: scary-swim-1, scary-swim-2, scary-swim-3;
+  animation-duration: 7s, 30s, 30s;
+  animation-delay: 23s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-@keyframes scary-swim-1{
-    0% {left: -35%; top: 10%;}
-    100% {left: 120%; top: 50%;}
+@keyframes scary-swim-1 {
+  0% {
+    left: -35%;
+    top: 10%;
+  }
+  100% {
+    left: 120%;
+    top: 50%;
+  }
 }
-@keyframes scary-swim-2{
-    0% {left: 110%; top: 0%; transform: scaleX(-1)}
-    10% {left: 100%; top: 0%; transform: scaleX(-1)}
-    20% {left: 70%; top: 0%; transform: scaleX(-1)}
-    30% {left: 65%; top: 0%; transform: scaleX(-1)}
-    35% {left: 60%; top: 0%; transform: scaleX(-1)}
-    40% {left: 50%; top: 0%; transform: scaleX(-1)}
-    50% {left: 40%; top: 0%; transform: scaleX(-1)}
-    60% {left: 50%; top: 0%; transform: scaleX(-1)}
-    65% {left: 40%; top: 0%; transform: scaleX(-1)}
-    70% {left: 59%; top: 0%; transform: scaleX(-1)}
-    80% {left: 69%; top: 0%; transform: scaleX(-1)}
-    90% {left: 95%; top: 0%; transform: scaleX(-1)}
-    100% {left: 115%; top: 0%; transform: scaleX(-1)}
+@keyframes scary-swim-2 {
+  0% {
+    left: 110%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  10% {
+    left: 100%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  20% {
+    left: 70%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  30% {
+    left: 65%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  35% {
+    left: 60%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  40% {
+    left: 50%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  50% {
+    left: 40%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  60% {
+    left: 50%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  65% {
+    left: 40%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  70% {
+    left: 59%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  80% {
+    left: 69%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  90% {
+    left: 95%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 115%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
 }
-@keyframes scary-swim-3{
-    0% {left: -80%; top: -30%; transform: scaleX(1)}
-    50% {left: -80%; top: -30%; transform: scaleX(1)}
-    70% {left: -30%; top: 0%; transform: scaleX(1)}
-    80% {left: -25%; top: 8%; transform: scaleX(1)}
-    93% {left: -22%; top: -2%; transform: scaleX(1)}
-    100% {left: 122%; top: 2%; transform: scaleX(1)}
-    
+@keyframes scary-swim-3 {
+  0% {
+    left: -80%;
+    top: -30%;
+    transform: scaleX(1);
+  }
+  50% {
+    left: -80%;
+    top: -30%;
+    transform: scaleX(1);
+  }
+  70% {
+    left: -30%;
+    top: 0%;
+    transform: scaleX(1);
+  }
+  80% {
+    left: -25%;
+    top: 8%;
+    transform: scaleX(1);
+  }
+  93% {
+    left: -22%;
+    top: -2%;
+    transform: scaleX(1);
+  }
+  100% {
+    left: 122%;
+    top: 2%;
+    transform: scaleX(1);
+  }
 }
 
-.fishing-hook{
-    position: absolute;
-    width: 10vw;
-    animation-name: fishing-hook-1, fishing-hook-2, fishing-hook-3;
-    animation-duration: 30s, 30s, 30s;
-    animation-delay: 0s, 30s, 60s;
-    animation-iteration-count: infinite;
+.fishing-hook {
+  position: absolute;
+  width: 10vw;
+  top: -30vh;
+  animation-name: fishing-hook-1, fishing-hook-2, fishing-hook-3;
+  animation-duration: 30s, 30s, 30s;
+  animation-delay: 0s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-@keyframes fishing-hook-1{
-    0% {left: 10%; top: -30%;}
-    40% {left: 10%; top: -30%;}
-    50% {left: 10%; top: 0%;}
-    55% {left: 10%; top: -2%;}
-    60% {left: 10%; top: 0%;}
-    100% {left: 10%; top: -30%;}
+@keyframes fishing-hook-1 {
+  0% {
+    left: 10%;
+    top: -30%;
+  }
+  40% {
+    left: 10%;
+    top: -30%;
+  }
+  50% {
+    left: 10%;
+    top: 0%;
+  }
+  55% {
+    left: 10%;
+    top: -2%;
+  }
+  60% {
+    left: 10%;
+    top: 0%;
+  }
+  100% {
+    left: 10%;
+    top: -30%;
+  }
 }
-@keyframes fishing-hook-2{
-    0% {left: 80%; top: -30%; transform: scaleX(-1)}
-    10% {left: 80%; top: 0%; transform: scaleX(-1)}
-    20% {left: 70%; top: -2%; transform: scaleX(-1)}
-    30% {left: 65%; top: -0%; transform: scaleX(-1)}
-    35% {left: 60%; top: -2%; transform: scaleX(-1)}
-    40% {left: 50%; top: -0%; transform: scaleX(-1)}
-    50% {left: 40%; top: -2%; transform: scaleX(-1)}
-    60% {left: 50%; top: -0%; transform: scaleX(-1)}
-    65% {left: 40%; top: -2%; transform: scaleX(-1)}
-    70% {left: 59%; top: -0%; transform: scaleX(-1)}
-    80% {left: 69%; top: -0%; transform: scaleX(-1)}
-    90% {left: 95%; top: -0%; transform: scaleX(-1)}
-    100% {left: 115%; top: -0%; transform: scaleX(-1)}
+@keyframes fishing-hook-2 {
+  0% {
+    left: 80%;
+    top: -30%;
+    transform: scaleX(-1);
+  }
+  10% {
+    left: 80%;
+    top: 0%;
+    transform: scaleX(-1);
+  }
+  20% {
+    left: 70%;
+    top: -2%;
+    transform: scaleX(-1);
+  }
+  30% {
+    left: 65%;
+    top: -0%;
+    transform: scaleX(-1);
+  }
+  35% {
+    left: 60%;
+    top: -2%;
+    transform: scaleX(-1);
+  }
+  40% {
+    left: 50%;
+    top: -0%;
+    transform: scaleX(-1);
+  }
+  50% {
+    left: 40%;
+    top: -2%;
+    transform: scaleX(-1);
+  }
+  60% {
+    left: 50%;
+    top: -0%;
+    transform: scaleX(-1);
+  }
+  65% {
+    left: 40%;
+    top: -2%;
+    transform: scaleX(-1);
+  }
+  70% {
+    left: 59%;
+    top: -0%;
+    transform: scaleX(-1);
+  }
+  80% {
+    left: 69%;
+    top: -0%;
+    transform: scaleX(-1);
+  }
+  90% {
+    left: 95%;
+    top: -0%;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 115%;
+    top: -0%;
+    transform: scaleX(-1);
+  }
 }
-@keyframes fishing-hook-3{
-    0% {left: -30%; top: 10%;}
-    100% {left: -30%; top: 10%;}
+@keyframes fishing-hook-3 {
+  0% {
+    left: -30%;
+    top: 10%;
+  }
+  100% {
+    left: -30%;
+    top: 10%;
+  }
 }
 
-.tardis{
-    position: absolute;
-    width: 3vw;
-    animation-name: tardis-1, tardis-2, tardis-3;
-    animation-duration: 30s, 30s, 30s;
-    animation-delay: 0s, 30s, 60s;
-    animation-iteration-count: infinite;
+.tardis {
+  position: absolute;
+  width: 3vw;
+  top: -30vh;
+  animation-name: tardis-1, tardis-2, tardis-3;
+  animation-duration: 30s, 30s, 30s;
+  animation-delay: 0s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-@keyframes tardis-1{
-    0% {bottom: 15%; right: 5%; opacity: 0;}
-    50% {bottom: 15%; right: 5%; opacity: 1;}
-    75% {bottom: 15%; right: 5%; opacity: 0;}
-    100% {bottom: 15%; right: 5%; opacity: 0;}
+@keyframes tardis-1 {
+  0% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
+  25% {
+    top: 68%;
+    right: 1%;
+    opacity: 1;
+  }
+  75% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
+  100% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
 }
-@keyframes tardis-2{
-    0% {bottom: 15%; right: 5%; opacity: 0;}
-    100% {bottom: 15%; right: 5%; opacity: 0;}
+@keyframes tardis-2 {
+  0% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
+  100% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
 }
-@keyframes tardis-3{
-    0% {bottom: 15%; right: 5%; opacity: 0;}
-    25% {bottom: 15%; right: 5%; opacity: 1;}
-    50% {bottom: 15%; right: 5%; opacity: 1;}
-    75% {bottom: 15%; right: 5%; opacity: 0;}
-    100% {bottom: 15%; right: 5%; opacity: 0;}
+@keyframes tardis-3 {
+  0% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
+  25% {
+    top: 68%;
+    right: 1%;
+    opacity: 1;
+  }
+  50% {
+    top: 68%;
+    right: 1%;
+    opacity: 1;
+  }
+  75% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
+  100% {
+    top: 68%;
+    right: 1%;
+    opacity: 0;
+  }
 }
 
-.chicken{
-    position: absolute;
-    top: -10vh;
-    width: 10vw;
-    z-index: 101;
-    animation-name: chicken-1, chicken-2, chicken-3;
-    animation-duration: 20s, 30s, 30s;
-    animation-delay: 10s, 30s, 60s;
-    animation-iteration-count: infinite;
+.chicken {
+  position: absolute;
+  top: -30vh;
+  width: 10vw;
+  z-index: 101;
+  animation-name: chicken-1, chicken-2, chicken-3;
+  animation-duration: 20s, 30s, 30s;
+  animation-delay: 10s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-@keyframes chicken-1{
-    0% {top: 19%; right: -20%; transform: scaleX(-1)}
-    5% {top: 22%; right: -7%; transform: scaleX(-1)}
-    10% {top: 26%; right: -3%; transform: scaleX(-1)}
-    15% {top: 33%; right: 0%; transform: scaleX(-1)}
-    20% {top: 44%; right: 1%; transform: scaleX(-1)}
-    25% {top: 42%; right: 4%;transform: scaleX(-1)}
-    30% {top: 46%; right: 13%;transform: scaleX(-1)}
-    40% {top: 12%; right: 50%;transform: scaleX(-1)}
-    50% {top: 10%; right: 60%;transform: scaleX(-1)}
-    60% {top: 40%; right: 80%;transform: scaleX(-1)}
-    70% {top: 42%; right: 82%;transform: scaleX(1)}
-    80% {top: 41%; right: 86%;transform: scaleX(1)}
-    90% {top: 36%; right: 90%;transform: scaleX(-1)}
-    100% {top: 30%; right: 102%;transform: scaleX(-1)}
+@keyframes chicken-1 {
+  0% {
+    top: 19%;
+    right: -20%;
+    transform: scaleX(-1);
+  }
+  5% {
+    top: 22%;
+    right: -7%;
+    transform: scaleX(-1);
+  }
+  10% {
+    top: 26%;
+    right: -3%;
+    transform: scaleX(-1);
+  }
+  15% {
+    top: 33%;
+    right: 0%;
+    transform: scaleX(-1);
+  }
+  20% {
+    top: 44%;
+    right: 1%;
+    transform: scaleX(-1);
+  }
+  25% {
+    top: 42%;
+    right: 4%;
+    transform: scaleX(-1);
+  }
+  30% {
+    top: 46%;
+    right: 13%;
+    transform: scaleX(-1);
+  }
+  40% {
+    top: 12%;
+    right: 50%;
+    transform: scaleX(-1);
+  }
+  50% {
+    top: 10%;
+    right: 60%;
+    transform: scaleX(-1);
+  }
+  60% {
+    top: 40%;
+    right: 80%;
+    transform: scaleX(-1);
+  }
+  70% {
+    top: 42%;
+    right: 82%;
+    transform: scaleX(1);
+  }
+  80% {
+    top: 41%;
+    right: 86%;
+    transform: scaleX(1);
+  }
+  90% {
+    top: 36%;
+    right: 90%;
+    transform: scaleX(-1);
+  }
+  100% {
+    top: 30%;
+    right: 102%;
+    transform: scaleX(-1);
+  }
 }
-@keyframes chicken-2{
-    0% {top: 30%; right: 102%;transform: scaleX(-1)}
-    10% {top: 30%; left: -10%;transform: scaleX(1)}
-    20% {top: 15%; left: 0%;transform: scaleX(1)}
-    30% {top: 25%; left: 4%;transform: scaleX(1)}
-    /* 0% {top: 30%; right: 84%;transform: scaleX(-1)}
+@keyframes chicken-2 {
+  0% {
+    top: 30%;
+    right: 102%;
+    transform: scaleX(-1);
+  }
+  10% {
+    top: 30%;
+    left: -10%;
+    transform: scaleX(1);
+  }
+  20% {
+    top: 15%;
+    left: 0%;
+    transform: scaleX(1);
+  }
+  30% {
+    top: 25%;
+    left: 4%;
+    transform: scaleX(1);
+  }
+  /* 0% {top: 30%; right: 84%;transform: scaleX(-1)}
     10% {top: 33%; right: 82%;transform: scaleX(1)}
     20% {top: 23%; right: 72%;transform: scaleX(1)}
     30% {top: 30%; right: 62%;transform: scaleX(1)}
     40% {top: 30%; right: 62%;transform: scaleX(1)} */
-    40% {top: 30%; left: 5%;transform: scaleX(1)}
-    60% {top: 18%; left: 21%;transform: scaleX(1)}
-    80% {top: 20%; left: 51%;transform: scaleX(1)}
-    100% {top: 1%; left: 111%;transform: scaleX(1)}
-    
+  40% {
+    top: 30%;
+    left: 5%;
+    transform: scaleX(1);
+  }
+  60% {
+    top: 18%;
+    left: 21%;
+    transform: scaleX(1);
+  }
+  80% {
+    top: 20%;
+    left: 51%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 1%;
+    left: 111%;
+    transform: scaleX(1);
+  }
 }
-@keyframes chicken-3{
-    0% {left: 102%; top: 73%;transform: scaleX(-1)}
-    60% {left: 102%; top: 73%;transform: scaleX(-1)}
-    70% {left: 82%; top: 74%;transform: scaleX(-1)}
-    80% {left: 62%; top: 82%;transform: scaleX(-1)}
-    85% {left: 68%; top: 79%;transform: scaleX(1)}
-    95% {left: 78%; top: 78%;transform: scaleX(1)}
-    /* 0% {left: 130%; top: 80%;transform: scaleX(-1)} */
-    /* 60% {left: 130%; top: 80%;transform: scaleX(-1)}
+@keyframes chicken-3 {
+  0% {
+    left: 102%;
+    top: 73%;
+    transform: scaleX(-1);
+  }
+  60% {
+    left: 102%;
+    top: 73%;
+    transform: scaleX(-1);
+  }
+  70% {
+    left: 82%;
+    top: 74%;
+    transform: scaleX(-1);
+  }
+  80% {
+    left: 62%;
+    top: 82%;
+    transform: scaleX(-1);
+  }
+  85% {
+    left: 68%;
+    top: 79%;
+    transform: scaleX(1);
+  }
+  95% {
+    left: 78%;
+    top: 78%;
+    transform: scaleX(1);
+  }
+  /* 0% {left: 130%; top: 80%;transform: scaleX(-1)} */
+  /* 60% {left: 130%; top: 80%;transform: scaleX(-1)}
     70% {left: 90%; top: 82%;transform: scaleX(-1)}
     80% {left: 92%; top: 84%;transform: scaleX(1)}
     90% {left: 93%; top: 82%;transform: scaleX(1)} */
-    100% {left: 104%; top: 74%;transform: scaleX(1)}
+  100% {
+    left: 104%;
+    top: 74%;
+    transform: scaleX(1);
+  }
 }
 
-.bubbles{
-    position: absolute;
-    left: -20vh;
-    width: 10vw;
-    animation-name: bubbles-1, bubbles-2, bubbles-3;
-    animation-duration: 15s, 30s, 30s;
-    animation-delay: 15s, 30s, 60s;
-    animation-iteration-count: infinite;
+.bubbles {
+  position: absolute;
+  left: -20vh;
+  top: -30vh;
+  width: 10vw;
+  animation-name: bubbles-1, bubbles-2, bubbles-3;
+  animation-duration: 15s, 30s, 30s;
+  animation-delay: 15s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-@keyframes bubbles-1{
-    0% {top: 10%; left: -30%;}
-    10% {top: 7%; left: -10%;}
-    45% {top: 3%; left: 0%;}
-    55% {top: 2%; left: 0%;}
-    100% {top: 22%; left: 15%;}
-   
+@keyframes bubbles-1 {
+  0% {
+    top: 10%;
+    left: -30%;
+  }
+  10% {
+    top: 7%;
+    left: -10%;
+  }
+  45% {
+    top: 3%;
+    left: 0%;
+  }
+  55% {
+    top: 2%;
+    left: 0%;
+  }
+  100% {
+    top: 22%;
+    left: 15%;
+  }
 }
-@keyframes bubbles-2{
-    0% {top: 22%; left: 15%;}
-    10% {top: 26%; left: 13%;}
-    20% {top: 29%; left: 11%;}
-    30% {top: 32%; left: 9%;}
-    40% {top: 33%; left: 10%;}
-    60% {top: 22%; left: 22%;}
-    80% {top: 24%; left: 52%;}
-    100% {top: 1%; left: 112%;}
-    
+@keyframes bubbles-2 {
+  0% {
+    top: 22%;
+    left: 15%;
+  }
+  10% {
+    top: 26%;
+    left: 13%;
+  }
+  20% {
+    top: 29%;
+    left: 11%;
+  }
+  30% {
+    top: 32%;
+    left: 9%;
+  }
+  40% {
+    top: 33%;
+    left: 10%;
+  }
+  60% {
+    top: 22%;
+    left: 22%;
+  }
+  80% {
+    top: 24%;
+    left: 52%;
+  }
+  100% {
+    top: 1%;
+    left: 112%;
+  }
 }
-@keyframes bubbles-3{
-    0% {top: 40%; left: -30%; transform: scaleX(1)}
-    40% {top: 40%; left: -30%; transform: scaleX(1)}
-    60% {top: 40%; left: 130%;transform: scaleX(1)}
-    100% {top: 40%; left: 130%;transform: scaleX(1)}
+@keyframes bubbles-3 {
+  0% {
+    top: 40%;
+    left: -30%;
+    transform: scaleX(1);
+  }
+  40% {
+    top: 40%;
+    left: -30%;
+    transform: scaleX(1);
+  }
+  60% {
+    top: 40%;
+    left: 130%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 40%;
+    left: 130%;
+    transform: scaleX(1);
+  }
 }
 
-.octopus{
-    position: absolute;
-    left: -20vh;
-    width: 8vw;
-    animation-name: octopus-1, octopus-2, octopus-3;
-    animation-duration: 30s, 30s, 30s;
-    animation-delay: 0s, 30s, 60s;
-    animation-iteration-count: infinite;
+.octopus {
+  position: absolute;
+  left: -20vh;
+  top: -30vh;
+  width: 8vw;
+  animation-name: octopus-1, octopus-2, octopus-3;
+  animation-duration: 30s, 30s, 30s;
+  animation-delay: 0s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-@keyframes octopus-1{
-    0% {bottom: -20%; left: -30%;}
-    20% {bottom: -20%; left: -10%;}
-    40% {bottom: -20%; left: 0%;}
-    60% {bottom: 7%; left: 2%;}
-    80% {bottom: 11%; left: 1%;}
-    100% {bottom: 10%; left: 0%;}
-    
+@keyframes octopus-1 {
+  0% {
+    bottom: -20%;
+    left: -30%;
+  }
+  20% {
+    bottom: -20%;
+    left: -10%;
+  }
+  40% {
+    bottom: -20%;
+    left: 0%;
+  }
+  60% {
+    bottom: 7%;
+    left: 2%;
+  }
+  80% {
+    bottom: 11%;
+    left: 1%;
+  }
+  100% {
+    bottom: 10%;
+    left: 0%;
+  }
 }
-@keyframes octopus-2{
-    0% {bottom: 10%; left: 0%;}
-    20% {bottom: 12%; left: 13%;}
-    40% {bottom: 9%; left: 22%; transform: scaleX(-1);}
-    60% {bottom: 18%; left: 14%;transform: scaleX(-1);}
-    80% {bottom: 28%; left:23%;transform: scaleX(1);}
-    100% {bottom: 50%; left: 40%;transform: scaleX(1);}
+@keyframes octopus-2 {
+  0% {
+    bottom: 10%;
+    left: 0%;
+  }
+  20% {
+    bottom: 12%;
+    left: 13%;
+  }
+  40% {
+    bottom: 9%;
+    left: 22%;
+    transform: scaleX(-1);
+  }
+  60% {
+    bottom: 18%;
+    left: 14%;
+    transform: scaleX(-1);
+  }
+  80% {
+    bottom: 28%;
+    left: 23%;
+    transform: scaleX(1);
+  }
+  100% {
+    bottom: 50%;
+    left: 40%;
+    transform: scaleX(1);
+  }
 }
-@keyframes octopus-3{
-    0% {bottom: 50%; left: 40%;transform: scaleX(1);}
-    20% {bottom: 62%; left: 29%;transform: scaleX(-1);}
-    40% {bottom: 73%; left: 5%;}
-    60% {bottom: 85%; left: 15%;transform: scaleX(1);}
-    80% {bottom: 80%; left: 40%;transform: scaleX(1);}
-    90% {bottom: 60%; left: 80%;transform: scaleX(1);}
-    100% {bottom: 110%; left: 120%;transform: scaleX(1);}
+@keyframes octopus-3 {
+  0% {
+    bottom: 50%;
+    left: 40%;
+    transform: scaleX(1);
+  }
+  20% {
+    bottom: 62%;
+    left: 29%;
+    transform: scaleX(-1);
+  }
+  40% {
+    bottom: 73%;
+    left: 5%;
+  }
+  60% {
+    bottom: 85%;
+    left: 15%;
+    transform: scaleX(1);
+  }
+  80% {
+    bottom: 80%;
+    left: 40%;
+    transform: scaleX(1);
+  }
+  90% {
+    bottom: 60%;
+    left: 80%;
+    transform: scaleX(1);
+  }
+  100% {
+    bottom: 110%;
+    left: 120%;
+    transform: scaleX(1);
+  }
 }
 
-.nyan{
-    position: absolute;
-    /* left: -20vh; */
-    width: 12vw;
-    animation-name: nyan-1, nyan-2, nyan-3;
-    animation-duration: 30s, 30s, 30s;
-    animation-delay: 0s, 30s, 60s;
-    animation-iteration-count: infinite;
+.nyan {
+  position: absolute;
+  /* left: -20vh; */
+  width: 12vw;
+  top: -30vh;
+  animation-name: nyan-1, nyan-2, nyan-3;
+  animation-duration: 30s, 30s, 30s;
+  animation-delay: 0s, 30s, 60s;
+  /* animation-iteration-count: infinite; */
 }
 
-@keyframes nyan-1{
-    0% {bottom: 2%; left: -30%;}
-    70% {bottom: 2%; left: -30%;}
-    90% {bottom: 2%; right: 130%;}
-    100% {bottom: 2%; right: -50%;}
-    
+@keyframes nyan-1 {
+  0% {
+    bottom: 2%;
+    left: -30%;
+  }
+  70% {
+    bottom: 2%;
+    left: -30%;
+  }
+  90% {
+    bottom: 2%;
+    right: 130%;
+  }
+  100% {
+    bottom: 2%;
+    right: -50%;
+  }
 }
-@keyframes nyan-2{
-    0% {bottom: 2%; right: -50%;}
-    10% {top: 40%; right: -50%; transform: scaleX(-1);}
-    40% {top: 40%; right: -50%; transform: scaleX(-1);}
-    70% {top: 40%; right: 150%; transform: scaleX(-1);}
-    100% {top: 40%; right: 150%; transform: scaleX(-1);}
+@keyframes nyan-2 {
+  0% {
+    bottom: 2%;
+    right: -50%;
+  }
+  10% {
+    top: 40%;
+    right: -50%;
+    transform: scaleX(-1);
+  }
+  40% {
+    top: 40%;
+    right: -50%;
+    transform: scaleX(-1);
+  }
+  70% {
+    top: 40%;
+    right: 150%;
+    transform: scaleX(-1);
+  }
+  100% {
+    top: 40%;
+    right: 150%;
+    transform: scaleX(-1);
+  }
 }
-@keyframes nyan-3{
-    0% {top: 40%; right: 150%; transform: scaleX(-1);}
-    10% {bottom: 80%; left: -30%; transform: scaleX(1)}
-    30% {bottom: 80%; left: -30%;transform: scaleX(1)}
-    50% {bottom: 80%; left: 130%;transform: scaleX(1)}
-    100% {bottom: 80%; left: 130%;transform: scaleX(1)}
+@keyframes nyan-3 {
+  0% {
+    top: 40%;
+    right: 150%;
+    transform: scaleX(-1);
+  }
+  10% {
+    bottom: 80%;
+    left: -30%;
+    transform: scaleX(1);
+  }
+  30% {
+    bottom: 80%;
+    left: -30%;
+    transform: scaleX(1);
+  }
+  50% {
+    bottom: 80%;
+    left: 130%;
+    transform: scaleX(1);
+  }
+  100% {
+    bottom: 80%;
+    left: 130%;
+    transform: scaleX(1);
+  }
 }
