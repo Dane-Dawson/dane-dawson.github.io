@@ -18,6 +18,7 @@
   align-content: center;
   width: 25%;
   font: 1.3rem Roboto Mono;
+  overflow: hidden;
 }
 
 /* left side panel */
@@ -49,36 +50,47 @@
 
 /* right side panel */
 .panel-1 {
-    justify-content: center;
+  justify-content: center;
   height: 75%;
+  width: 90%;
   text-align: center;
+  margin: auto;
+  overflow: hidden;
 }
 
-.display-div{
-    justify-content: center;
-    width: 100%;
-    text-align: center;
+.display-div {
+  justify-content: center;
+  width: 90%;
+  text-align: center;
+  margin: auto;
 }
 
-.display-name{
-    font-family: Atlantis;
-    padding: 0px;
-    margin: 0px;
-    margin-top: 10px;
-    font-size: 3vw;
+.display-name {
+  font-family: Atlantis;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 10px;
+  font-size: 3vw;
 }
 
-.display-source{
-    padding: 0px;
-    margin: 0px;
-    font-size: 1.3rem;
+.display-source {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.3rem;
 }
 
-.actual-source{
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
-    font-size: 1vw;
+.actual-source {
+  color: inherit;
+  text-decoration: inherit;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  font-size: 1vw;
+  text-align: justify;
+}
+
+.heart-icon {
+  width: 5vw;
 }
 .another-castle {
   text-align: center;
@@ -114,15 +126,15 @@
   }
 }
 @keyframes mushroom-idle {
-    0% {
-        bottom: 0%;
-        left: 70%;
-      }
-    100% {
-      bottom: 0%;
-      left: 70%;
-    }
+  0% {
+    bottom: 0%;
+    left: 70%;
   }
+  100% {
+    bottom: 0%;
+    left: 70%;
+  }
+}
 
 /* actual fish tank */
 
@@ -894,96 +906,95 @@
 }
 
 @keyframes octopus-1 {
-  0% {
-    bottom: -20%;
-    left: -30%;
-  }
-  20% {
-    bottom: -20%;
-    left: -10%;
-  }
-  40% {
-    bottom: -20%;
-    left: 0%;
-  }
-  60% {
-    bottom: 7%;
-    left: 2%;
-  }
-  80% {
-    bottom: 11%;
-    left: 1%;
-  }
-  100% {
-    bottom: 10%;
-    left: 0%;
-  }
+    0% {
+        top: 80%;
+        left: -25%;
+      }
+    20% {
+        top: 70%;
+        left: 5%;
+      }
+    40% {
+        top: 78%;
+        left: 15%;
+      }
+    60% {
+        top: 73%;
+        left: 25%;
+      }
+    60% {
+        top: 71%;
+        left: 30%;
+      }
+      100% {
+        top: 78%;
+        left: 33%;
+      }
 }
 @keyframes octopus-2 {
-  0% {
-    bottom: 10%;
-    left: 0%;
-  }
-  20% {
-    bottom: 12%;
-    left: 13%;
-  }
-  40% {
-    bottom: 9%;
-    left: 22%;
-    transform: scaleX(-1);
-  }
-  60% {
-    bottom: 18%;
-    left: 14%;
-    transform: scaleX(-1);
-  }
-  80% {
-    bottom: 28%;
-    left: 23%;
-    transform: scaleX(1);
-  }
-  100% {
-    bottom: 50%;
-    left: 40%;
-    transform: scaleX(1);
-  }
+    0% {
+        top: 78%;
+        left: 33%;
+      }
+    20% {
+        top: 74%;
+        left: 33%;
+        transform: scaleX(-1);
+      }
+    40% {
+        top: 78%;
+        left: 28%;
+        transform: scaleX(-1);
+      }
+    60% {
+        top: 73%;
+        left: 24%;
+        transform: scaleX(-1);
+      }
+    80% {
+        top: 80%;
+        left: 20%;
+        transform: scaleX(-1);
+      }
+    100% {
+        top: 72%;
+        left: 26%;
+        transform: scaleX(1);
+      }
+  
 }
 @keyframes octopus-3 {
-  0% {
-    bottom: 50%;
-    left: 40%;
-    transform: scaleX(1);
-  }
-  20% {
-    bottom: 62%;
-    left: 29%;
-    transform: scaleX(-1);
-  }
-  40% {
-    bottom: 73%;
-    left: 5%;
-  }
-  60% {
-    bottom: 85%;
-    left: 15%;
-    transform: scaleX(1);
-  }
-  80% {
-    bottom: 80%;
-    left: 40%;
-    transform: scaleX(1);
-  }
-  90% {
-    bottom: 60%;
-    left: 80%;
-    transform: scaleX(1);
-  }
-  100% {
-    bottom: 110%;
-    left: 120%;
-    transform: scaleX(1);
-  }
+    0% {
+        top: 72%;
+        left: 26%;
+        transform: scaleX(1);
+      }
+    20% {
+        top: 62%;
+        left: 24%;
+        transform: scaleX(1);
+      }
+    40% {
+        top: 50%;
+        left: 25%;
+        transform: scaleX(-1);
+      }
+    60% {
+        top: 42%;
+        left: 27%;
+        transform: scaleX(-1);
+      }
+    80% {
+        top: 13%;
+        left: 25%;
+        transform: scaleX(1);
+      }
+    100% {
+        top: -15%;
+        left: 56%;
+        transform: scaleX(1);
+      }
+  
 }
 
 .nyan {
@@ -1048,22 +1059,22 @@
     transform: scaleX(-1);
   }
   10% {
-    bottom: 80%;
+    top: 40%;
     left: -30%;
     transform: scaleX(1);
   }
   30% {
-    bottom: 80%;
+    top: 40%;
     left: -30%;
     transform: scaleX(1);
   }
   50% {
-    bottom: 80%;
+    top: 40%;
     left: 130%;
     transform: scaleX(1);
   }
   100% {
-    bottom: 80%;
+    top: 40%;
     left: 130%;
     transform: scaleX(1);
   }

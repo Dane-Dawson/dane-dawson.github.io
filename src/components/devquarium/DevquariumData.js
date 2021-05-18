@@ -1,19 +1,13 @@
 import axolotl from "./images/axolotl.gif";
-// withnails.tumblr.com (tumblr won't let me link directly to account without my own account)
 import scaryFish from "./images/scary-fish.gif";
-// https://www.deviantart.com/narotiza/art/Tireeie-Animated-Pixel-Art-703595484
 import fishingHook from "./images/fishing-hook.gif";
-// https://giphy.com/stickers/fish-worm-poisson-8O86D1SZggIcIWe7Ee
 import tardis from "./images/tardis-fade.gif";
-// https://www.deviantart.com/astronautswhale
 import chicken from "./images/chicken.gif";
-// https://gfycat.com/uk/cluelessquaintgelding
 import bubbles from "./images/bubble-fish.gif";
-// https://br.pinterest.com/pin/792211390676963069/
 import octopus from "./images/octopus.gif";
-// http://rexsmealart.com/pixelart
 import nyan from "./images/nyan-cat.gif";
-// https://gfycat.com/accurateagreeabledairycow
+
+import heart from "./images/heart.png"
 
 import mushroom from "./images/mushroom.gif";
 // https://wifflegif.com/gifs/706475-pixel-art-mushroom-gif
@@ -30,15 +24,14 @@ export const leftSidePanel = () => {
         <div className="welcome">
           Welcome to the
           <div className="welcome-title">Devquarium!!</div>
-          For best viewing experience, view full screen on a non-mobile device. While it is *technically* fully responsive, it's still growing.
+          An adventure 20,000 Leagues Under the C..SS.
         </div>
         <div className="project-intro">
           This project is an exploration of CSS animation and effects.
-          Everything you can see in the "tank" was accomplished using 9 gifs
-          (credited in the code) and pure CSS.
+          Everything you can see in the "tank" was accomplished using 9 gifs and pure CSS. For best viewing experience, view full screen on a non-mobile device. While it is *technically* fully responsive, it's still growing.
         </div>
         <div className="enjoy-message">
-          For now, enjoy the 90 second animation at your leisure!
+          For now, enjoy the 90 second animation at your leisure! Try clicking on the images for sources and fun!
         </div>
       </div>
     );
@@ -97,28 +90,49 @@ const handleDisplay = (display) => {
         case "axolotl":
         return (<div className="display-div">
             <p className="display-name">Axolotl</p>
-            <p className="display-source">Sourced with love from</p>
-            <p className="actual-source">https://www.withnails.tumblr.com</p>
+            <p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="https://www.withnails.tumblr.com"><img src={heart} className="heart-icon"/></a>
         </div>)
         case "scary":
-
+            return (<div className="display-div">
+            <p className="display-name">Creepy Fish</p><p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="https://www.deviantart.com/narotiza/art/Tireeie-Animated-Pixel-Art-703595484"><img src={heart} className="heart-icon"/></a>
+        </div>)
         break;
         case "hook":
-
+            return (<div className="display-div">
+            <p className="display-name">Cpt. Hook</p><p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="https://giphy.com/stickers/fish-worm-poisson-8O86D1SZggIcIWe7Ee"><img src={heart} className="heart-icon"/></a>
+        </div>)
         break;
         case "tardis":
-            return <p>Tardis!</p>
+            return (<div className="display-div">
+            <p className="display-name">TARDIS</p><p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="https://www.deviantart.com/astronautswhale"><img src={heart} className="heart-icon"/></a>
+        </div>)
         case "chicken":
-
+            return (<div className="display-div">
+            <p className="display-name">Ninja Chicken</p><p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="https://gfycat.com/uk/cluelessquaintgelding"><img src={heart} className="heart-icon"/></a>
+        </div>)
         break;
         case "bubbles":
-
+            return (<div className="display-div">
+            <p className="display-name">Bubbles The Fish</p><p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="https://br.pinterest.com/pin/792211390676963069/"><img src={heart} className="heart-icon"/></a>
+        </div>)
         break;
         case "octopus":
-
+            return (<div className="display-div">
+            <p className="display-name">Oswald</p><p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="http://rexsmealart.com/pixelart"><img src={heart} className="heart-icon"/></a>
+        </div>)
         break;
         case "nyan":
-
+            return (<div className="display-div">
+            <p className="display-name">Nyan Cat</p><p className="display-source">Sourced with creative commons license (and love). Click the image below to see their page.</p>
+            <a target="_blank" className="actual-source" href="https://gfycat.com/accurateagreeabledairycow"><img src={heart} className="heart-icon"/></a>
+        </div>)
         break;
     }
 }
