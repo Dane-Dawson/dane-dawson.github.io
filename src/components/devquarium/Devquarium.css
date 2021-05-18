@@ -161,85 +161,6 @@
   /* animation-iteration-count: infinite; */
 }
 
-@keyframes axolotl-swim {
-  0% {
-    left: -20%;
-    top: 20%;
-  }
-  11% {
-    left: -20%;
-    top: 20%;
-  }
-  23% {
-    left: 65%;
-    top: 60%;
-  }
-  33% {
-    left: 140%;
-    top: 50%;
-  }
-  34% {
-    left: 110%;
-    top: 30%;
-    transform: scaleX(-1);
-  }
-  50% {
-    left: 60%;
-    top: 70%;
-    transform: scaleX(-1);
-  }
-  67% {
-    left: -20%;
-    top: 80%;
-    transform: scaleX(-1);
-  }
-  68% {
-    left: 40%;
-    top: 110%;
-    transform: scaleX(1);
-  }
-  76% {
-    left: 40%;
-    top: 70%;
-    transform: scaleX(1);
-  }
-  83% {
-    left: 60%;
-    top: 65%;
-    transform: scaleX(1);
-  }
-  86% {
-    left: 70%;
-    top: 60%;
-    transform: scaleX(1);
-  }
-  88% {
-    left: 90%;
-    top: 65%;
-    transform: scaleX(-1);
-  }
-  91% {
-    left: 85%;
-    top: 70%;
-    transform: scaleX(-1);
-  }
-  94% {
-    left: 75%;
-    top: 65%;
-    transform: scaleX(1);
-  }
-  97% {
-    left: 85%;
-    top: 70%;
-    transform: scaleX(1);
-  }
-  100% {
-    left: 130%;
-    top: 80%;
-    transform: scaleX(1);
-  }
-}
-
 @keyframes axolotl-swim-1 {
   0% {
     left: -20%;
@@ -270,7 +191,7 @@
     transform: scaleX(-1);
   }
   100% {
-    left: -20%;
+    left: -40%;
     top: 80%;
     transform: scaleX(-1);
   }

@@ -24,14 +24,14 @@ export const leftSidePanel = () => {
         <div className="welcome">
           Welcome to the
           <div className="welcome-title">Devquarium!!</div>
-          An adventure 20,000 Leagues Under the C..SS.
+          An adventure 20,000 Leagues Under the C...SS.
         </div>
         <div className="project-intro">
           This project is an exploration of CSS animation and effects.
           Everything you can see in the "tank" was accomplished using 9 gifs and pure CSS. For best viewing experience, view full screen on a non-mobile device. While it is *technically* fully responsive, it's still growing.
         </div>
         <div className="enjoy-message">
-          For now, enjoy the 90 second animation at your leisure! Try clicking on the images for sources and fun!
+          For now, enjoy the 90 second animation at your leisure! Try clicking on the images for links to sources and extra fun!
         </div>
       </div>
     );
