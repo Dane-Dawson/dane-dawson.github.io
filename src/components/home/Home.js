@@ -142,7 +142,7 @@ export default function Home() {
         <p className="info-blurb jobs-description">
           A renaissance man of sorts, I have collected an assortment of varied work experience over the years. Click to see a randomly selected place I have actually worked, as well as the poisition I held there!
           <br/>
-        <p onClick={() => jobRandomizer()} > ➜Click on this text here to show me random job (and equally as randomly selected commentary on said job) to the right!</p>
+        <p onClick={() => jobRandomizer()} > ➜ Click on this text here to display a random job (and some random commentary) to the right!</p>
         </p>
         
       <div className="info-image jobs-show">

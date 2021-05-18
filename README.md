@@ -50,3 +50,7 @@ Font for name - https://fonts.google.com/specimen/Monoton
 Font for the rest - https://fonts.google.com/specimen/Oswald?query=oswald
 
 React Typist - https://github.com/jstejada/react-typist
+
+tree stuff
+
+pixel gif for tree - https://giphy.com/javerage

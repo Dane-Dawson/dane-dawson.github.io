@@ -9,6 +9,7 @@ import piConstruction from "./images/pika-construction.gif";
 import Terminal from "./components/terminal/Terminal";
 import Home from "./components/home/Home";
 import Projects from "./components/projects/Projects";
+import Devquarium from "./components/devquarium/Devquarium"
 
 function App() {
   const [pets, petPikachu] = useState(0);
@@ -28,6 +29,10 @@ function App() {
             <Link className="projects-link link" to="/projects">
               Pr<img src={gitIcon} className="icon git-1" />jects
             </Link>
+            ||
+            <Link className="devquarium-link link" to="/devquarium">
+              Devquarium
+            </Link>
           </nav>
           <br />
           <br />
@@ -38,6 +43,9 @@ function App() {
             </Route>
             <Route path="/projects">
               <Projects />
+            </Route>
+            <Route path="/devquarium">
+              <Devquarium />
             </Route>
             <Route path="/">
               <Home />
