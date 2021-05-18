@@ -5,6 +5,10 @@ Hosted a React through GitHub Pages using these resources:
 - https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
 - https://github.com/gitname/react-gh-pages
 
+SPA with React Router in Github pages:
+
+- https://github.com/rafgraph/spa-github-pages
+
 Notes for Dane:
 ```
 npm run deploy
