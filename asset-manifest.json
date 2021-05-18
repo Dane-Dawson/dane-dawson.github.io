@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.e267507d.chunk.css",
+    "main.css": "/static/css/main.8eb57d79.chunk.css",
     "main.js": "/static/js/main.23266c24.chunk.js",
     "main.js.map": "/static/js/main.23266c24.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.72ce45e7.js",
@@ -10,7 +10,7 @@
     "static/js/3.60a4ab7e.chunk.js": "/static/js/3.60a4ab7e.chunk.js",
     "static/js/3.60a4ab7e.chunk.js.map": "/static/js/3.60a4ab7e.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.e267507d.chunk.css.map": "/static/css/main.e267507d.chunk.css.map",
+    "static/css/main.8eb57d79.chunk.css.map": "/static/css/main.8eb57d79.chunk.css.map",
     "static/js/2.0c58f07b.chunk.js.LICENSE.txt": "/static/js/2.0c58f07b.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/static/media/Oswald-VariableFont_wght.88fc6c5b.ttf",
     "static/media/App.css": "/static/media/bubbles.30c85f8f.gif",
@@ -43,7 +43,7 @@
   "entrypoints": [
     "static/js/runtime-main.72ce45e7.js",
     "static/js/2.0c58f07b.chunk.js",
-    "static/css/main.e267507d.chunk.css",
+    "static/css/main.8eb57d79.chunk.css",
     "static/js/main.23266c24.chunk.js"
   ]
 }
