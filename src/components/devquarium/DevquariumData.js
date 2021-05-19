@@ -10,6 +10,7 @@ import bubbles from "./images/bubble-fish.gif";
 import octopus from "./images/octopus.gif";
 import nyan from "./images/nyan-cat.gif";
 import stereo from "./images/stereo.gif"
+// https://www.deviantart.com/ate-bit/art/Pixel-Art-BoomBox-Animation-396425766
 
 import heart from "./images/heart.png"
 
@@ -33,8 +34,7 @@ export const leftSidePanel = () => {
           An adventure 20,000 Leagues Under the C...SS.
         </div>
         <div className="project-intro">
-          This project is an exploration of CSS animation and effects.
-          Everything you can see in the "tank" was accomplished using 9 gifs and pure CSS. For best viewing experience, view full screen on a non-mobile device. While it is *technically* fully responsive, it's still growing.
+          This project is an exploration of CSS animation and effects. Everything you can see in the "tank" was accomplished using 9 gifs and pure CSS and, with the exception of the nyan song, everything you hear is recorded; my voice, instruments, or whatever I could find around the house.
         </div>
         <div className="enjoy-message">
           For now, enjoy the 90 second animation at your leisure! Try clicking on the images for links to sources and extra fun!
@@ -134,7 +134,7 @@ const handleDisplay = (display, playAxolotl, playNyan, playScary, playPirate, pl
         break;
         case "octopus":
             return (<div className="display-div">
-            <p className="display-name">Oswald</p><p className="display-source">Sourced with creative commons license (and love). Click the heart image below to see their page. Click the stereo (just once!) to hear Oswald's barbershop group singing out their favorite animals!</p>
+            <p className="display-name">Oswald</p><p className="display-source">Sourced with creative commons license (and love). Click the heart image below to see their page. Click the stereo (just once!) to hear Oswald's barbershop group singing about their favorite animals!</p>
             <a target="_blank" className="actual-source" href="http://rexsmealart.com/pixelart"><img src={heart} className="heart-icon"/></a>
             <img src={stereo} className="stereo-gif"  onClick={playOctopus}/>
         </div>)

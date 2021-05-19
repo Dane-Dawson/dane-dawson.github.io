@@ -4,7 +4,7 @@
   border-radius: 20px;
   position: relative;
   text-align: left;
-  overflow-x: scroll;
+  overflow: hidden;
   background-color: rgb(1, 8, 32);
 
   height: 80vh;
@@ -17,8 +17,8 @@
   position: relative;
   align-content: center;
   width: 25%;
-  font: 1.3rem Roboto Mono;
-  overflow: hidden;
+  font: 1.2vw Roboto Mono;
+  overflow-y: scroll;
 }
 
 /* left side panel */
@@ -51,18 +51,21 @@
 /* right side panel */
 .panel-1 {
   justify-content: center;
-  height: 75%;
+  height: 70%;
   width: 90%;
   text-align: center;
   margin: auto;
   overflow: hidden;
+  font-size: 1.2vw;
 }
 
 .display-div {
   justify-content: center;
   width: 90%;
+  height: 70%;
   text-align: center;
   margin: auto;
+  font-size: 1.2vw;
 }
 
 .display-name {
@@ -76,7 +79,7 @@
 .display-source {
   padding: 0px;
   margin: 0px;
-  font-size: 1.3rem;
+  font-size: 1.2vw;
 }
 
 .actual-source {
@@ -91,22 +94,24 @@
 
 .heart-icon {
   position: absolute;
-  top: 40%;
+  bottom: 35%;
   right: 10%;
   width: 5vw;
+  height: auto;
 }
 
 .stereo-gif{
   width:7vw;
   position: absolute;
-   top: 40%;
+  bottom: 37%;
    left: 10%;
 }
 .another-castle {
   text-align: center;
   width: 85%;
   font-family: Retro;
-  font-size: 1rem;
+  font-size: 1vw;
+  height: 30%;
 }
 @font-face {
   font-family: Retro;

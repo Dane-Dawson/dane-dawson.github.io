@@ -10,7 +10,7 @@ import pirate from "./sounds/pirate.mp3"
 import tardis from "./sounds/tardis.mp3"
 import chicken from "./sounds/chicken.mp3"
 import bubbles from "./sounds/bubbles.mp3"
-import octopus from "./sounds/cephalopod.mp3"
+import octopus from "./sounds/cephalapod.mp3"
 
 
 import { devquarium, rightSidePanel, leftSidePanel } from "./DevquariumData";
@@ -21,8 +21,8 @@ const [playAxolotl] = useSound(axolotl, {volume: .05})
 const [playNyan] = useSound(nyan, {volume: .05})
 const [playScary] = useSound(scary, {volume: .1})
 const [playPirate] = useSound(pirate, {volume: .15})
-const [playTardis] = useSound(tardis, {volume: .20})
-const [playChicken] = useSound(chicken, {volume: .10})
+const [playTardis] = useSound(tardis, {volume: .40})
+const [playChicken] = useSound(chicken, {volume: .15})
 const [playBubbles] = useSound(bubbles, {volume: .15})
 const [playOctopus] = useSound(octopus, {volume: .15})
 
