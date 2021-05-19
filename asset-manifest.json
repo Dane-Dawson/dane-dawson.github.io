@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.66a0adf7.chunk.css",
-    "main.js": "/static/js/main.2a8cc655.chunk.js",
-    "main.js.map": "/static/js/main.2a8cc655.chunk.js.map",
+    "main.css": "/static/css/main.6f0372f0.chunk.css",
+    "main.js": "/static/js/main.e4fdf84b.chunk.js",
+    "main.js.map": "/static/js/main.e4fdf84b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.0d388bdd.js",
     "runtime-main.js.map": "/static/js/runtime-main.0d388bdd.js.map",
     "static/js/2.8dcebfe8.chunk.js": "/static/js/2.8dcebfe8.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/4.392b444b.chunk.js": "/static/js/4.392b444b.chunk.js",
     "static/js/4.392b444b.chunk.js.map": "/static/js/4.392b444b.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.66a0adf7.chunk.css.map": "/static/css/main.66a0adf7.chunk.css.map",
+    "static/css/main.6f0372f0.chunk.css.map": "/static/css/main.6f0372f0.chunk.css.map",
     "static/js/2.8dcebfe8.chunk.js.LICENSE.txt": "/static/js/2.8dcebfe8.chunk.js.LICENSE.txt",
     "static/js/3.e9c5f730.chunk.js.LICENSE.txt": "/static/js/3.e9c5f730.chunk.js.LICENSE.txt",
     "static/media/Home.css": "/static/media/Oswald-VariableFont_wght.88fc6c5b.ttf",
@@ -50,12 +50,12 @@
     "static/media/scary-fish.d4772f29.mp3": "/static/media/scary-fish.d4772f29.mp3",
     "static/media/stereo.68f99b19.gif": "/static/media/stereo.68f99b19.gif",
     "static/media/tardis-fade.ae938b18.gif": "/static/media/tardis-fade.ae938b18.gif",
-    "static/media/tardis.dc9fd8aa.mp3": "/static/media/tardis.dc9fd8aa.mp3"
+    "static/media/tardis.53df9533.mp3": "/static/media/tardis.53df9533.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.0d388bdd.js",
     "static/js/2.8dcebfe8.chunk.js",
-    "static/css/main.66a0adf7.chunk.css",
-    "static/js/main.2a8cc655.chunk.js"
+    "static/css/main.6f0372f0.chunk.css",
+    "static/js/main.e4fdf84b.chunk.js"
   ]
 }
