@@ -135,6 +135,9 @@ export default function Home() {
             <br/>
           
             Please feel free to check back regularly, as this site is consistently under construction.
+
+            <br/>
+            If you have any interest in contacting me feel free to visit my <a href="https://www.linkedin.com/in/dane-dawson/">LinkedIn.</a>
           </p>
         </div>
 
