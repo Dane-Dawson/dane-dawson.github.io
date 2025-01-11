@@ -31,7 +31,7 @@ function App() {
             </Link>
             ||
             <Link className="devquarium-link link" to="/devquarium">
-              Devquarium
+              Devquariums
             </Link>
           </nav>
           <br />
