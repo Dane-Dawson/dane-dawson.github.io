@@ -114,7 +114,7 @@ export default function Home() {
 
         <div className="info-block">
           <p className="info-blurb">
-            Look, I finally updated this! I work at THD now in the OrangeMethod OrangeWorks team teaching code.
+          Most recently I have been employed by Flatiron School as a Software Engineer Coach. During that time it was my responsibility to guide and teach students in the fundamentals of programming, with a primary focus in Ruby, Ruby on Rails, JavaScript, and React. I was also the scrum master and project manager for the cohorts, with duties including coordinating projects, troubleshooting and debugging code, creating materials and overseeing cohort teamwork and communication.
              </p>
           <div className="image-holder">
 
