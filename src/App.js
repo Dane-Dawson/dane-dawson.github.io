@@ -10,6 +10,7 @@ import Terminal from "./components/terminal/Terminal";
 import Home from "./components/home/Home";
 import Projects from "./components/projects/Projects";
 import Devquarium from "./components/devquarium/Devquarium"
+import IRLpg from "./components/IRLpg/IRLpg";
 
 function App() {
   const [pets, petPikachu] = useState(0);
@@ -31,7 +32,10 @@ function App() {
             </Link>
             ||
             <Link className="devquarium-link link" to="/devquarium">
-              Devquariums
+              Devquarium
+            </Link>
+            <Link className="IRLpg-link link" to="/IRLpg">
+              IRLpg
             </Link>
           </nav>
           <br />
@@ -46,6 +50,9 @@ function App() {
             </Route>
             <Route path="/devquarium">
               <Devquarium />
+            </Route>
+            <Route path="/IRLpg">
+              <IRLpg />
             </Route>
             <Route path="/">
               <Home />
