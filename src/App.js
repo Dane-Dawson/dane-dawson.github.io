@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./App.css";
 
+// connected?
+
 import gitIcon from "./components/projects/images/git-icon.png";
 import rocketDane from "./images/Rocket-Dane.png";
 import piConstruction from "./images/pika-construction.gif";
