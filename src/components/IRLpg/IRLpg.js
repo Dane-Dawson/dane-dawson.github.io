@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Projects.css";
 
 
 export default function IRLpg() {
