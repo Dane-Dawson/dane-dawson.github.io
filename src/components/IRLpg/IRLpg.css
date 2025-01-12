@@ -1,0 +1,11 @@
+.IRLpg-main-div {
+    position: relative;
+    display: flex;
+    /* overflow: scroll; */
+    flex-direction: row;
+    background-color: rgba(3, 87, 95, 0.557);
+    border: 2px solid gray;
+    border-radius: 20px;
+    width: 90vw;
+    height: 80vh;
+}

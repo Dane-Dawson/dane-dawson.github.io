@@ -18,7 +18,7 @@ function App() {
       <br />
       <Router>
         <div>
-          {IRLpgView ? <button onClick={()=>toggleIRLpgView(false)}>Come back home</button> : <nav>
+          {IRLpgView ? <Link className="home-link link" to="/" onClick={()=>toggleIRLpgView(false)}>Home</Link> : <nav>
             <Link className="home-link link" to="/">Home</Link>||
             <Link className="show-terminal link" to="/terminal">
               Terminal
@@ -31,6 +31,7 @@ function App() {
             <Link className="devquarium-link link" to="/devquarium">
               Devquarium
             </Link>
+            ||
             <Link className="IRLpg-link link" to="/IRLpg" onClick={()=>toggleIRLpgView(true)}>
               IRLpg
             </Link>
