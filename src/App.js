@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 import gitIcon from "./components/projects/images/git-icon.png";
-import rocketDane from "./images/Rocket-Dane.png";
-import piConstruction from "./images/pika-construction.gif";
 import Terminal from "./components/terminal/Terminal";
 import Home from "./components/home/Home";
 import Projects from "./components/projects/Projects";
@@ -13,15 +11,14 @@ import Devquarium from "./components/devquarium/Devquarium"
 import IRLpg from "./components/IRLpg/IRLpg";
 
 function App() {
-  const [pets, petPikachu] = useState(0);
+  const [IRLpgView, toggleIRLpgView] = useState(false);
 
   return (
     <div className="App">
-      {/* <img src={rocketDane} className="rocket-dane" alt="logo" /> */}
       <br />
       <Router>
         <div>
-          <nav>
+          {IRLpgView ? <button onClick={()=>toggleIRLpgView(false)}>Come back home</button> : <nav>
             <Link className="home-link link" to="/">Home</Link>||
             <Link className="show-terminal link" to="/terminal">
               Terminal
@@ -34,10 +31,11 @@ function App() {
             <Link className="devquarium-link link" to="/devquarium">
               Devquarium
             </Link>
-            <Link className="IRLpg-link link" to="/IRLpg">
+            <Link className="IRLpg-link link" to="/IRLpg" onClick={()=>toggleIRLpgView(true)}>
               IRLpg
             </Link>
-          </nav>
+          </nav>}
+          
           <br />
           <br />
 
@@ -52,7 +50,7 @@ function App() {
               <Devquarium />
             </Route>
             <Route path="/IRLpg">
-              <IRLpg />
+              <IRLpg toggleIRLpgView={toggleIRLpgView}/>
             </Route>
             <Route path="/">
               <Home />
@@ -60,14 +58,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-      
-        {/* <img src={piConstruction} 
-        onClick={()=>petPikachu(prev => prev + 1)}
-        className="construction-pika" 
-        alt="under construction" />
-          <p>
-          {pets} Pikachu pets. Well done.
-          </p> */}
     </div>
   );
 }
