@@ -66,6 +66,11 @@ export default function Home() {
     "CSS/HTML",
     "Ruby/Ruby On Rails",
     "JavaScript/React",
+    "Java/SpringBoot",
+    "GenAI leadership",
+    "Python",
+    "Docker/CICD",
+    "teaching and mentoring"
   ];
 
   const renderTechExperience = () => {
