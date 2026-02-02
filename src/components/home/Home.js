@@ -5,6 +5,7 @@ import "./Home.css";
 import skyline from "./images/austin-skyline.png"
 import flatiron from "./images/flatiron-logo.png"
 import projectTech from "./images/project-tech.png"
+import homeDepot from "./images/home-depot.png"
 
 
 export default function Home() {
@@ -114,12 +115,23 @@ export default function Home() {
 
         <div className="info-block">
           <p className="info-blurb">
-          Most recently I have been employed by Flatiron School as a Software Engineer Coach. During that time it was my responsibility to guide and teach students in the fundamentals of programming, with a primary focus in Ruby, Ruby on Rails, JavaScript, and React. I was also the scrum master and project manager for the cohorts, with duties including coordinating projects, troubleshooting and debugging code, creating materials and overseeing cohort teamwork and communication.
+          I started my software engineer employed by Flatiron School as a Software Engineer Coach. During that time it was my responsibility to guide and teach students in the fundamentals of programming, with a primary focus in Ruby, Ruby on Rails, JavaScript, and React. I was also the scrum master and project manager for the cohorts, with duties including coordinating projects, troubleshooting and debugging code, creating materials and overseeing cohort teamwork and communication.
              </p>
           <div className="image-holder">
 
           <img className="info-image" src={flatiron} />
           </div>
+        </div>
+
+          <img className="info-image" src={homeDepot} />
+        <div className="info-block">
+          <p className="info-blurb">
+          My most recent role was working at The Home Depot. I started on the Retail Media team and was responsible for integration of Google Ad Manager as well as a main contributor to projects with an estimated 1.2 million dollar annual revenue.
+
+          I later transitioned to the Orange Method Orange Works team and became a Sr. leader in anchoring our Apprenticeship program, designed to bring associates in from the stores with no technical background and train them to join our technology teams. 
+
+          We worked largely in a React front end, and Java/Spring backend environment, with some applications of Python, Angular, Google Cloud Platform, and other CICD tools.
+             </p>
         </div>
         
         <div className="info-block">

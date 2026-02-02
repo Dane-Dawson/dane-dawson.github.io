@@ -31,10 +31,10 @@ function App() {
             <Link className="devquarium-link link" to="/devquarium">
               Devquarium
             </Link>
-            ||
+            {/* ||
             <Link className="IRLpg-link link" to="/IRLpg" onClick={()=>toggleIRLpgView(true)}>
               IRLpg
-            </Link>
+            </Link> */}
           </nav>}
           
           <br />

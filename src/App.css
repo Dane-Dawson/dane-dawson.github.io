@@ -66,6 +66,15 @@
   font: 1.3rem Inconsolata, monospace;
   background-color: rgba(128, 128, 128, 0.411);
 }
+
+.IRLpg-link{
+  border: 3px solid #c8c8c831;
+  border-radius: 20px;
+  padding: 10px;
+  font: bold 1.3rem Brush Script MT, monospace;
+  background-color: rgba(169, 35, 5, 0.411);
+}
+
 .git-1{
   height: 20px;
   padding-left: 3px;

@@ -77,7 +77,7 @@
 
 /* vector images offset for each display div. */
 .info-image{
-    max-height: 250px;
+    max-height: 200px;
     height: auto;
     padding: 2.5%;
     align-self: center;
