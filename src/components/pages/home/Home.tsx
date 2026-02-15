@@ -63,15 +63,17 @@ export default function Home() {
   ]
 
   const techExperience = [
-    "SQL/Postrgress",
     "CSS/HTML",
-    "Ruby/Ruby On Rails",
     "JavaScript/React",
+    "Typescript",
     "Java/SpringBoot",
     "GenAI leadership",
     "Python",
     "Docker/CICD",
-    "teaching and mentoring"
+    "SQL/Postrgress",
+    "Ruby/Ruby On Rails",
+    "teaching and mentoring",
+    "Technology"
   ];
 
 
