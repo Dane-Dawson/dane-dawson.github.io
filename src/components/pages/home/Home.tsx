@@ -108,7 +108,7 @@ export default function Home() {
         <div className="info-block">
         <img className="info-image" src={skyline} />
           <p className="info-blurb">
-            Born and raised in Austin, Texas, my life has been an adventurous forray into a myriad of experiences thusfar (at least, in my humble opinion). With a lifetime of diverse hobbies and jobs, many browsable below, I've made the recent career shift into tech. With initial experience at SignUp and then as I moved into teaching programming with Flatiron, I have been thankful for the opportnity to find a unique field that is a meeting point for creativity, problem solving, and communication.
+            Born and raised in Austin, Texas, my life has been an adventurous forray into a myriad of experiences thusfar (at least, in my humble opinion). With a lifetime of diverse hobbies and jobs, many browsable below, I've made the career shift into tech. I started my experience working with initial experience at SignUp, primarily focusing on backend testing. I then was given the opportunity to teach code at Flatiron, and ended up most recently at a role at The Home Depot. I have been thankful for the opportunity to find a unique field that is a meeting point for creativity, problem solving, and communication.
           </p>
         </div>
 
