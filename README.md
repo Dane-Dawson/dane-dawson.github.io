@@ -1,60 +1,73 @@
-# Dane's README
+# React + TypeScript + Vite
 
-Hosted a React through GitHub Pages using these resources:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f
-- https://github.com/gitname/react-gh-pages
+Currently, two official plugins are available:
 
-SPA with React Router in Github pages:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- https://github.com/rafgraph/spa-github-pages
+## React Compiler
 
-Notes for Dane:
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-npm run deploy
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-to update site.
-
-
-Tools used to make my site:
-
-hooks useState review - https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/
-
-icons and tips - https://dev.to/philiphaines/beautify-your-github-40hh
-
-terminal component: 
-
-blinking text - https://html-online.com/articles/blinking-text-css-animation/
-
-terminal style - https://css-tricks.com/old-timey-terminal-styling/
-
-avoid placeholder - https://knowbility.org/blog/2019/animating-form-labels
-
-typewriter effect - https://css-tricks.com/snippets/css/typewriter-effect/
-
-staggering animations - https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/
-
-style change after animation - https://stackoverflow.com/questions/25794276/apply-style-after-css-animation-without-js
-
-
-Project component :
-
-react router setup - https://reactrouter.com/web/guides/quick-start
-
-guide to flexbox - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-
-href open in new window - https://www.rapidtables.com/web/html/link/html-link-new-window.html
-
-About page:
-
-Name light scroll - https://codepen.io/avstorm/pen/WNrMqjG
-
-Font for name - https://fonts.google.com/specimen/Monoton
-
-Font for the rest - https://fonts.google.com/specimen/Oswald?query=oswald
-
-React Typist - https://github.com/jstejada/react-typist
-
-devquarium 
-
-use-sound - https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/

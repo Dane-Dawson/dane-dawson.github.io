@@ -1,0 +1,98 @@
+.navbar {
+    position: fixed !important; 
+    top: 0;     
+    left: 0;     
+    width: 100%;    
+    z-index: 999;   
+    background-color: #333;
+    color: white;
+    height: 100px; 
+    text-align: justify;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Stacks the Title and Links */
+    justify-content: space-evenly; /* Centers vertically */
+    align-items: center;     /* Centers horizontally */
+    /* The Mask Effect */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    
+    /* Ensure the mask covers the whole width */
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+  .navbar ul {
+    display: flex;       /* Put links in a row */
+    list-style: none;    /* Remove the bullet points */
+    margin: 0;           /* Remove browser default margin */
+    padding: 0;          /* This removes that huge gap on the left! */
+    height: 100%;        /* Make the list fill the nav height */
+    align-items: center; /* Center links vertically */
+}
+
+.navbar li {
+    padding: 0 20px;     /* Add even spacing between your links */
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.navbar li a:hover {
+  /* color:  rgb(12, 17, 41); */
+  border-bottom: 2px solid  rgb(12, 17, 41);
+}
+
+
+
+
+.navbar h1 {
+  font-family: 'Monoton', cursive; 
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar h1:hover {
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px #00f2fe; 
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    height: auto; /* Let the height wrap the content */
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .navbar h1 {
+    font-size: 1.5rem; /* Shrink the title */
+    margin-bottom: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: row; 
+    flex-wrap: wrap;    /* Allow links to wrap to a second line if needed */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar li {
+    padding: 5px 10px; /* Tighter spacing */
+  }
+
+  .navbar li a {
+    font-size: 1.1rem; /* Adjust font for smaller screens */
+  }
+}

@@ -1,0 +1,229 @@
+.home-main-div {font-family: 'Inter', sans-serif; /* Using the readable font we discussed */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  /* GLASSMORPHISM CORE */
+  background: #0c1129; 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* SHADOWING & BORDER */
+  border: 1px solid rgba(0, 210, 255, 0.2); /* Subtle Cyan Border */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
+              0 0 15px rgba(0, 210, 255, 0.1); /* Soft Cyan Glow */
+  
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 40px;
+  overflow-x: hidden;
+}
+.hr-line{
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #00d2ff, transparent);
+  border: none;
+  margin: 40px 0;
+  opacity: 0.3;
+}
+
+.home-name {
+  font-family: 'Monoton', cursive;
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+.developer-info{
+    font-family: AnamaticSC;
+    /* position: absolute; */
+    font-size: 40px;
+
+  /* transform: translate(-50%, -50%); */
+    left: 50%;
+    top: 170px;
+}
+.tech-experience-list{
+    position: relative;
+}
+.general-info-div{
+    /* position: absolute; */
+    top: 200px;
+    margin: 15px;
+    font-family: Oswald;
+    font-size: 20px;
+
+  /* transform: translate(-50%, -50%); */
+    align-items: center;
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+}
+
+.info-block {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: auto; /* Remove the fixed 300px to avoid text cutoff */
+  margin-bottom: 60px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02); /* Very faint inner card */
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 210, 255, 0.2); /* Cyan border */
+    border-radius: 20px;
+    padding: 50px;
+    /* max-width: 600px; */
+    width: 95%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.info-block:hover {
+  background: rgba(0, 210, 255, 0.05); /* Glows when you read a section */
+  /* transform: translateY(-5px); */
+}
+
+/* vector images offset for each display div. */
+.info-image{
+    max-height: 250px;
+    height: auto;
+    width: 25vw;
+    padding: 2.5%;
+    align-self: center;
+    margin: auto;
+}
+.image-holder{
+    align-content: left;
+    width: 35%;
+    margin: auto;
+}
+
+.info-blurb{
+    text-align: justify;
+    min-width: 50%;
+    max-width: 60%;
+    /* max-height: 250px; */
+    margin: auto;
+    /* overflow:scroll; */
+
+}
+.tech-list{
+    margin: auto;
+    width: 70%;
+}
+.experience-div{
+
+    font-family: Oswald;
+    font-size: 20px;
+ /* position: absolute; */
+ /* top: 300px; */
+ /* display: none; */
+}
+
+.jobs-description{
+    width: 50%;
+}
+
+.jobs-description p {
+  color: #00d2ff;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.jobs-description p:hover {
+  color: white;
+  text-shadow: 0 0 10px #00d2ff;
+}
+
+.jobs-show{
+    width: 40%;
+}
+
+.job-name{
+    font-size: 36px;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("./fonts/Oswald-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Monoton";
+  src: url("./fonts/BungeeShade-Regular.ttf");
+}
+@font-face {
+  font-family: "AnamaticSC";
+  src: url("./fonts/AmaticSC-Regular.ttf");
+}
+
+@keyframes shine {
+  /* 0%
+    {background-position: 0px} */
+  /* 30%
+    {background-position: 150x} */
+  /* 50%
+    {background-position: 300px} */
+  /* 75%
+    {background-position: 450px} */
+  100% {
+    background-position: 3000vw;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Tablet and Mobile adjustments */
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: inline;
+  }
+  .home-main-div {
+    width: 90vw; /* Give more room on small screens */
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .home-name {
+    font-size: 48px; /* Shrink the massive title */
+    white-space: normal; /* Allow name to wrap if needed */
+    text-align: center;
+  }
+
+  .developer-info {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* CRITICAL: Stack the image and text vertically */
+  .info-block {
+    flex-direction: column !important; 
+    height: auto; /* Remove the 300px limit so text can grow */
+    margin-bottom: 40px;
+  }
+
+  .info-blurb {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: none; /* Let the text breathe */
+    text-align: left;
+    order: 2; /* Ensures text usually goes under the image */
+  }
+
+  .image-holder, .info-image {
+    width: 80%; /* Make images larger on mobile */
+    max-height: 200px;
+    order: 1; /* Move image to the top of the block */
+  }
+}

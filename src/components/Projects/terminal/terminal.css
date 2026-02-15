@@ -1,0 +1,255 @@
+.terminal-div{
+  position: fixed !important; 
+    top: 0;   
+    left: 0;      
+    z-index: 1000;  
+  padding: 10px;
+  border: 3px solid #C8C8C8;
+  border-radius: 20px;
+  position: relative;
+  text-align: left;
+  overflow-x: scroll;
+  background-color: rgb(10, 15, 36);
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), rgb(12, 17, 41) 120%
+  );
+  height: 96vh;
+  width: 97vw;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
+
+.terminal-div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 80vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(black, 0.15),
+    rgba(black, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+.terminal-div::selection {
+  background: #0080FF;
+  text-shadow: none;
+}
+
+.terminal-input-div {
+  width: 100%;
+  height: 5vh;
+  position: absolute;
+    background-color:transparent;
+  bottom: 5px;
+  left: 0px;
+}
+
+.terminal-div p {
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+.terminal-file-path{
+  position: absolute;
+  bottom: 4px;
+  left: 5px;
+}
+
+.terminal-input{
+  position: absolute;
+  border:hidden;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  bottom: 4px;
+  left: 400px;
+  height: 20px;
+  width: 60%;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
+.terminal-input::placeholder{
+
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+}
+
+.terminal-input-placeholder{
+  animation: 
+    typingplaceholder 3.5s steps(40, end),
+    blinker 1s linear infinite;
+  position: absolute;
+  bottom: 4px;
+  left: 400px;
+  visibility: hidden;
+  overflow: hidden;
+  overflow-x: scroll; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation-delay: 9500ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+/* type effect delayed timer setting for initial terminal readout */
+
+.webpack-compiling{
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+    animation-delay: 50ms;
+    -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.webpack-compiled {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+  typing 3.5s steps(40, end);
+  animation-delay: 1200ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-hash {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 2800ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-time {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 3700ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-enter-commands {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 4500ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-commands {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 6000ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+.terminal-file-path {
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .00em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end);
+  animation-delay: 8300ms;
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+
+
+/* End timer sequential loading delay */
+
+/* single line type-writer terminal effect */
+.terminal-display {
+  width: 100%;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+  typing 3s steps(40, end);
+  -webkit-animation-fill-mode:forwards; animation-fill-mode:forwards;
+}
+
+/* terminal output timer delay sequences */
+.help-1{
+  animation-delay: 1500ms;
+}
+.limmerick-2{
+  animation-delay: 1000ms;
+}
+.limmerick-3{
+  animation-delay: 2500ms;
+}
+.limmerick-4{
+  animation-delay: 3500ms;
+}
+.limmerick-5{
+  animation-delay: 4500ms;
+}
+.limmerick-6{
+  animation-delay: 6000ms;
+}
+
+.commands-2{
+  animation-delay: 2000ms;
+}
+.commands-3{
+  animation-delay: 4000ms;
+}
+.commands-4{
+  animation-delay: 5500ms;
+}
+/* The typing effect */
+@keyframes typing {
+  from { visibility: visible; width: 0 }
+  to { visibility: visible; width: 100% }
+}
+@keyframes typingplaceholder {
+  from { visibility: visible; width: 0 }
+  to { visibility: visible; width: 75% }
+}
+
+/* Blinking "click here" text animation */
+@keyframes blinker {
+  0%{     color: white;    }
+    39%{    color: white; }
+    60%{    color: transparent; }
+    79%{    color:transparent;  }
+    100%{   color: white;    }
+}
