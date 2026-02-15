@@ -1,5 +1,5 @@
 import "./terminal.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { handleTerminalDisplay, commandsArray, programsArray, terminalInput } from "./TerminalDisplayReadouts.tsx";
 
