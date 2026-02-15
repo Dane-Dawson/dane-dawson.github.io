@@ -34,6 +34,7 @@ export const leftSidePanel = () => {
   };
 
   
+
 export const devquarium = (setDisplay: { (value: React.SetStateAction<string>): void; (arg0: string): void; }) => {
   return (
     <div className="devquarium-tank">
@@ -53,7 +54,15 @@ const refreshPage = () => {
     window.location.reload();
 }
 
-export const rightSidePanel = (display: string, playAxolotl: React.MouseEventHandler<HTMLImageElement> | undefined, playNyan: React.MouseEventHandler<HTMLImageElement> | undefined, playScary: React.MouseEventHandler<HTMLImageElement> | undefined, playPirate: React.MouseEventHandler<HTMLImageElement> | undefined, playTardis: React.MouseEventHandler<HTMLImageElement> | undefined, playChicken: React.MouseEventHandler<HTMLImageElement> | undefined, playBubbles: React.MouseEventHandler<HTMLImageElement> | undefined, playOctopus: React.MouseEventHandler<HTMLImageElement> | undefined) => {
+export const rightSidePanel = (display: string, 
+  playAxolotl: () => void, // Change from MouseEventHandler
+  playNyan: () => void,    // Change from MouseEventHandler
+  playScary: () => void,
+  playPirate: () => void,
+  playTardis: () => void,
+  playChicken: () => void,
+  playBubbles: () => void,
+  playOctopus: () => void) => {
   return (
     <div className="devquarium-side-panel">
       <div className="panel-1">
@@ -83,7 +92,7 @@ const handleDisplay = (display: string, playAxolotl: React.MouseEventHandler<HTM
             <p className="display-name">Axolotl</p>
             <p className="display-source">Sourced with creative commons license (and love). Click the heart image below to see their page. Click the stereo for an original tune about Axolotls.</p>
             <a target="_blank" className="actual-source" href="https://www.withnails.tumblr.com"><img src={heart} className="heart-icon"/></a>
-            <img src={stereo} className="stereo-gif"  onClick={playAxolotl}/>
+            <img src={stereo} className="stereo-gif"  onClick={(e) => playAxolotl && playAxolotl(e)}/>
         </div>)
         case "scary":
             return (<div className="display-div">

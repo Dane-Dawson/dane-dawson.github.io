@@ -1,5 +1,5 @@
 import "./terminal.css";
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 
 import { handleTerminalDisplay, commandsArray, programsArray, terminalInput } from "./TerminalDisplayReadouts.tsx";
 
@@ -8,7 +8,7 @@ function Terminal() {
   const [commandLine, setCommandLine] = useState('')
   const [program, setProgram] = useState('launch')
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setCommandLine(event.target.value);
     let command = event.target.value.toLowerCase();
     if (commandsArray.includes(command)) {
