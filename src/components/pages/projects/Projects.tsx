@@ -14,13 +14,13 @@ const Projects = () => {
   const myProjects: Project[] = [
     {
       title: "Devquarium",
-      description: "Fun little project that acted as an exploration into animation and CSS in a fun, quasi-interactive aquarium setting.",
+      description: "Fun little project that acted as an exploration into animation and CSS in a fun, quasi-interactive aquarium setting. *Note* Designed for desktop",
       tech: ["React", "TypeScript", "Vite", "CSS Animation"],
       demoUrl: "/devquarium"
     },
     {
       title: "The Terminal",
-      description: "Another early project of mine that played with animation and interactive Javascript, styled in the format of a terminal.",
+      description: "Another early project of mine that played with animation and interactive Javascript, styled in the format of a terminal. *Note* Designed for desktop",
       tech: ["React", "TypeScript", "Vite", "CSS Animation"],
       demoUrl: '/terminal'
     },
