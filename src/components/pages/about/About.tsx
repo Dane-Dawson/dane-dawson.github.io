@@ -9,7 +9,8 @@ const About = () => {
         "Python",
         "JavaScript (Node.js/DOM)", 
         "Java (Spring/Micronaut)", 
-        "SQL/Relational Databases", 
+        "SQL/Relational Databases",
+        "Technical Documentation and Standards", 
         "Ruby on Rails"
       ] 
     },
@@ -47,7 +48,13 @@ const About = () => {
     {
       category: "Educational Experience",
       items: [
-        
+        "Curriculum Architecture",
+        "Instructional Design",
+        "Assessment Engineering",
+        "Technical Mentorship",
+        "Peer-Coaching",
+        "Apprenticeship Anchorage",
+        "Cross-Functional Technical Training",
       ]
     }
   ];

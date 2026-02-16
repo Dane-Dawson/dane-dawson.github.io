@@ -63,17 +63,16 @@ export default function Home() {
   ]
 
   const techExperience = [
-    "CSS/HTML",
-    "JavaScript/React",
-    "Typescript",
-    "Java/SpringBoot",
-    "GenAI leadership",
-    "Python",
-    "Docker/CICD",
-    "SQL/Postrgress",
-    "Ruby/Ruby On Rails",
-    "teaching and mentoring",
-    "Technology"
+    "React & TypeScript",
+    "Java (Spring/Micronaut)",
+    "Python & Node.js",
+    "GenAI SDLC Integration",
+    "Curriculum Architecture",
+    "GCP & Cloud Infrastructure",
+    "System Observability",
+    "Technical Mentorship",
+    "SQL & Schema Design",
+    "Instructional Design"
   ];
 
 
@@ -97,7 +96,8 @@ export default function Home() {
       strings: techExperience,
       autoStart: true,
       loop: true,
-      deleteSpeed: 50,
+      delay: 1,
+      deleteSpeed: 10,
     }}
   />
 </div>

@@ -34,12 +34,18 @@
     top: 120px;
     height: fit-content;
   }
+
+  .skills-sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
   
   .skill-group h3 {
-    color: #4facfe; /* Terminal Green from our previous chat */
+    color: #4facfe; 
     font-size: 1.2rem;
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(77, 250, 102, 0.3);
+    text-align: center;
   }
   
   .skill-group ul {
@@ -47,6 +53,7 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
   }
   
@@ -56,6 +63,7 @@
     border-radius: 4px;
     font-size: 0.9rem;
   }
+
   
   /* Timeline Experience */
   .timeline {

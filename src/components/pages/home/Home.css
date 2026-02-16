@@ -18,6 +18,13 @@
   padding: 40px;
   overflow-x: hidden;
 }
+
+.Typewriter__cursor {
+  color: #00d2ff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00d2ff;
+}
+
 .hr-line{
   width: 100%;
   height: 1px;
