@@ -36,7 +36,9 @@
   /* The Line that extends to the edge */
   .projects-header::after {
     content: "";
-    flex: 1; /* Fills the remaining space to the right */
+    flex: 1; 
+    /* Give the line a base width so it never disappears */
+    min-width: 50px; 
     height: 1px;
     background: linear-gradient(to right, #00d2ff, transparent);
     opacity: 0.5;
@@ -145,3 +147,28 @@
     border-color: white;
   }
   
+  @media (max-width: 900px) {
+
+    .projects-page{
+      margin-top: 70px;
+    }
+
+    .projects-header {
+      font-size: 2.2rem; /* Scale down from 4rem */
+      margin-bottom: 30px;
+      gap: 15px; /* Tighten the gap for smaller screens */
+      flex-wrap: nowrap; /* Keep the line and text on one line if possible */
+    }
+  
+    /* Ensure the container itself doesn't exceed the viewport */
+    .projects-page {
+      padding: 20px; /* Reducing desktop's 40px padding */
+      width: 100%;
+    }
+  
+    .projects-grid {
+      /* Adjust grid to prevent cards from being wider than the screen */
+      grid-template-columns: 1fr; 
+      padding: 0 10px;
+    }
+  }

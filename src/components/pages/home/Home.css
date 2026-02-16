@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .home-main-div {font-family: 'Inter', sans-serif; /* Using the readable font we discussed */
   position: relative;
   display: flex;
@@ -197,8 +201,7 @@
     display: inline;
   }
   .home-main-div {
-    width: 90vw; /* Give more room on small screens */
-    margin-top: 10px;
+    margin-top: 70px;
     padding: 10px;
   }
 
@@ -209,8 +212,10 @@
   }
 
   .developer-info {
-    font-size: 24px;
-    text-align: center;
+    left: 0; /* Reset positioning */
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   /* CRITICAL: Stack the image and text vertically */

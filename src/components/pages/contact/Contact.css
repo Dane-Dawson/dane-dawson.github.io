@@ -72,6 +72,9 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     transition: transform 0.2s ease;
+    width: 100%;
+    overflow: hidden; /* Prevents child content from breaking the card */
+    box-sizing: border-box;
   }
   
   .contact-item:hover {
@@ -102,6 +105,9 @@
     color: #ffffff;
     text-decoration: none;
     transition: color 0.2s ease;
+    word-break: break-all; /* Forces long emails/URLs to wrap */
+    white-space: normal;
+    max-width: 100%;
   }
   
   .contact-value:hover {
@@ -124,10 +130,30 @@
   
   /* Mobile Responsiveness */
   @media (max-width: 480px) {
-    .contact-card {
-      padding: 30px 20px;
+    .contact-page {
+      margin-top: 70px;
+      padding: 20px 10px; /* Reduce outer page padding */
     }
+  
+    .contact-card {
+      padding: 30px 15px; /* Reduce internal card padding */
+    }
+  
     .contact-title {
       font-size: 2rem;
+      letter-spacing: 4px; /* Tighten spacing so it fits on one line */
+    }
+  
+    .contact-item {
+      gap: 12px; /* Reduce gap between icon and text */
+      padding: 12px;
+    }
+  
+    .contact-icon {
+      font-size: 1.2rem; /* Shrink icons slightly */
+    }
+  
+    .contact-value {
+      font-size: 0.95rem; /* Shrink text slightly for mobile */
     }
   }
