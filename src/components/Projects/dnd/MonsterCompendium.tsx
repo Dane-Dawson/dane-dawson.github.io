@@ -8,10 +8,15 @@ import './MonsterCompendium.css';
 
 const data = monsterDataRaw as unknown as MonsterData;
 
+type SortKey = 'name' | 'type' | 'Challenge' | 'Armor Class' | 'Hit Points';
+
 const MonsterCompendium: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMonster, setSelectedMonster] = useState<Monster | null>(null);
   const [showAnalytics, setShowAnalytics] = useState(false);
+  
+  // Sorting State
+  const [sortConfig, setSortConfig] = useState<{ key: SortKey; direction: 'asc' | 'desc' } | null>(null);
 
   const filteredMonsters = useMemo(() => {
     return data.monsters.filter((monster: Monster) => {
@@ -23,6 +28,48 @@ const MonsterCompendium: React.FC = () => {
       );
     });
   }, [searchQuery]);
+
+  // Logic to handle sorting, including fractions for CR
+  const sortedMonsters = useMemo(() => {
+    let sortableItems = [...filteredMonsters];
+    if (sortConfig !== null) {
+      sortableItems.sort((a, b) => {
+        let aValue = a[sortConfig.key as keyof Monster];
+        let bValue = b[sortConfig.key as keyof Monster];
+
+        // Helper to convert "1/4" or "1/8" to decimals for accurate sorting
+        const parseValue = (val: any, key: SortKey) => {
+          if (key === 'Challenge') {
+            if (typeof val === 'number') return val;
+            const parts = String(val).split('/');
+            return parts.length === 2 ? Number(parts[0]) / Number(parts[1]) : Number(val);
+          }
+          return typeof val === 'string' ? val.toLowerCase() : val;
+        };
+
+        const finalA = parseValue(aValue, sortConfig.key);
+        const finalB = parseValue(bValue, sortConfig.key);
+
+        if (finalA < finalB) return sortConfig.direction === 'asc' ? -1 : 1;
+        if (finalA > finalB) return sortConfig.direction === 'asc' ? 1 : -1;
+        return 0;
+      });
+    }
+    return sortableItems;
+  }, [filteredMonsters, sortConfig]);
+
+  const requestSort = (key: SortKey) => {
+    let direction: 'asc' | 'desc' = 'asc';
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
+
+  const getSortClass = (key: SortKey) => {
+    if (!sortConfig || sortConfig.key !== key) return "";
+    return sortConfig.direction === 'asc' ? "sort-asc" : "sort-desc";
+  };
 
   if (selectedMonster) {
     return (
@@ -46,7 +93,6 @@ const MonsterCompendium: React.FC = () => {
       <header className="compendium-header">
         <h1>Bestiary</h1>
         <div className="header-actions">
-          {/* Visible on Desktop */}
           <button 
             className={`stats-toggle-btn ${showAnalytics ? 'active' : ''}`}
             onClick={() => setShowAnalytics(!showAnalytics)}
@@ -66,13 +112,13 @@ const MonsterCompendium: React.FC = () => {
 
         <div className="monster-list-view">
           <div className="list-header">
-            <span>Name</span>
-            <span>Type</span>
-            <span>CR</span>
-            <span className="hide-mobile">AC</span>
-            <span className="hide-mobile">HP</span>
+            <span onClick={() => requestSort('name')} className={getSortClass('name')}>Name</span>
+            <span onClick={() => requestSort('type')} className={getSortClass('type')}>Type</span>
+            <span onClick={() => requestSort('Challenge')} className={getSortClass('Challenge')}>CR</span>
+            <span onClick={() => requestSort('Armor Class')} className={`hide-mobile ${getSortClass('Armor Class')}`}>AC</span>
+            <span onClick={() => requestSort('Hit Points')} className={`hide-mobile ${getSortClass('Hit Points')}`}>HP</span>
           </div>
-          {filteredMonsters.map((m) => (
+          {sortedMonsters.map((m) => (
             <div 
               key={m.name} 
               className="monster-list-item"
@@ -85,13 +131,12 @@ const MonsterCompendium: React.FC = () => {
               <span className="m-hp hide-mobile">{m["Hit Points"]}</span>
             </div>
           ))}
-          {filteredMonsters.length === 0 && (
+          {sortedMonsters.length === 0 && (
             <div className="no-results">No monsters found matching "{searchQuery}"</div>
           )}
         </div>
       </div>
 
-      {/* Visible only on Mobile */}
       <button 
         className={`fab-stats-btn ${showAnalytics ? 'active' : ''}`}
         onClick={() => setShowAnalytics(!showAnalytics)}

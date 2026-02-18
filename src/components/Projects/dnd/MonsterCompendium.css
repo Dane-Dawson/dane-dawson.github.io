@@ -147,6 +147,53 @@
     animation: slideDown 0.3s ease-out;
 }
 
+/* --- List Header Sorting Styles --- */
+.list-header span {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.list-header span:hover {
+    color: #fff;
+}
+
+/* Sort Indicators */
+.sort-asc::after {
+    content: ' ▲';
+    font-size: 0.6rem;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d4af37;
+}
+
+.sort-desc::after {
+    content: ' ▼';
+    font-size: 0.6rem;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d4af37;
+}
+
+/* Existing Header Styles Refined */
+.list-header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.5fr 0.5fr 0.5fr;
+    padding: 1rem;
+    border-bottom: 2px solid #d4af37;
+    color: #d4af37;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
