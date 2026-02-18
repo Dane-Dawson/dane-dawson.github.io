@@ -63,6 +63,54 @@
     gap: 2rem;
   }
 
+  /* --- Professional D&D Header Styling --- */
+.compendium-header h1 {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-variant: small-caps;
+    letter-spacing: 0.15em; /* Airy and authoritative */
+    color: #d4af37;
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 1.2rem; /* Room for the flourish */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* The Gold Flourish Line */
+.compendium-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem; /* Aligns with the center of the diamond */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Tapered line */
+    height: 1px;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(212, 175, 55, 0.8) 20%, 
+        rgba(212, 175, 55, 0.8) 80%, 
+        transparent
+    );
+    z-index: 1;
+}
+
+/* The Centered Diamond Icon */
+.compendium-header h1::before {
+    content: '♦'; /* Elegant diamond character */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #d4af37;
+    background: #1a1a1a; /* Matches header bg to "break" the line */
+    padding: 0 15px;      /* Creates space around the diamond */
+    z-index: 2;
+    line-height: 1;
+}
+
 .header-actions {
     flex: 1;
     display: flex;
@@ -247,6 +295,26 @@
 }
 
   @media (max-width: 768px) {
+
+    .compendium-header {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+        gap: 1.2rem;
+    }
+
+    .compendium-header h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0.1em;
+        width: 100%;
+        display: block;
+    }
+
+    .compendium-header h1::after {
+        width: 80%; /* Slightly wider line on mobile for balance */
+    }
+
     .stats-toggle-btn {
         display: none;
     }
@@ -269,7 +337,7 @@
 
     .header-actions {
         min-width: 100%;
-        justify-content: stretch;
+        justify-content: center;
     }
 
     /* Make search container fill remaining space */
@@ -280,6 +348,7 @@
     .monster-search-input {
         width: 100%;
         font-size: 16px; /* Prevents iOS zoom-on-focus */
+        text-align: center;
     }
 
     /* Adjust list view padding for smaller screens */
