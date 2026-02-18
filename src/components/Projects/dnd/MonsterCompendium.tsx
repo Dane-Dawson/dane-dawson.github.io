@@ -1,34 +1,44 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import monsterDataRaw from './monsters.json';
+import MonsterCard from './components/MonsterCard';
+import SearchBar from './components/SearchBar';
 import type { Monster, MonsterData } from './types';
+import './MonsterCompendium.css';
 
-// Cast the JSON to our type for full IntelliSense
 const data = monsterDataRaw as unknown as MonsterData;
 
-const MonsterList: React.FC = () => {
-  return (
-    <div className="monster-container">
-      {data.monsters.map((monster: Monster) => (
-        <div key={monster.name} className="monster-card">
-          <h2>{monster.name}</h2>
-          <p><em>{monster.size} {monster.type}, {monster.alignment}</em></p>
-          
-          <div className="stats">
-            <p><strong>AC:</strong> {monster["Armor Class"]} ({monster.armor_type})</p>
-            <p><strong>HP:</strong> {monster["Hit Points"]} ({monster.hit_point_die})</p>
-            <p><strong>XP:</strong> {monster.xp.toLocaleString()}</p>
-          </div>
+const MonsterCompendium: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
 
-          <h3>Traits</h3>
-          {monster.Traits.map((trait, index) => (
-            // Since traits contain HTML tags like <em>, 
-            // we use dangerouslySetInnerHTML to render them correctly
-            <p key={index} dangerouslySetInnerHTML={{ __html: trait }} />
-          ))}
-        </div>
-      ))}
+  const filteredMonsters = useMemo(() => {
+    return data.monsters.filter((monster: Monster) => {
+      const searchStr = searchQuery.toLowerCase();
+      return (
+        monster.name.toLowerCase().includes(searchStr) ||
+        monster.type.toLowerCase().includes(searchStr) ||
+        monster.alignment.toLowerCase().includes(searchStr)
+      );
+    });
+  }, [searchQuery]);
+
+  return (
+    <div className="compendium-overlay">
+      <header className="compendium-header">
+        <h1>Bestiary</h1>
+        <SearchBar query={searchQuery} setQuery={setSearchQuery} />
+      </header>
+
+      <div className="monster-grid">
+        {filteredMonsters.length > 0 ? (
+          filteredMonsters.map((m) => (
+            <MonsterCard key={m.name} monster={m} />
+          ))
+        ) : (
+          <div className="no-results">No monsters found matching "{searchQuery}"</div>
+        )}
+      </div>
     </div>
   );
 };
 
-export default MonsterList;
+export default MonsterCompendium;

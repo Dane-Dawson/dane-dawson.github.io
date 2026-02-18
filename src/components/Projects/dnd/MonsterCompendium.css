@@ -1,0 +1,57 @@
+/* MonsterCompendium.css */
+
+/* Keep the reset to prevent gaps */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .compendium-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1a;
+    z-index: 9999;
+    overflow-y: auto;
+  }
+  
+  .compendium-header {
+    position: sticky;
+    top: 0;
+    background: #1a1a1a;
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid #d4af37;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .monster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .monster-search-input {
+    width: 400px;
+    padding: 0.8rem 1.2rem;
+    background: #2a2a2a;
+    border: 1px solid #d4af37;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+  }
+  
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem;
+    color: #888;
+  }
