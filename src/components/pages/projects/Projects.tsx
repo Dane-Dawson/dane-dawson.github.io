@@ -25,6 +25,12 @@ const Projects = () => {
       demoUrl: '/terminal'
     },
     {
+      title: "Monster Compendium",
+      description: "An exploration of large, complex dataset management and visual data displays using D&D 5e monsters",
+      tech: ["React", "TypeScript", "Vite", "CSS Animation"],
+      demoUrl: '/monstercompendium'
+    },
+    {
       title: "Dane Dawson: The Site",
       description: "This site here! Made using React, hooks, css and whatever creative madness my mind could conjure.",
       tech: ["Javascript", "Typescript", "React", "CSS", "HTML"],
