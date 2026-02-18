@@ -5,112 +5,168 @@
     padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 900px; /* Widened for desktop side-by-side */
-  }
-  
-  /* NEW: Layout wrapper */
-  .monster-card-top {
+    max-width: 900px;
+}
+
+/* Header Layout */
+.monster-card-top {
     display: flex;
-    flex-direction: row; /* Desktop: side-by-side */
+    flex-direction: row;
     gap: 2rem;
     margin-bottom: 1.5rem;
-    background: transparent;
-  }
-  
-  .monster-image-container {
+}
+
+/* IMAGE CENTERING: Vertical on Desktop */
+.monster-image-container {
     flex: 1;
     max-width: 300px;
     background: #1a1a1a;
     border-radius: 8px;
     overflow: hidden;
-    border: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* aspect-ratio: 1 / 1;  */
-    height: auto; 
-    align-self: flex-start;
-  }
-  
-  .monster-image {
+    align-items: center; /* Vertical center on desktop */
+    min-height: 250px;
+    align-self: center;
+}
+
+.monster-image {
     width: 100%;
     height: auto;
     object-fit: contain;
     display: block;
-  }
-  
-  .monster-header-info {
+}
+
+.monster-header-info {
     flex: 2;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-  }
-  
-  .stats-grid {
+    justify-content: center;
+}
+
+.monster-header-info h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: #d4af37;
+    text-transform: uppercase;
+}
+
+.monster-meta {
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 0.75rem;
+}
+
+/* 2x2 Stats Banner */
+.monster-stats-banner {
+    background: rgba(212, 175, 55, 0.08);
+    border-top: 2px solid #d4af37;
+    border-bottom: 2px solid #d4af37;
+    padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: #333;
-    padding: 0.75rem;
-    border-radius: 4px;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .ability-scores {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    border-top: 1px solid #d4af37;
-    border-bottom: 1px solid #d4af37;
-    padding: 0.75rem 0;
-    margin: 1rem 0;
-    text-align: center;
-  }
-  
-  .stat-block {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 1rem 2rem; /* Vertical and horizontal gap */
+}
+
+.stat-item {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    font-size: 0.85rem;
-  }
-  
-  .stat-block .label {
+}
+
+.stat-item .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.stat-item .value {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Middle Section */
+.attributes-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 1.5rem 0;
+    border-top: 1px solid #d4af37;
+    border-bottom: 1px solid #d4af37;
+}
+
+.radar-chart-container {
+    flex: 1;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.ability-scores-column {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.stat-block .label {
     font-weight: bold;
     color: #d4af37;
-    font-size: 0.75rem;
-  }
+    font-size: 0.8rem;
+}
 
-  .radar-chart-container {
-    width: 100%;
-    height: 200px; /* Adjust height as needed */
-    margin-top: 1rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 10px;
-  }
+/* Bottom Sections */
+.section-header {
+    border-bottom: 1px solid #d4af37;
+    margin-top: 1.5rem;
+    color: #d4af37;
+    text-transform: uppercase;
+}
 
-  
-  /* MOBILE VIEW */
-  @media (max-width: 768px) {
+/* MOBILE VIEW */
+@media (max-width: 768px) {
     .monster-card-top {
-      flex-direction: column; /* Stack image above text */
-      gap: 1rem;
+        flex-direction: column;
     }
-  
+
+    /* IMAGE CENTERING: Horizontal on Mobile */
     .monster-image-container {
-      max-width: 100%;
-      aspect-ratio: 16 / 9; /* Wider banner-style for mobile */
+        max-width: 100%;
+        min-height: auto;
+        padding: 1rem 0;
+        justify-content: center; /* Horizontal center */
+        align-items: flex-start; 
     }
-  
-    .monster-card {
-      padding: 1rem;
+
+    /* Keep 2x2 on mobile for symmetry, or switch to 1 column if preferred */
+    .monster-stats-banner {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
     }
-  
-    .ability-scores {
-      grid-template-columns: repeat(3, 1fr); /* 3x2 grid on mobile */
-      gap: 1rem 0;
+
+    .attributes-section {
+        flex-direction: column;
     }
 
     .radar-chart-container {
-        height: 180px;
-      }
-  }
+        width: 100%;
+        min-width: unset;
+    }
+
+    .ability-scores-column {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
