@@ -6,6 +6,7 @@ import Layout from '../components/layout/Layout';
 import Devquarium from "../components/Projects/devquarium/Devquarium";
 import Projects from "../components/pages/projects/Projects.tsx";
 import Terminal from "../components/Projects/terminal/Terminal";
+import MonsterCompendium from "../components/Projects/dnd/MonsterCompendium.tsx"
 
 const routes: RouteObject[] = [
     {
@@ -36,6 +37,10 @@ const routes: RouteObject[] = [
             {
                 path: "/terminal",
                 element: <Terminal />
+            },
+            {
+                path: "/monstercompendium",
+                element: <MonsterCompendium />
             }
         ]
     }

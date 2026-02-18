@@ -1,0 +1,268 @@
+/* ... */
+.monster-card {
+    background: #2a2a2a;
+    border-left: 8px solid #d4af37;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Header Layout */
+.monster-card-top {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Image Centering: Vertical on Desktop */
+.monster-image-container {
+    flex: 1;
+    max-width: 300px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 250px;
+    align-self: center;
+}
+
+.monster-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.monster-header-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.monster-header-info h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: #d4af37;
+    text-transform: uppercase;
+}
+
+.monster-meta {
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 0.75rem;
+}
+
+/* 2x2 Stats Banner */
+.monster-stats-banner {
+    background: rgba(212, 175, 55, 0.08);
+    border-top: 2px solid #d4af37;
+    border-bottom: 2px solid #d4af37;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for 2x2 grid */
+    gap: 1rem 2rem; 
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.stat-item .value {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Middle Section */
+.attributes-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 1.5rem 0;
+    border-top: 1px solid #d4af37;
+    border-bottom: 1px solid #d4af37;
+}
+
+.radar-chart-container {
+    flex: 1;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 300px;
+}
+
+.ability-scores-column {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.stat-block .label {
+    font-weight: bold;
+    color: #d4af37;
+    font-size: 0.8rem;
+}
+
+.section-header {
+    margin: 0 !important; /* Reset margin for summary */
+    flex: 1;
+    color: #d4af37;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Styling for dice rolls within descriptions */
+
+.stat-highlight {
+    font-weight: bold;
+    color: #f1c40f; 
+    background: rgba(241, 196, 15, 0.08);
+    padding: 0 4px;
+    border-radius: 4px;
+    white-space: nowrap;
+    border-bottom: 1px dotted rgba(241, 196, 15, 0.4);
+}
+
+/* --- Collapsible Section Styling --- */
+
+.monster-collapsible {
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.3s ease;
+}
+
+.monster-collapsible[open] {
+    background: rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.monster-collapsible summary {
+    list-style: none; /* Hide default arrow */
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d4af37;
+    outline: none;
+}
+
+/* Custom indicator arrow */
+.monster-collapsible summary::before {
+    content: '▶';
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-right: 0.75rem;
+    color: #d4af37;
+    transition: transform 0.2s ease;
+}
+
+.monster-collapsible[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.monster-collapsible summary:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* Padding for the text inside the collapse */
+.collapsible-content {
+    margin: 0.75rem 0;
+    padding-left: 1.25rem;
+    text-indent: -1.25rem; /* Hanging indent for the bold titles */
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+.collapsible-content p:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.75rem;
+}
+
+.collapsible-content p {
+    margin-bottom: 0.75rem;
+}
+
+.collapsible-content strong em, 
+.collapsible-content em strong {
+    color: #d4af37; /* Use your gold theme for the trait/action names */
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.legendary-intro {
+    font-style: italic;
+    color: #aaa;
+    font-size: 0.9rem;
+    padding-left: 0 !important;
+    text-indent: 0 !important;
+    border-bottom: 1px solid #d4af37 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+    .monster-card-top {
+        flex-direction: column;
+    }
+
+    /* Image Centering: Horizontal on Mobile */
+    .monster-image-container {
+        max-width: 100%;
+        min-height: auto;
+        padding: 1rem 0;
+        justify-content: center; 
+        align-items: flex-start; 
+    }
+
+    .monster-stats-banner {
+        grid-template-columns: 1fr 1fr; /* Keep 2x2 symmetry on mobile */
+        gap: 0.75rem;
+    }
+
+    .attributes-section {
+        flex-direction: column;
+    }
+
+    .radar-chart-container {
+        width: 100%;
+        min-width: unset;
+        height: 300px; /* FIX: Added explicit height for mobile */
+        flex: none;    /* FIX: Prevents container from collapsing in column flex */
+    }
+
+    .ability-scores-column {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+}
