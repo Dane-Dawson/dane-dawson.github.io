@@ -1,3 +1,4 @@
+/* ... */
 .monster-card {
     background: #2a2a2a;
     border-left: 8px solid #d4af37;
@@ -16,7 +17,7 @@
     margin-bottom: 1.5rem;
 }
 
-/* IMAGE CENTERING: Vertical on Desktop */
+/* Image Centering: Vertical on Desktop */
 .monster-image-container {
     flex: 1;
     max-width: 300px;
@@ -25,7 +26,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center; /* Vertical center on desktop */
+    align-items: center; 
     min-height: 250px;
     align-self: center;
 }
@@ -64,8 +65,8 @@
     border-bottom: 2px solid #d4af37;
     padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 1rem 2rem; /* Vertical and horizontal gap */
+    grid-template-columns: 1fr 1fr; /* Two columns for 2x2 grid */
+    gap: 1rem 2rem; 
 }
 
 .stat-item {
@@ -128,12 +129,12 @@
     font-size: 0.8rem;
 }
 
-/* Bottom Sections */
 .section-header {
     border-bottom: 1px solid #d4af37;
     margin-top: 1.5rem;
     color: #d4af37;
     text-transform: uppercase;
+    font-size: 1.2rem;
 }
 
 /* MOBILE VIEW */
@@ -142,18 +143,17 @@
         flex-direction: column;
     }
 
-    /* IMAGE CENTERING: Horizontal on Mobile */
+    /* Image Centering: Horizontal on Mobile */
     .monster-image-container {
         max-width: 100%;
         min-height: auto;
         padding: 1rem 0;
-        justify-content: center; /* Horizontal center */
+        justify-content: center; 
         align-items: flex-start; 
     }
 
-    /* Keep 2x2 on mobile for symmetry, or switch to 1 column if preferred */
     .monster-stats-banner {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* Keep 2x2 symmetry on mobile */
         gap: 0.75rem;
     }
 
@@ -164,9 +164,12 @@
     .radar-chart-container {
         width: 100%;
         min-width: unset;
+        height: 300px; /* FIX: Added explicit height for mobile */
+        flex: none;    /* FIX: Prevents container from collapsing in column flex */
     }
 
     .ability-scores-column {
         grid-template-columns: repeat(3, 1fr);
+        width: 100%;
     }
 }

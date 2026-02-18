@@ -3,7 +3,7 @@ import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, 
   ResponsiveContainer, Tooltip, Legend 
 } from 'recharts';
-import CustomRadarTooltip from './CustomRadarTooltip'; // Import the new component
+import CustomRadarTooltip from './CustomRadarTooltip';
 import type { Monster } from '../types';
 import "./MonsterCard.css";
 
@@ -12,7 +12,6 @@ interface MonsterCardProps {
 }
 
 const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
-  // Update: Add the modifier to each data point
   const abilityData = [
     { subject: 'STR', value: monster.STR, modifier: monster.STR_mod, fullMark: 30 },
     { subject: 'DEX', value: monster.DEX, modifier: monster.DEX_mod, fullMark: 30 },
@@ -30,33 +29,33 @@ const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
         </div>
         
         <div className="monster-header-info">
-  <h2>{monster.name}</h2>
-  <p className="monster-meta">
-    {monster.size} {monster.type}, {monster.alignment}
-  </p>
-  
-  <div className="monster-stats-banner">
-    <div className="stat-item">
-      <span className="label">Armor Class</span>
-      <span className="value">{monster["Armor Class"]} ({monster.armor_type})</span>
-    </div>
-    
-    <div className="stat-item">
-      <span className="label">Hit Points</span>
-      <span className="value">{monster["Hit Points"]} ({monster.hit_point_die})</span>
-    </div>
+          <h2>{monster.name}</h2>
+          <p className="monster-meta">
+            {monster.size} {monster.type}, {monster.alignment}
+          </p>
+          
+          <div className="monster-stats-banner">
+            <div className="stat-item">
+              <span className="label">Armor Class</span>
+              <span className="value">{monster["Armor Class"]} ({monster.armor_type})</span>
+            </div>
+            
+            <div className="stat-item">
+              <span className="label">Hit Points</span>
+              <span className="value">{monster["Hit Points"]} ({monster.hit_point_die})</span>
+            </div>
 
-    <div className="stat-item">
-      <span className="label">Speed</span>
-      <span className="value">{monster.Speed || '30 ft.'}</span>
-    </div>
-    
-    <div className="stat-item">
-      <span className="label">Challenge</span>
-      <span className="value">{monster.Challenge} ({monster.xp || '0'} XP)</span>
-    </div>
-  </div>
-</div>
+            <div className="stat-item">
+              <span className="label">Speed</span>
+              <span className="value">{monster.Speed || '30 ft.'}</span>
+            </div>
+            
+            <div className="stat-item">
+              <span className="label">Challenge</span>
+              <span className="value">{monster.Challenge} ({monster.xp || '0'} XP)</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="attributes-section">
@@ -65,10 +64,7 @@ const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
             <RadarChart cx="50%" cy="50%" outerRadius="80%" data={abilityData}>
               <PolarGrid stroke="#444" />
               <PolarAngleAxis dataKey="subject" tick={{ fill: '#d4af37', fontSize: 12 }} />
-              
-              {/* Updated: Pass the Custom Component here */}
               <Tooltip content={<CustomRadarTooltip />} />
-              
               <Legend iconType="diamond" verticalAlign="bottom" />
               <Radar
                 name="Base Stats"
@@ -82,52 +78,34 @@ const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
         </div>
 
         <div className="ability-scores-column">
-          <div className="stat-block">
-            <span className="label">STR</span>
-            <span>{monster.STR} {monster.STR_mod}</span>
-          </div>
-          <div className="stat-block">
-            <span className="label">DEX</span>
-            <span>{monster.DEX} {monster.DEX_mod}</span>
-          </div>
-          <div className="stat-block">
-            <span className="label">CON</span>
-            <span>{monster.CON} {monster.CON_mod}</span>
-          </div>
-          <div className="stat-block">
-            <span className="label">INT</span>
-            <span>{monster.INT} {monster.INT_mod}</span>
-          </div>
-          <div className="stat-block">
-            <span className="label">WIS</span>
-            <span>{monster.WIS} {monster.WIS_mod}</span>
-          </div>
-          <div className="stat-block">
-            <span className="label">CHA</span>
-            <span>{monster.CHA} {monster.CHA_mod}</span>
-          </div>
+          {abilityData.map((stat) => (
+            <div className="stat-block" key={stat.subject}>
+              <span className="label">{stat.subject}</span>
+              <span>{stat.value} {stat.modifier}</span>
+            </div>
+          ))}
         </div>
       </div>
+
       <div className="monster-sections">
-        {/* Traits Section */}
+          
+            <h3 className="section-header">Traits</h3>
         {monster.Traits && monster.Traits.map((trait, i) => (
           <p key={`trait-${i}`} dangerouslySetInnerHTML={{ __html: trait }} />
         ))}
 
-        {/* Actions Section */}
         {monster.Actions && monster.Actions.length > 0 && (
           <>
-            <h3 style={{ borderBottom: '1px solid #d4af37', marginTop: '1.5rem' }}>Actions</h3>
+            <h3 className="section-header">Actions</h3>
             {monster.Actions.map((action, i) => (
               <p key={`action-${i}`} dangerouslySetInnerHTML={{ __html: action }} />
             ))}
           </>
         )}
 
-        {/* Legendary Actions Section */}
         {monster["Legendary Actions"] && monster["Legendary Actions"].length > 0 && (
           <>
-            <h3 style={{ borderBottom: '1px solid #d4af37', marginTop: '1.5rem' }}>Legendary Actions</h3>
+            <h3 className="section-header">Legendary Actions</h3>
             {monster["Legendary Actions"].map((lAction, i) => (
               <p key={`legendary-${i}`} dangerouslySetInnerHTML={{ __html: lAction }} />
             ))}
