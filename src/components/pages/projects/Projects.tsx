@@ -26,8 +26,8 @@ const Projects = () => {
     },
     {
       title: "Monster Compendium",
-      description: "An exploration of large, complex dataset management and visual data displays using D&D 5e monsters",
-      tech: ["React", "TypeScript", "Vite", "CSS Animation"],
+      description: "An exploration of large, complex dataset management and visual data displays using D&D 5e monsters and ReChart library for data visualization.",
+      tech: ["React", "TypeScript", "Vite", "CSS Animation", "ReChart"],
       demoUrl: '/monstercompendium'
     },
     {

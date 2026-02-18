@@ -21,6 +21,32 @@ const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
     { subject: 'CHA', value: monster.CHA, modifier: monster.CHA_mod, fullMark: 30 },
   ];
 
+  const formatMonsterText = (text: string) => {
+    const patterns = [
+        // 1. Dice notation with optional parens and +/- modifiers (e.g., 1d4 - 1)
+        /(\(?\d+d\d+(?:\s*[+-]\s*\d+)?\)?|DC\s\d+|[+-]\d+\s+to\shit)/gi,
+        // 2. Attack Types and Labels
+        /(Melee|Ranged)\s(Weapon|Spell)\sAttack:/g,
+        /(Hit:)/g,
+        // 3. Legendary Action Costs
+        /(\(Costs\s\d+\sActions\))/g
+      ];
+  
+    let formattedText = text;
+    
+    // Wrap standard stats in the highlight class
+    formattedText = formattedText.replace(patterns[0], '<span class="stat-highlight">$1</span>');
+    
+    // Wrap attack types and "Hit:" in a bold, capitalized style
+    formattedText = formattedText.replace(patterns[1], '<strong>$1 $2 Attack:</strong>');
+    formattedText = formattedText.replace(patterns[2], '<strong>$1</strong>');
+    
+    // Wrap Costs in a small badge-like style
+    formattedText = formattedText.replace(patterns[3], '<small style="color: #d4af37; font-weight: bold;">$1</small>');
+  
+    return formattedText;
+  };
+
   return (
     <div className="monster-card">
       <div className="monster-card-top">
@@ -39,20 +65,17 @@ const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
               <span className="label">Armor Class</span>
               <span className="value">{monster["Armor Class"]} ({monster.armor_type})</span>
             </div>
-            
             <div className="stat-item">
               <span className="label">Hit Points</span>
               <span className="value">{monster["Hit Points"]} ({monster.hit_point_die})</span>
             </div>
-
             <div className="stat-item">
               <span className="label">Speed</span>
               <span className="value">{monster.Speed || '30 ft.'}</span>
             </div>
-            
             <div className="stat-item">
               <span className="label">Challenge</span>
-              <span className="value">{monster.Challenge} ({monster.xp || '0'} XP)</span>
+              <span className="value">{monster.Challenge}</span>
             </div>
           </div>
         </div>
@@ -88,33 +111,45 @@ const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
       </div>
 
       <div className="monster-sections">
-          
-        {monster.Traits && monster.Traits.length>0 && (
-            <>
-          <h3 className="section-header">Traits</h3>
-            
-        {monster.Traits.map((trait, i) => (
-            <p key={`trait-${i}`} dangerouslySetInnerHTML={{ __html: trait }} />
-        ))}
-        </>
+        {monster.Traits && monster.Traits.length > 0 && (
+          <details className="monster-collapsible" open>
+            <summary className="section-header">Traits</summary>
+            <div className="collapsible-content">
+              {monster.Traits.map((trait, i) => (
+                <p key={`trait-${i}`} dangerouslySetInnerHTML={{ __html: formatMonsterText(trait) }} />
+              ))}
+            </div>
+          </details>
         )}
 
         {monster.Actions && monster.Actions.length > 0 && (
-          <>
-            <h3 className="section-header">Actions</h3>
-            {monster.Actions.map((action, i) => (
-              <p key={`action-${i}`} dangerouslySetInnerHTML={{ __html: action }} />
-            ))}
-          </>
+          <details className="monster-collapsible">
+            <summary className="section-header">Actions</summary>
+            <div className="collapsible-content">
+              {monster.Actions.map((action, i) => (
+                <p key={`action-${i}`} dangerouslySetInnerHTML={{ __html: formatMonsterText(action) }} />
+              ))}
+            </div>
+          </details>
         )}
 
-        {monster["Legendary Actions"] && monster["Legendary Actions"].length > 0 && (
-          <>
-            <h3 className="section-header">Legendary Actions</h3>
-            {monster["Legendary Actions"].map((lAction, i) => (
-              <p key={`legendary-${i}`} dangerouslySetInnerHTML={{ __html: lAction }} />
-            ))}
-          </>
+{monster["Legendary Actions"] && monster["Legendary Actions"].length > 0 && (
+  <details className="monster-collapsible">
+    <summary className="section-header">Legendary Actions</summary>
+    <div className="collapsible-content">
+      {monster["Legendary Actions"].map((lAction, i) => {
+        // If it's the first item and doesn't have a <strong> tag, it's the intro
+        const isIntro = i === 0 && !lAction.includes('<strong>');
+        return (
+          <p 
+            key={`lAction-${i}`} 
+            className={isIntro ? "legendary-intro" : ""}
+            dangerouslySetInnerHTML={{ __html: formatMonsterText(lAction) }} 
+          />
+        );
+      })}
+    </div>
+          </details>
         )}
       </div>
     </div>
