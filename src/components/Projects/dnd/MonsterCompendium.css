@@ -1,57 +1,105 @@
-/* MonsterCompendium.css */
-
-/* Keep the reset to prevent gaps */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .compendium-overlay {
+.compendium-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #1a1a1a;
-    z-index: 9999;
-    overflow-y: auto;
+    background-color: #1a1a1a; /* Solid background to hide what's underneath */
+    z-index: 9999;             /* Sits on top of navbars, footers, etc. */
+    overflow-y: auto;          /* Allows scrolling within the overlay */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
-  
+
   .compendium-header {
     position: sticky;
     top: 0;
     background: #1a1a1a;
     padding: 1.5rem 2rem;
     border-bottom: 2px solid #d4af37;
-    z-index: 10;
+    z-index: 10000; /* Must be higher than list items */
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
   
-  .monster-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1400px;
+  .count-tag {
+    background: #333;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #d4af37;
+  }
+  
+  /* Table-like List Layout */
+  .monster-list-view {
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
   }
   
-  .monster-search-input {
-    width: 400px;
-    padding: 0.8rem 1.2rem;
-    background: #2a2a2a;
-    border: 1px solid #d4af37;
-    border-radius: 20px;
-    color: white;
-    outline: none;
+  .list-header, .monster-list-item {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.5fr 0.5fr 0.5fr;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px solid #333;
   }
   
-  .no-results {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 4rem;
-    color: #888;
+  .list-header {
+    font-weight: bold;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+  }
+  
+  .monster-list-item {
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .monster-list-item:hover {
+    background: #252525;
+  }
+  
+  .m-name {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .m-type { color: #aaa; font-size: 0.9rem; }
+  
+  /* Single Card View Container */
+  .focused-card-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Start at top for long cards */
+    padding: 4rem 2rem;
+    background: radial-gradient(circle, #2a2a2a 0%, #1a1a1a 100%);
+  }
+  
+  .back-btn {
+    background: none;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .back-btn:hover {
+    background: #d4af37;
+    color: #1a1a1a;
   }

@@ -1,23 +1,49 @@
 .monster-card {
     background: #2a2a2a;
-    border-left: 5px solid #d4af37;
-    border-radius: 4px;
-    padding: 1.5rem;
+    border-left: 8px solid #d4af37;
+    border-radius: 12px;
+    padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
+    width: 100%;
+    max-width: 900px; /* Widened for desktop side-by-side */
   }
   
-  .monster-card:hover {
-    transform: translateY(-5px);
+  /* NEW: Layout wrapper */
+  .monster-card-top {
+    display: flex;
+    flex-direction: row; /* Desktop: side-by-side */
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    background: transparent;
+  }
+  
+  .monster-image-container {
+    flex: 1;
+    max-width: 300px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* aspect-ratio: 1 / 1;  */
+    height: auto; 
+    align-self: flex-start;
   }
   
   .monster-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    border: 1px solid #444;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .monster-header-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   
   .stats-grid {
@@ -31,18 +57,60 @@
   }
   
   .ability-scores {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     border-top: 1px solid #d4af37;
     border-bottom: 1px solid #d4af37;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     margin: 1rem 0;
-    font-weight: bold;
-    color: #d4af37;
+    text-align: center;
   }
   
-  /* For the HTML traits we processed earlier */
-  .monster-sections em strong {
-    color: #ffaa00;
-    font-style: normal;
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+  }
+  
+  .stat-block .label {
+    font-weight: bold;
+    color: #d4af37;
+    font-size: 0.75rem;
+  }
+
+  .radar-chart-container {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  
+  /* MOBILE VIEW */
+  @media (max-width: 768px) {
+    .monster-card-top {
+      flex-direction: column; /* Stack image above text */
+      gap: 1rem;
+    }
+  
+    .monster-image-container {
+      max-width: 100%;
+      aspect-ratio: 16 / 9; /* Wider banner-style for mobile */
+    }
+  
+    .monster-card {
+      padding: 1rem;
+    }
+  
+    .ability-scores {
+      grid-template-columns: repeat(3, 1fr); /* 3x2 grid on mobile */
+      gap: 1rem 0;
+    }
+
+    .radar-chart-container {
+        height: 180px;
+      }
   }
