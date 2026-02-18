@@ -89,10 +89,15 @@ const MonsterCard: React.FC<MonsterCardProps> = ({ monster }) => {
 
       <div className="monster-sections">
           
-            <h3 className="section-header">Traits</h3>
-        {monster.Traits && monster.Traits.map((trait, i) => (
-          <p key={`trait-${i}`} dangerouslySetInnerHTML={{ __html: trait }} />
+        {monster.Traits && monster.Traits.length>0 && (
+            <>
+          <h3 className="section-header">Traits</h3>
+            
+        {monster.Traits.map((trait, i) => (
+            <p key={`trait-${i}`} dangerouslySetInnerHTML={{ __html: trait }} />
         ))}
+        </>
+        )}
 
         {monster.Actions && monster.Actions.length > 0 && (
           <>
