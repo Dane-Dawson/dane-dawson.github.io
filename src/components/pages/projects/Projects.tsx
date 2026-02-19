@@ -44,7 +44,7 @@ const Projects = () => {
       title: "Tarot Reader",
       description:
         "Have your fortune told! Not saying I believe in any of this, but it was a fun experiment with CSS and AI integration.",
-      tech: ["React", "TypeScript", "Vite", "CSS Animation", "tsParticles", "Gemini API"],
+      tech: ["React", "TypeScript", "Vite", "CSS Animation", "tsParticles", "Gemini API", "ReactMarkdown", "html-to-image"],
       demoUrl: "/tarotreader",
     },
     {

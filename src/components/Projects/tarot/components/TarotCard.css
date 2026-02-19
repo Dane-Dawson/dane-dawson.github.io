@@ -11,10 +11,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    /* Subtle inner shadow for depth */
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.5s ease;
-    backdrop-filter: blur(4px); /* Particles blur as they go behind the card */
+    backdrop-filter: blur(4px);
     background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%);
 }
 
@@ -36,6 +35,7 @@
     font-size: 1.1rem;
     letter-spacing: 1px;
     color: #d4af37;
+    margin: 4px 0;
 }
 
 .tarot-card__image-container {
@@ -43,27 +43,40 @@
     background: #000;
     border-radius: 2px;
     overflow: hidden;
-    filter: sepia(0.3) contrast(1.1); /* Slightly aged photo look */
+    filter: sepia(0.3) contrast(1.1);
     transition: filter 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tarot-card__image {
-    /* width: 100%; */
     height: 100%;
-    /* background-color: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%); */
-    background: red;
+    width: auto;
+    object-fit: contain;
+    /* This allows the image to rotate smoothly */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tarot-card:hover .tarot-card__image-container {
-    filter: sepia(0) contrast(1.2); /* Clears up on hover */
+/* REVERSED LOGIC: Flips the image upside down */
+.tarot-card--reversed .tarot-card__image {
+    transform: rotate(180deg);
 }
 
-/* Scroll Area Styling */
 .tarot-card__scroll-area {
     flex: 1;
     overflow-y: auto;
     margin-top: 15px;
-    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    padding-right: 5px;
+}
+
+/* Scrollbar Styling */
+.tarot-card__scroll-area::-webkit-scrollbar {
+    width: 4px;
+}
+.tarot-card__scroll-area::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
 }
 
 .tarot-card__label {
@@ -73,6 +86,9 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     opacity: 0.8;
+    display: block;
+    border-bottom: 1px solid #333;
+    margin-bottom: 5px;
 }
 
 .tarot-card__text {
@@ -80,4 +96,11 @@
     font-size: 0.95rem;
     line-height: 1.6;
     color: #dcdcdc;
+    margin-bottom: 15px;
+}
+
+.tarot-card__text--desc {
+    font-size: 0.85rem;
+    font-style: normal;
+    color: #aaa;
 }

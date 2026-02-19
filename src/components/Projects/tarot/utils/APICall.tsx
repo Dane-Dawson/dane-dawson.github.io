@@ -13,7 +13,7 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({
   model: "gemini-2.5-flash",
   systemInstruction:
-    "You are a tarot reading mystique. Interpret three prompts to give a fortune. The cards will come as a string of 3 cards, each containing the card name, direction, and meaning. Interpret each individual card, giving it's name and direction, and then give a cumulative interpretation using all three.",
+    "You are a tarot reading mystique. Interpret three prompts to give a fortune. The cards will come as a string of 3 cards, each containing the card name, direction, and meaning. Interpret each individual card, giving it's name and direction, and then give a cumulative interpretation using all three. Interpret the 3 cards provided. Use Markdown for structure: Use **bold** for card names and key themes, and use '***' to create a horizontal divider before your final 'Combined Fortune' summary. Maintain a mysterious, wise, and supportive tone."
 });
 
 interface DrawnCard {
