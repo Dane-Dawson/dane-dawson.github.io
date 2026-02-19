@@ -54,21 +54,34 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
             Season {painting.season}, Episode {painting.episode}
           </p>
 
-          <div className="palette-section">
-            <h3>Palette Used</h3>
-            <div className="swatch-grid">
-              {painting.color_hex.map((hex, i) => (
-                <div key={i} className="swatch-item">
-                  <div
-                    className="color-circle"
-                    style={{ backgroundColor: hex }}
-                    title={painting.colors[i]}
-                  />
-                  <span>{painting.colors[i]}</span>
-                </div>
-              ))}
-            </div>
+<div className="palette-section">
+  <h3>Palette Used</h3>
+  <p className="colors-string-list">
+    {painting.colors.join(', ')}
+  </p>
+  <div className="palette-container">
+    <div className="palette-wood-base">
+      {painting.color_hex.map((hex, i) => {
+        // Spans 180 degrees starting from the left (0) to the right (180)
+        const angle = (i / (painting.color_hex.length - 1)) * 180;
+        return (
+          <div 
+            key={i} 
+            className="swatch-drop" 
+            style={{ 
+              '--angle': `${angle}deg`,
+              '--distance': '130px' 
+            } as React.CSSProperties}
+          >
+            <div className="color-circle" style={{ backgroundColor: hex }} title={painting.colors[i]} />
+            <span className="swatch-label">{painting.colors[i]}</span>
           </div>
+        );
+      })}
+      <div className="palette-thumb-hole"></div>
+    </div>
+  </div>
+</div>
 
           <a
             href={painting.youtube_src}
