@@ -127,26 +127,92 @@
 }
 
 .watch-btn {
-  display: inline-block;
-  margin-top: 20px;
+  background: var(--palette-wood);
+  color: white !important;
+  padding: 12px 24px; /* Slightly adjusted padding for the double line */
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Tightened slightly for readability */
+  font-size: 0.85rem;
+  border: none;
+  box-shadow: 3px 3px 0px var(--bob-brown);
+  transition: all 0.2s;
+  display: inline-flex;     /* Changed from inline-block */
+  flex-direction: column;   /* Stacks the two spans vertically */
+  align-items: center;      /* Centers the text lines horizontally */
+  justify-content: center;  /* Centers content vertically */
+  text-align: center;       /* Ensures text wraps center-aligned */
+  
   padding: 12px 24px;
-  background-color: #e50914; /* YouTube Red */
-  color: white !important; /* Ensure text is white */
+  min-width: 220px;         /* Optional: keeps button size consistent */
   text-decoration: none;
-  border-radius: 5px;
+  line-height: 1.4;
+}
+
+.btn-line-one {
   font-weight: bold;
-  align-self: center;
+}
+
+.btn-line-two {
+  font-size: 0.75rem; /* Slightly smaller to create a visual hierarchy */
+  opacity: 0.9;
+  text-transform: none; /* Keeps "Or Watch Below!" from being all caps if you prefer */
+  letter-spacing: 1px;
+}
+
+.watch-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--bob-brown);
 }
 
 .color-circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  margin-bottom: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 50% 10% 80%; /* Messy "paint drop" shape */
+  transform: rotate(-15deg);
+  border: none;
+  box-shadow: inset -3px -3px 5px rgba(0,0,0,0.2), 2px 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 8px;
+  transition: transform 0.2s;
 }
 
+.color-circle:hover {
+  transform: scale(1.2) rotate(0deg);
+}
+
+.video-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px dashed #d2b48c;
+  text-align: center;
+}
+
+.video-section h3 {
+  color: var(--bob-brown);
+  margin-bottom: 25px;
+  font-family: 'Georgia', serif;
+}
+
+/* Container to maintain 16:9 aspect ratio */
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+  height: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 8px solid white; /* Looks like a frame/border */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 4px;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
 
 /* Desktop Styles */
 @media (min-width: 768px) {

@@ -1,22 +1,49 @@
 .painting-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 35px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .painting-card {
-    cursor: pointer;
-    background-color: white;
-    border: 10px solid white; /* Matte look */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .painting-card:hover {
-    transform: scale(1.03);
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  padding-top: 40px;
+}
+
+.painting-card {
+  background: white;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border-bottom: 5px solid var(--palette-wood); /* Looks like a tiny shelf */
+}
+
+.painting-card:hover {
+  transform: rotate(2deg) translateY(-10px);
+  box-shadow: 15px 15px 30px rgba(0,0,0,0.15);
+}
+
+.painting-card h3 {
+  font-family: 'Georgia', serif;
+  color: var(--bob-brown);
+  margin: 15px 0 5px 0;
+}
+
+/* Artistic corner accent */
+.painting-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background: var(--cadmium-yellow);
+  clip-path: circle(50% at 50% 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.painting-card:hover::before {
+  opacity: 0.6;
+}
   
   .image-wrapper {
     height: 200px;

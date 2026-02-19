@@ -31,6 +31,12 @@ const Projects = () => {
       demoUrl: '/monstercompendium'
     },
     {
+      title: "Bob Ross Gallery",
+      description: "Playing with video embedding and making a happy little demo to showcase the work of one of the kindest people of all time.",
+      tech: ["React", "TypeScript", "Vite", "CSS Animation", "ReChart"],
+      demoUrl: '/bobrossgallery'
+    },
+    {
       title: "Dane Dawson: The Site",
       description: "This site here! Made using React, hooks, css and whatever creative madness my mind could conjure.",
       tech: ["Javascript", "Typescript", "React", "CSS", "HTML"],
