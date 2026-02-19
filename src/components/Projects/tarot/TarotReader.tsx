@@ -129,11 +129,11 @@ const TarotReader: React.FC = () => {
           </div>
           
           <div className="tarot-reader__controls" style={{ marginTop: '3rem' }}>
-            <button className="btn btn--primary" onClick={saveFortuneImage}>
-              Save as Image
-            </button>
             <button className="btn btn--secondary" onClick={resetDisplay}>
               Return to the Circle
+            </button>
+            <button className="btn btn--primary" onClick={saveFortuneImage}>
+              Save as Image
             </button>
           </div>
         </section>

@@ -124,6 +124,11 @@
 .btn--primary {
     background: rgba(212, 175, 55, 0.1);
     margin-bottom: 150px;
+    margin-top: 15px;
+}
+
+.btn--secondary {
+    margin-top: 15px;
 }
 
 /* Animations */
