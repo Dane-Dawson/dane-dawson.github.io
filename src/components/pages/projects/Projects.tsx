@@ -36,8 +36,8 @@ const Projects = () => {
     {
       title: "Bob Ross Gallery",
       description:
-        "Playing with video embedding and making a happy little demo to showcase the work of one of the kindest people of all time.",
-      tech: ["React", "TypeScript", "Vite", "CSS Animation", "ReChart"],
+        "Playing with video embedding and making a happy little demo to showcase the work of one of the kindest people of all time with some embedded videos.",
+      tech: ["React", "TypeScript", "Vite", "CSS Animation", "framer-motion"],
       demoUrl: "/bobrossgallery",
     },
     {
