@@ -1,0 +1,369 @@
+.detail-view {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #3d2b1f; /* Explicit base color for all text */
+}
+
+.detail-main-content {
+  display: flex;
+  flex-direction: column; /* Stacked on mobile */
+  gap: 30px;
+  align-items: center;
+}
+
+.canvas-wrapper {
+  width: 100%;
+  max-width: 500px; /* Limits image size on mobile */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.content-section {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px; /* Adds space between elements */
+}
+
+/* Maintain your existing specific element styles below */
+.painting-window {
+  display: grid;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.painting-layer,
+.overlay-layer {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.painting-layer {
+  z-index: 1;
+  transform: scale(0.725) translate(-15%, -26.5%) rotate(3deg);
+}
+
+.overlay-layer {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.back-btn {
+  background: none;
+  border: 1px solid #d2b48c;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #8b7355;
+  margin-bottom: 30px;
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #2c1e14;
+}
+
+.detail-meta {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8b7355; /* Earthy brown to ensure visibility */
+  margin: 0;
+}
+
+.colors-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+.color-tag {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #e8e0d5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--bob-brown);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+/* The "Fun" part: Actual paint color indicator */
+.color-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background-color: var(--paint-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for professional polish */
+.color-tag:hover {
+  transform: translateY(-2px);
+  border-color: var(--palette-wood);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* If the paint color is white, give it a visible border */
+.color-tag[style*="#FFFFFF"] .color-indicator,
+.color-tag[style*="#ffffff"] .color-indicator {
+  border: 1px solid #ddd;
+}
+
+.palette-container {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+  perspective: 1000px;
+}
+
+.palette-wood-base {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  background: #c19a6b; /* Light wood color */
+  border-radius: 150px 150px 50px 50px;
+  box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+    5px 15px 30px rgba(0, 0, 0, 0.1);
+  border: 4px solid #8b7355;
+}
+
+.palette-thumb-hole {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  width: 40px;
+  height: 50px;
+  background: var(--canvas-color); /* Matches page background */
+  border-radius: 50%;
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid #8b7355;
+}
+
+.palette-section h3 {
+  font-size: 1.1rem;
+  border-bottom: 2px solid #d2b48c;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.swatch-drop {
+  position: absolute;
+  left: 50%;
+  top: 85%; /* The pivot point at the bottom center of the palette */
+
+  /* rotate(calc(var(--angle) - 180deg)): 
+     Starts at 9 o'clock (-180deg) and arcs to 3 o'clock (0deg) 
+  */
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) - 180deg))
+    translate(var(--distance)) rotate(calc(180deg - var(--angle)));
+  scale: 120%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.swatch-drop:hover {
+  z-index: 10;
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) - 180deg))
+    translate(calc(var(--distance) + 15px)) rotate(calc(180deg - var(--angle)))
+    scale(1.2);
+}
+
+.swatch-label {
+  position: absolute;
+  top: -25px; /* Sits slightly above the color drop */
+  font-size: 0.7rem;
+  color: var(--bob-brown);
+  font-weight: bold;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+
+  /* Hidden by default */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.swatch-drop:hover {
+  z-index: 10;
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) - 180deg))
+    translate(calc(var(--distance) + 10px)) rotate(calc(180deg - var(--angle)))
+    scale(1.2);
+}
+
+.swatch-drop:hover .swatch-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.swatch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.swatch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+}
+
+.swatch-item span {
+  font-size: 0.75rem;
+  color: #555; /* Dark gray for the color names */
+  margin-top: 4px;
+  text-align: center;
+}
+
+.watch-btn {
+  background: var(--palette-wood);
+  color: white !important;
+  padding: 12px 24px; /* Slightly adjusted padding for the double line */
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Tightened slightly for readability */
+  font-size: 0.85rem;
+  border: none;
+  box-shadow: 3px 3px 0px var(--bob-brown);
+  transition: all 0.2s;
+  display: inline-flex; /* Changed from inline-block */
+  flex-direction: column; /* Stacks the two spans vertically */
+  align-items: center; /* Centers the text lines horizontally */
+  justify-content: center; /* Centers content vertically */
+  text-align: center; /* Ensures text wraps center-aligned */
+
+  padding: 12px 24px;
+  min-width: 220px; /* Optional: keeps button size consistent */
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.btn-line-one {
+  font-weight: bold;
+}
+
+.btn-line-two {
+  font-size: 0.75rem; /* Slightly smaller to create a visual hierarchy */
+  opacity: 0.9;
+  text-transform: none; /* Keeps "Or Watch Below!" from being all caps if you prefer */
+  letter-spacing: 1px;
+}
+
+.watch-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--bob-brown);
+}
+
+.color-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50% 50% 20% 70%; /* Drip shape */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.color-circle:hover {
+  transform: scale(1.2) rotate(0deg);
+}
+
+.video-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px dashed #d2b48c;
+  text-align: center;
+}
+
+.video-section h3 {
+  color: var(--bob-brown);
+  margin-bottom: 25px;
+  font-family: "Georgia", serif;
+}
+
+/* Container to maintain 16:9 aspect ratio */
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+  height: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 8px solid white; /* Looks like a frame/border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .detail-main-content {
+    flex-direction: row; /* Side-by-side on desktop */
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  .canvas-wrapper {
+    flex: 1.2; /* Give the image slightly more space */
+  }
+
+  .content-section {
+    flex: 1;
+    text-align: left; /* Align text to the left when side-by-side */
+    padding-top: 20px;
+  }
+
+  .swatch-grid {
+    justify-content: flex-start; /* Align swatches to the left on desktop */
+  }
+}

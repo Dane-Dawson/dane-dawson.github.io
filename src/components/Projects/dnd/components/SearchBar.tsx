@@ -1,5 +1,5 @@
 // SearchBar.tsx
-import React from 'react';
+import React from "react";
 
 interface SearchBarProps {
   query: string;

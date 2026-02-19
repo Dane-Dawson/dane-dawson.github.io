@@ -1,159 +1,157 @@
 .contact-page {
-    font-family: 'Inter', sans-serif; /* Using the readable font we discussed */
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
-    /* GLASSMORPHISM CORE */
-    background: #0c1129; 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    
-    /* SHADOWING & BORDER */
-    border: 1px solid rgba(0, 210, 255, 0.2); /* Subtle Cyan Border */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
-                0 0 15px rgba(0, 210, 255, 0.1); /* Soft Cyan Glow */
-    
-    border-radius: 20px;
-    margin-top: 20px;
-    padding: 40px;
-    overflow-x: hidden;
-  }
-  
-  .contact-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(0, 210, 255, 0.2); /* Cyan border */
-    border-radius: 20px;
-    padding: 50px;
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  }
-  
-  .contact-title {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    color: #ffffff;
-    position: relative;
-    display: inline-block;
-    
-    background-image: 
-      linear-gradient(rgba(0, 210, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 210, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    padding: 10px 20px;
+  font-family: "Inter", sans-serif; /* Using the readable font we discussed */
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  /* GLASSMORPHISM CORE */
+  background: #0c1129;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* SHADOWING & BORDER */
+  border: 1px solid rgba(0, 210, 255, 0.2); /* Subtle Cyan Border */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 210, 255, 0.1); /* Soft Cyan Glow */
+
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 210, 255, 0.2); /* Cyan border */
+  border-radius: 20px;
+  padding: 50px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.contact-title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+
+  background-image: linear-gradient(rgba(0, 210, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  padding: 10px 20px;
+}
+
+.contact-subtitle {
+  font-family: "Inter", sans-serif;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  text-align: left;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  width: 100%;
+  overflow: hidden; /* Prevents child content from breaking the card */
+  box-sizing: border-box;
+}
+
+.contact-item:hover {
+  transform: translateX(10px);
+  background: rgba(0, 210, 255, 0.08);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #00d2ff; /* Your new Cyan accent */
+}
+
+.contact-value {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  word-break: break-all; /* Forces long emails/URLs to wrap */
+  white-space: normal;
+  max-width: 100%;
+}
+
+.contact-value:hover {
+  color: #00d2ff;
+}
+
+.contact-footer {
+  margin-top: 40px;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.contact-footer span {
+  display: block;
+  font-size: 0.9rem;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .contact-page {
+    margin-top: 70px;
+    padding: 20px 10px; /* Reduce outer page padding */
   }
 
-  .contact-subtitle {
-    font-family: 'Inter', sans-serif;
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 40px;
+  .contact-card {
+    padding: 30px 15px; /* Reduce internal card padding */
   }
-  
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    text-align: left;
+
+  .contact-title {
+    font-size: 2rem;
+    letter-spacing: 4px; /* Tighten spacing so it fits on one line */
   }
-  
+
   .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    transition: transform 0.2s ease;
-    width: 100%;
-    overflow: hidden; /* Prevents child content from breaking the card */
-    box-sizing: border-box;
+    gap: 12px; /* Reduce gap between icon and text */
+    padding: 12px;
   }
-  
-  .contact-item:hover {
-    transform: translateX(10px);
-    background: rgba(0, 210, 255, 0.08);
-  }
-  
+
   .contact-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Shrink icons slightly */
   }
-  
-  .contact-text {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-label {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    color: #00d2ff; /* Your new Cyan accent */
-  }
-  
+
   .contact-value {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    word-break: break-all; /* Forces long emails/URLs to wrap */
-    white-space: normal;
-    max-width: 100%;
+    font-size: 0.95rem; /* Shrink text slightly for mobile */
   }
-  
-  .contact-value:hover {
-    color: #00d2ff;
-  }
-  
-  .contact-footer {
-    margin-top: 40px;
-    font-family: 'Amatic SC', cursive;
-    font-size: 1.5rem;
-    color: #666;
-  }
-  
-  .contact-footer span {
-    display: block;
-    font-size: 0.9rem;
-    font-family: 'Inter', sans-serif;
-    font-style: italic;
-  }
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 480px) {
-    .contact-page {
-      margin-top: 70px;
-      padding: 20px 10px; /* Reduce outer page padding */
-    }
-  
-    .contact-card {
-      padding: 30px 15px; /* Reduce internal card padding */
-    }
-  
-    .contact-title {
-      font-size: 2rem;
-      letter-spacing: 4px; /* Tighten spacing so it fits on one line */
-    }
-  
-    .contact-item {
-      gap: 12px; /* Reduce gap between icon and text */
-      padding: 12px;
-    }
-  
-    .contact-icon {
-      font-size: 1.2rem; /* Shrink icons slightly */
-    }
-  
-    .contact-value {
-      font-size: 0.95rem; /* Shrink text slightly for mobile */
-    }
-  }
+}

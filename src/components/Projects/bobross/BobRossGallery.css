@@ -1,0 +1,255 @@
+:root {
+  --bob-brown: #3d2b1f;
+  --happy-green: #228b22;
+  --cadmium-yellow: #ffec00;
+  --canvas-color: #fdfaf5;
+  --palette-wood: #8b7355;
+}
+
+.gallery-container {
+  padding: 40px 20px;
+  background-color: var(--canvas-color);
+  /* Subtle Canvas Texture */
+  background-image: url("https://www.transparenttextures.com/patterns/canvas-orange.png");
+  min-height: 100vh;
+  font-family: "Georgia", serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  margin-top: 0 !important;
+  min-height: 100vh;
+  background-attachment: fixed; /* This keeps the texture from moving when the page scrolls */
+  background-size: auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gallery-header h1 {
+  font-size: 3rem;
+  color: var(--bob-brown);
+  text-shadow: 2px 2px 0px rgba(210, 180, 140, 0.3);
+  margin-bottom: 10px;
+}
+
+.gallery-header::after {
+  content: "“We don’t make mistakes, just happy little accidents.”";
+  display: block;
+  font-style: italic;
+  color: var(--palette-wood);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.controls {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 2px solid #e8e0d5;
+}
+
+.search-input,
+.season-select {
+  border: 2px solid transparent;
+  background: white;
+  color: rgba(21, 18, 14, 0.3);
+  transition: border-color 0.3s ease;
+  font-family: "Arial", sans-serif;
+}
+
+.search-input:focus,
+.season-select:focus {
+  border-color: var(--palette-wood);
+  box-shadow: 0 0 8px rgba(139, 115, 85, 0.2);
+}
+
+.search-input {
+  width: 320px;
+}
+
+.color-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--bob-brown);
+  min-width: 120px;
+}
+
+.color-filter input[type="range"] {
+  cursor: pointer;
+  accent-color: var(--palette-wood);
+  width: 100%;
+}
+
+.color-filter label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.color-controls-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+  min-width: 150px;
+  border-left: 1px solid #e8e0d5;
+}
+
+.range-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.range-group label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--bob-brown);
+  margin-bottom: 2px;
+  font-family: "Arial", sans-serif;
+}
+
+.range-group input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+  accent-color: var(--happy-green);
+  height: 4px;
+}
+
+.results-count {
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--happy-green);
+  letter-spacing: 1px;
+}
+
+.master-palette-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 15px;
+  border-left: 1px solid #e8e0d5;
+  border-right: 1px solid #e8e0d5;
+}
+
+.master-palette-container label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--bob-brown);
+  text-transform: uppercase;
+}
+
+.master-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 250px;
+  align-items: center;
+}
+
+.palette-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.palette-swatch:hover {
+  transform: scale(1.3);
+  z-index: 2;
+}
+
+.palette-swatch.active {
+  transform: scale(0.9);
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--palette-wood);
+  z-index: 3;
+}
+
+.clear-color {
+  background: var(--bob-brown);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-top: 10px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.2s;
+}
+
+.clear-color:hover {
+  background: #ff4444;
+}
+
+/* Responsive Mobile Styles */
+@media (max-width: 768px) {
+  .master-palette-container {
+    border: none;
+    border-top: 1px solid #e8e0d5;
+    padding: 15px 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .master-palette {
+    justify-content: center;
+    max-width: none;
+  }
+
+  .controls {
+    display: flex; /* Switch from inline-flex */
+    flex-direction: column;
+    border-radius: 20px; /* Squarer corners look better on mobile */
+    width: 90%;
+    margin: 0 auto;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .search-input {
+    width: 100%; /* Take full width on mobile */
+    max-width: none;
+  }
+
+  .season-select {
+    width: 100%;
+    height: 45px; /* Better touch target */
+  }
+
+  .color-controls-column {
+    width: 100%;
+    border-left: none; /* Remove vertical divider */
+    border-top: 1px solid #e8e0d5; /* Add horizontal divider instead */
+    padding: 15px 0 0 0;
+    flex-direction: row; /* Keep min/max side-by-side on tablet/wide mobile */
+    justify-content: space-between;
+  }
+
+  .range-group {
+    flex: 1;
+    padding: 0 10px;
+  }
+}
+
+/* Narrow Phone Adjustment */
+@media (max-width: 480px) {
+  .color-controls-column {
+    flex-direction: column; /* Stack min/max on very narrow screens */
+    gap: 15px;
+  }
+}
