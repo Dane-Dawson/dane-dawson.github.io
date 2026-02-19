@@ -30,7 +30,7 @@ jobs:
         # This step injects your secret into the Vite build process
         run: npm run build
         env:
-          VITE_TAROT_API_KEY: ${{ secrets.VITE_TAROT_API_KEY }}
+          VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
