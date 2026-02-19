@@ -20,6 +20,9 @@
   width: 100%;
   z-index: 1000;
   margin-top: 0 !important;
+  min-height: 100vh;
+  background-attachment: fixed; /* This keeps the texture from moving when the page scrolls */
+  background-size: auto;
 }
 
 .gallery-header {

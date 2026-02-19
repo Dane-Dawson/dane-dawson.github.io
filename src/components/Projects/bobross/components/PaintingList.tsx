@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import type { Painting } from '../types';
 import './PaintingList.css';
 
@@ -16,9 +17,12 @@ const PaintingList: React.FC<ListProps> = ({ paintings, onSelectPainting }) => {
           className="painting-card"
           onClick={() => onSelectPainting(painting.id)}
         >
-          <div className="image-wrapper">
+          <motion.div 
+            className="image-wrapper"
+            layoutId={`painting-img-${painting.id}`}
+          >
             <img src={painting.img_src} alt={painting.painting_title} />
-          </div>
+          </motion.div>
           <div className="card-info">
             <h3>{painting.painting_title}</h3>
             <span className="episode-tag">

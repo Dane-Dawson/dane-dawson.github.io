@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 import data from "../assets/bob-ross.json";
 import type { BobRossData } from "../types";
 import "./PaintingDetail.css";
@@ -20,7 +21,6 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
       </button>
     );
 
-  // Helper to get YouTube ID from URL (handles watch?v= format)
   const getEmbedUrl = (url: string) => {
     const videoId = url.split("v=")[1];
     return `https://www.youtube.com/embed/${videoId}`;
@@ -34,7 +34,11 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
 
       <div className="detail-main-content">
         <div className="canvas-wrapper">
-          <div className="painting-window">
+          <motion.div
+            className="painting-window"
+            layoutId={`painting-img-${painting.id}`}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
             <img
               src={painting.img_src}
               alt={painting.painting_title}
@@ -45,7 +49,7 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
               alt="Bob Ross Overlay"
               className="overlay-layer"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="content-section">
@@ -54,36 +58,57 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
             Season {painting.season}, Episode {painting.episode}
           </p>
 
-<div className="palette-section">
-  <h3>Palette Used</h3>
-  <p className="colors-string-list">
-    {painting.colors.join(', ')}
-  </p>
-  <div className="palette-container">
-    <div className="palette-wood-base">
-      {painting.color_hex.map((hex, i) => {
-        // Spans 180 degrees starting from the left (0) to the right (180)
-        const angle = (i / (painting.color_hex.length - 1)) * 180;
-        return (
-          <div 
-            key={i} 
-            className="swatch-drop" 
-            style={{ 
-              '--angle': `${angle}deg`,
-              '--distance': '130px' 
-            } as React.CSSProperties}
-          >
-            <div className="color-circle" style={{ backgroundColor: hex }} title={painting.colors[i]} />
-            <span className="swatch-label">{painting.colors[i]}</span>
+          <div className="palette-section">
+            <h3>Palette Used</h3>
+            <div className="colors-tag-list">
+              {painting.colors.map((color, index) => (
+                <span
+                  key={index}
+                  className="color-tag"
+                  style={
+                    {
+                      "--paint-color": painting.color_hex[index],
+                    } as React.CSSProperties
+                  }
+                >
+                  <span className="color-indicator"></span>
+                  {color}
+                </span>
+              ))}
+            </div>
+            <div className="palette-container">
+              <div className="palette-wood-base">
+                {painting.color_hex.map((hex, i) => {
+                  const angle = (i / (painting.color_hex.length - 1)) * 180;
+                  return (
+                    <div
+                      key={i}
+                      className="swatch-drop"
+                      style={
+                        {
+                          "--angle": `${angle}deg`,
+                          "--distance": "130px",
+                        } as React.CSSProperties
+                      }
+                    >
+                      <div
+                        className="color-circle"
+                        style={{ backgroundColor: hex }}
+                        title={painting.colors[i]}
+                      />
+                      <span className="swatch-label">{painting.colors[i]}</span>
+                    </div>
+                  );
+                })}
+                <div className="palette-thumb-hole"></div>
+              </div>
+            </div>
           </div>
-        );
-      })}
-      <div className="palette-thumb-hole"></div>
-    </div>
-  </div>
-</div>
 
-          <a
+          
+        </div>
+      </div>
+      <a
             href={painting.youtube_src}
             target="_blank"
             rel="noreferrer"
@@ -93,10 +118,6 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
             <br />
             <span className="btn-line-two">↓ Or Watch Below!</span>
           </a>
-        </div>
-      </div>
-
-      {/* New Professional Video Section */}
       <div className="video-section">
         <h3>Watch the Episode</h3>
         <div className="video-responsive">
