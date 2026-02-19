@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import type { Painting } from '../types';
-import './PaintingList.css';
+import React from "react";
+import { motion } from "framer-motion";
+import type { Painting } from "../types";
+import "./PaintingList.css";
 
 interface ListProps {
   paintings: Painting[];
@@ -12,12 +12,12 @@ const PaintingList: React.FC<ListProps> = ({ paintings, onSelectPainting }) => {
   return (
     <div className="painting-grid">
       {paintings.map((painting) => (
-        <div 
+        <div
           key={painting.id}
           className="painting-card"
           onClick={() => onSelectPainting(painting.id)}
         >
-          <motion.div 
+          <motion.div
             className="image-wrapper"
             layoutId={`painting-img-${painting.id}`}
           >

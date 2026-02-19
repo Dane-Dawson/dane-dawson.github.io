@@ -12,7 +12,7 @@
   /* Subtle Canvas Texture */
   background-image: url("https://www.transparenttextures.com/patterns/canvas-orange.png");
   min-height: 100vh;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   position: absolute;
   top: 0;
   left: 0;
@@ -38,7 +38,7 @@
 }
 
 .gallery-header::after {
-  content: '“We don’t make mistakes, just happy little accidents.”';
+  content: "“We don’t make mistakes, just happy little accidents.”";
   display: block;
   font-style: italic;
   color: var(--palette-wood);
@@ -53,7 +53,7 @@
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   border: 2px solid #e8e0d5;
 }
 
@@ -63,7 +63,7 @@
   background: white;
   color: rgba(21, 18, 14, 0.3);
   transition: border-color 0.3s ease;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .search-input:focus,
@@ -116,7 +116,7 @@
   font-weight: bold;
   color: var(--bob-brown);
   margin-bottom: 2px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .range-group input[type="range"] {
@@ -161,7 +161,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0;
@@ -173,7 +173,7 @@
 }
 
 .palette-swatch.active {
-  transform: scale(.9);
+  transform: scale(0.9);
   box-shadow: 0 0 0 2px white, 0 0 0 4px var(--palette-wood);
   z-index: 3;
 }
@@ -205,7 +205,7 @@
     width: 100%;
     align-items: center;
   }
-  
+
   .master-palette {
     justify-content: center;
     max-width: none;

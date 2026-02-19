@@ -104,20 +104,18 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
       <a
-            href={painting.youtube_src}
-            target="_blank"
-            rel="noreferrer"
-            className="watch-btn"
-          >
-            <span className="btn-line-one">Open in ▶️ YouTube</span>
-            <br />
-            <span className="btn-line-two">↓ Or Watch Below!</span>
-          </a>
+        href={painting.youtube_src}
+        target="_blank"
+        rel="noreferrer"
+        className="watch-btn"
+      >
+        <span className="btn-line-one">Open in ▶️ YouTube</span>
+        <br />
+        <span className="btn-line-two">↓ Or Watch Below!</span>
+      </a>
       <div className="video-section">
         <h3>Watch the Episode</h3>
         <div className="video-responsive">

@@ -12,7 +12,6 @@
   align-items: center;
 }
 
-
 .canvas-wrapper {
   width: 100%;
   max-width: 500px; /* Limits image size on mobile */
@@ -33,7 +32,6 @@
   text-align: center;
   gap: 15px; /* Adds space between elements */
 }
-
 
 /* Maintain your existing specific element styles below */
 .painting-window {
@@ -105,7 +103,7 @@
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--bob-brown);
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.03);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
   cursor: default;
 }
@@ -117,14 +115,14 @@
   border-radius: 50%;
   margin-right: 8px;
   background-color: var(--paint-color);
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Hover effect for professional polish */
 .color-tag:hover {
   transform: translateY(-2px);
   border-color: var(--palette-wood);
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* If the paint color is white, give it a visible border */
@@ -146,7 +144,8 @@
   height: 250px;
   background: #c19a6b; /* Light wood color */
   border-radius: 150px 150px 50px 50px;
-  box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2), 5px 15px 30px rgba(0,0,0,0.1);
+  box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+    5px 15px 30px rgba(0, 0, 0, 0.1);
   border: 4px solid #8b7355;
 }
 
@@ -158,7 +157,7 @@
   height: 50px;
   background: var(--canvas-color); /* Matches page background */
   border-radius: 50%;
-  box-shadow: inset 4px 4px 10px rgba(0,0,0,0.3);
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.3);
   border: 2px solid #8b7355;
 }
 
@@ -174,16 +173,13 @@
   position: absolute;
   left: 50%;
   top: 85%; /* The pivot point at the bottom center of the palette */
-  
+
   /* rotate(calc(var(--angle) - 180deg)): 
      Starts at 9 o'clock (-180deg) and arcs to 3 o'clock (0deg) 
   */
-  transform: 
-    translate(-50%, -50%) 
-    rotate(calc(var(--angle) - 180deg)) 
-    translate(var(--distance)) 
-    rotate(calc(180deg - var(--angle)));
-    scale: 120%;
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) - 180deg))
+    translate(var(--distance)) rotate(calc(180deg - var(--angle)));
+  scale: 120%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,11 +189,8 @@
 
 .swatch-drop:hover {
   z-index: 10;
-  transform: 
-    translate(-50%, -50%) 
-    rotate(calc(var(--angle) - 180deg)) 
-    translate(calc(var(--distance) + 15px)) 
-    rotate(calc(180deg - var(--angle))) 
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) - 180deg))
+    translate(calc(var(--distance) + 15px)) rotate(calc(180deg - var(--angle)))
     scale(1.2);
 }
 
@@ -211,7 +204,7 @@
   background: rgba(255, 255, 255, 0.8);
   padding: 2px 6px;
   border-radius: 4px;
-  
+
   /* Hidden by default */
   opacity: 0;
   transform: translateY(10px);
@@ -221,11 +214,8 @@
 
 .swatch-drop:hover {
   z-index: 10;
-  transform: 
-    translate(-50%, -50%) 
-    rotate(calc(var(--angle) - 180deg)) 
-    translate(calc(var(--distance) + 10px)) 
-    rotate(calc(180deg - var(--angle))) 
+  transform: translate(-50%, -50%) rotate(calc(var(--angle) - 180deg))
+    translate(calc(var(--distance) + 10px)) rotate(calc(180deg - var(--angle)))
     scale(1.2);
 }
 
@@ -280,17 +270,16 @@
   border: none;
   box-shadow: 3px 3px 0px var(--bob-brown);
   transition: all 0.2s;
-  display: inline-flex;     /* Changed from inline-block */
-  flex-direction: column;   /* Stacks the two spans vertically */
-  align-items: center;      /* Centers the text lines horizontally */
-  justify-content: center;  /* Centers content vertically */
-  text-align: center;       /* Ensures text wraps center-aligned */
-  
+  display: inline-flex; /* Changed from inline-block */
+  flex-direction: column; /* Stacks the two spans vertically */
+  align-items: center; /* Centers the text lines horizontally */
+  justify-content: center; /* Centers content vertically */
+  text-align: center; /* Ensures text wraps center-aligned */
+
   padding: 12px 24px;
-  min-width: 220px;         /* Optional: keeps button size consistent */
+  min-width: 220px; /* Optional: keeps button size consistent */
   text-decoration: none;
   line-height: 1.4;
-  
 }
 
 .btn-line-one {
@@ -313,10 +302,9 @@
   width: 35px;
   height: 35px;
   border-radius: 50% 50% 20% 70%; /* Drip shape */
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 
-    inset -2px -2px 4px rgba(0,0,0,0.2),
-    2px 2px 5px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .color-circle:hover {
@@ -333,7 +321,7 @@
 .video-section h3 {
   color: var(--bob-brown);
   margin-bottom: 25px;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
 
 /* Container to maintain 16:9 aspect ratio */
@@ -345,7 +333,7 @@
   max-width: 800px;
   margin: 0 auto;
   border: 8px solid white; /* Looks like a frame/border */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 
@@ -378,5 +366,4 @@
   .swatch-grid {
     justify-content: flex-start; /* Align swatches to the left on desktop */
   }
-
 }

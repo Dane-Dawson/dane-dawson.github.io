@@ -1,134 +1,133 @@
 .work-page {
-    font-family: 'Inter', sans-serif; /* Using the readable font we discussed */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    
-    /* GLASSMORPHISM CORE */
-    background: #0c1129; 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    
-    /* SHADOWING & BORDER */
-    border: 1px solid rgba(0, 210, 255, 0.2); /* Subtle Cyan Border */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
-                0 0 15px rgba(0, 210, 255, 0.1); /* Soft Cyan Glow */
-    
-    border-radius: 20px;
-    margin-top: 20px;
-    padding: 40px;
-    overflow-x: hidden;
-  }
-  
-  .work-container {
-    display: flex;
-    max-width: 1100px;
-    margin: 0 auto;
-    gap: 50px;
-  }
-  
-  /* Sticky Skills Sidebar */
-  .skills-sidebar {
-    flex: 1;
-    position: sticky;
-    top: 120px;
-    height: fit-content;
-  }
+  font-family: "Inter", sans-serif; /* Using the readable font we discussed */
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
-  .skills-sidebar h2 {
-    text-align: center;
-    margin-bottom: 30px;
+  /* GLASSMORPHISM CORE */
+  background: #0c1129;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* SHADOWING & BORDER */
+  border: 1px solid rgba(0, 210, 255, 0.2); /* Subtle Cyan Border */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 210, 255, 0.1); /* Soft Cyan Glow */
+
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 40px;
+  overflow-x: hidden;
 }
-  
-  .skill-group h3 {
-    color: #4facfe; 
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    border-bottom: 1px solid rgba(77, 250, 102, 0.3);
-    text-align: center;
-  }
-  
-  .skill-group ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-  
-  .skill-group li {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-  }
 
-  
-  /* Timeline Experience */
-  .timeline {
-    flex: 2;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
-    padding-left: 30px;
+.work-container {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+/* Sticky Skills Sidebar */
+.skills-sidebar {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.skills-sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skill-group h3 {
+  color: #4facfe;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(77, 250, 102, 0.3);
+  text-align: center;
+}
+
+.skill-group ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.skill-group li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Timeline Experience */
+.timeline {
+  flex: 2;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* The "Dot" on the timeline */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -41px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background: #4facfe;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4facfe;
+}
+
+.timeline-date {
+  font-family: monospace;
+  /* color: #00d2ff; */
+  color: #4facfe;
+  margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.timeline-content h4 {
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 900px) {
+  .work-container {
+    flex-direction: column;
   }
-  
-  .timeline-item {
+  .skills-sidebar {
     position: relative;
-    margin-bottom: 50px;
+    top: 0;
   }
-  
-  /* The "Dot" on the timeline */
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -41px;
-    top: 5px;
-    width: 20px;
-    height: 20px;
-    background: #4facfe;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #4facfe;
-  }
-  
-  .timeline-date {
-    font-family: monospace;
-    /* color: #00d2ff; */
-    color: #4facfe;
-    margin-bottom: 5px;
-  }
-  
-  .timeline-content h3 {
-    font-size: 1.8rem;
-    margin: 0;
-  }
-  
-  .timeline-content h4 {
-    color: #aaa;
-    margin-bottom: 15px;
-  }
-  
-  @media (max-width: 900px) {
-    .work-container {
-      flex-direction: column;
-    }
-    .skills-sidebar {
-      position: relative;
-      top: 0;
-    }
-  }
-  
+}
+
 /* Keep the punchy font for the Job Title */
 .timeline-content h3 {
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 2px;
-    font-size: 1.8rem;
-  }
-  
-  /* Use the readable font for the actual work descriptions */
-  .timeline-content ul li {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 12px;
-    color: #e0e0e0; /* Off-white to reduce eye strain */
-  }
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+}
+
+/* Use the readable font for the actual work descriptions */
+.timeline-content ul li {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #e0e0e0; /* Off-white to reduce eye strain */
+}

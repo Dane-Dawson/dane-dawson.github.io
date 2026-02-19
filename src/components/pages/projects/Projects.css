@@ -1,174 +1,174 @@
-.projects-page {font-family: 'Inter', sans-serif; /* Using the readable font we discussed */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    
-    /* GLASSMORPHISM CORE */
-    background: #0c1129; 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    
-    /* SHADOWING & BORDER */
-    border: 1px solid rgba(0, 210, 255, 0.2); /* Subtle Cyan Border */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 
-                0 0 15px rgba(0, 210, 255, 0.1); /* Soft Cyan Glow */
-    
-    border-radius: 20px;
-    margin-top: 20px;
-    padding: 40px;
-    overflow-x: hidden;
+.projects-page {
+  font-family: "Inter", sans-serif; /* Using the readable font we discussed */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  /* GLASSMORPHISM CORE */
+  background: #0c1129;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* SHADOWING & BORDER */
+  border: 1px solid rgba(0, 210, 255, 0.2); /* Subtle Cyan Border */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 210, 255, 0.1); /* Soft Cyan Glow */
+
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.projects-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* The Line that extends to the edge */
+.projects-header::after {
+  content: "";
+  flex: 1;
+  /* Give the line a base width so it never disappears */
+  min-width: 50px;
+  height: 1px;
+  background: linear-gradient(to right, #00d2ff, transparent);
+  opacity: 0.5;
+}
+
+.projects-header span {
+  /* Wrap your text in a <span> for this effect */
+  background: -webkit-linear-gradient(#fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 350px));
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: #00d2ff;
+  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
+}
+
+.project-card h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  color: #00d2ff;
+  margin-top: 0;
+}
+
+.project-card p {
+  font-family: "Inter", sans-serif;
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.tech-tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  background: rgba(0, 210, 255, 0.1);
+  color: #00d2ff;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.btn-primary,
+.btn-secondary {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: #00d2ff;
+  color: #0c1129;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  border-color: white;
+}
+
+@media (max-width: 900px) {
+  .projects-page {
+    margin-top: 70px;
   }
-  
+
   .projects-header {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 4rem;
-    text-align: left;
+    font-size: 2.2rem; /* Scale down from 4rem */
+    margin-bottom: 30px;
+    gap: 15px; /* Tighten the gap for smaller screens */
+    flex-wrap: nowrap; /* Keep the line and text on one line if possible */
+  }
+
+  /* Ensure the container itself doesn't exceed the viewport */
+  .projects-page {
+    padding: 20px; /* Reducing desktop's 40px padding */
     width: 100%;
-    max-width: 1200px;
-    margin-bottom: 60px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  /* The Line that extends to the edge */
-  .projects-header::after {
-    content: "";
-    flex: 1; 
-    /* Give the line a base width so it never disappears */
-    min-width: 50px; 
-    height: 1px;
-    background: linear-gradient(to right, #00d2ff, transparent);
-    opacity: 0.5;
-  }
-  
-  .projects-header span {
-    /* Wrap your text in a <span> for this effect */
-    background: -webkit-linear-gradient(#fff, #888);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 350px));
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: center;
+    /* Adjust grid to prevent cards from being wider than the screen */
+    grid-template-columns: 1fr;
+    padding: 0 10px;
   }
-  
-  .project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-    border-color: #00d2ff;
-    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
-  }
-  
-  .project-card h3 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    color: #00d2ff;
-    margin-top: 0;
-  }
-  
-  .project-card p {
-    font-family: 'Inter', sans-serif;
-    color: #ccc;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-  
-  .project-tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 20px 0;
-  }
-  
-  .tech-tag {
-    font-family: monospace;
-    font-size: 0.75rem;
-    background: rgba(0, 210, 255, 0.1);
-    color: #00d2ff;
-    padding: 4px 10px;
-    border-radius: 4px;
-  }
-  
-  .project-actions {
-    display: flex;
-    gap: 15px;
-    margin-top: auto;
-  }
-  
-  .btn-primary, .btn-secondary {
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.2s;
-    border: none;
-  }
-  
-  .btn-primary {
-    background: #00d2ff;
-    color: #0c1129;
-  }
-  
-  .btn-primary:hover {
-    background: #ffffff;
-  }
-  
-  .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .btn-secondary:hover {
-    border-color: white;
-  }
-  
-  @media (max-width: 900px) {
-
-    .projects-page{
-      margin-top: 70px;
-    }
-
-    .projects-header {
-      font-size: 2.2rem; /* Scale down from 4rem */
-      margin-bottom: 30px;
-      gap: 15px; /* Tighten the gap for smaller screens */
-      flex-wrap: nowrap; /* Keep the line and text on one line if possible */
-    }
-  
-    /* Ensure the container itself doesn't exceed the viewport */
-    .projects-page {
-      padding: 20px; /* Reducing desktop's 40px padding */
-      width: 100%;
-    }
-  
-    .projects-grid {
-      /* Adjust grid to prevent cards from being wider than the screen */
-      grid-template-columns: 1fr; 
-      padding: 0 10px;
-    }
-  }
+}
