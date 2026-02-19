@@ -13,20 +13,6 @@ interface Project {
 const Projects = () => {
   const myProjects: Project[] = [
     {
-      title: "Devquarium",
-      description:
-        "Fun little project that acted as an exploration into animation and CSS in a fun, quasi-interactive aquarium setting. *Note* Designed for desktop",
-      tech: ["React", "TypeScript", "Vite", "CSS Animation"],
-      demoUrl: "/devquarium",
-    },
-    {
-      title: "The Terminal",
-      description:
-        "Another early project of mine that played with animation and interactive Javascript, styled in the format of a terminal. *Note* Designed for desktop",
-      tech: ["React", "TypeScript", "Vite", "CSS Animation"],
-      demoUrl: "/terminal",
-    },
-    {
       title: "Monster Compendium",
       description:
         "An exploration of large, complex dataset management and visual data displays using D&D 5e monsters and ReChart library for data visualization.",
@@ -46,6 +32,20 @@ const Projects = () => {
         "Have your fortune told! Not saying I believe in any of this, but it was a fun experiment with CSS and AI integration.",
       tech: ["React", "TypeScript", "Vite", "CSS Animation", "tsParticles", "Gemini API", "ReactMarkdown", "html-to-image"],
       demoUrl: "/tarotreader",
+    },
+    {
+      title: "Devquarium",
+      description:
+        "Fun little project that acted as an exploration into animation and CSS in a fun, quasi-interactive aquarium setting. *Note* Designed for desktop",
+      tech: ["React", "TypeScript", "Vite", "CSS Animation"],
+      demoUrl: "/devquarium",
+    },
+    {
+      title: "The Terminal",
+      description:
+        "Another early project of mine that played with animation and interactive Javascript, styled in the format of a terminal. *Note* Designed for desktop",
+      tech: ["React", "TypeScript", "Vite", "CSS Animation"],
+      demoUrl: "/terminal",
     },
     {
       title: "Dane Dawson: The Site",
