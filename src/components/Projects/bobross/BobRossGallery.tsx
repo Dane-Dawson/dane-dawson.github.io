@@ -11,7 +11,7 @@ const BobRossGallery: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSeason, setSelectedSeason] = useState<string>("All");
   const [minColors, setMinColors] = useState<number>(0);
-  const [maxColorsFilter, setMaxColorsFilter] = useState<number>(100);
+  const [maxColorsFilter, setMaxColorsFilter] = useState<number>(15);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
   const { paintings } = data as BobRossData;
