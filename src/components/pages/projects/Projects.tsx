@@ -41,6 +41,13 @@ const Projects = () => {
       demoUrl: "/bobrossgallery",
     },
     {
+      title: "Tarot Reader",
+      description:
+        "Have your fortune told! Not saying I believe in any of this, but it was a fun experiment with CSS and AI integration.",
+      tech: ["React", "TypeScript", "Vite", "CSS Animation", "tsParticles", "Gemini API"],
+      demoUrl: "/tarotreader",
+    },
+    {
       title: "Dane Dawson: The Site",
       description:
         "This site here! Made using React, hooks, css and whatever creative madness my mind could conjure.",

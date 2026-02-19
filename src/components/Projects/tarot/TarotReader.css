@@ -1,0 +1,81 @@
+/* src/TarotReader.css */
+
+.tarot-reader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    /* Mysterious Deep Space Gradient */
+    background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0a 100%);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.tarot-reader__title {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    /* Soft gold glow */
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.tarot-spread {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; /* Increased gap for breathing room */
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+/* Button Styling: Professional but Alchemical */
+.btn {
+    padding: 14px 28px;
+    font-family: 'Crimson Text', serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 2px; /* Sharper corners for a more formal look */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+}
+
+.btn:hover:not(:disabled) {
+    background: #d4af37;
+    color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn--primary {
+    margin-top: 40px;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.fortune-display {
+    margin-top: 5rem;
+    max-width: 750px;
+    padding: 3rem;
+    /* Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    color: #e0e0e0;
+    line-height: 2;
+}
