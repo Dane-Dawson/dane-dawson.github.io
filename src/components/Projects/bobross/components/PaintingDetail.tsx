@@ -1,7 +1,8 @@
 import React from 'react';
-import data from '../bob-ross.json';
+import data from '../assets/bob-ross.json';
 import type { BobRossData } from '../types';
 import './PaintingDetail.css';
+import bobOverlay from '../assets/bob-painting.png'
 
 interface DetailProps {
   paintingId: number;
@@ -18,9 +19,22 @@ const PaintingDetail: React.FC<DetailProps> = ({ paintingId, onBack }) => {
     <div className="detail-view">
       <button onClick={onBack} className="back-btn">← Back to Gallery</button>
       
-      <div className="frame-container">
-        <div className="wood-frame">
-          <img src={painting.img_src} alt={painting.painting_title} />
+      <div className="canvas-wrapper">
+        {/* The "Window" Container */}
+        <div className="painting-window">
+          {/* Layer 1: The Painting (Behind) */}
+          <img 
+            src={painting.img_src} 
+            alt={painting.painting_title} 
+            className="painting-layer" 
+          />
+          
+          {/* Layer 2: Bob Ross (In Front) */}
+          <img 
+            src={bobOverlay} 
+            alt="Bob Ross Overlay" 
+            className="overlay-layer" 
+          />
         </div>
       </div>
 

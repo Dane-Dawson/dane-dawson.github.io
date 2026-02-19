@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import PaintingDetail from "./components/PaintingDetail";
 import PaintingList from './components/PaintingList';
-import data from './bob-ross.json';
+import data from './assets/bob-ross.json';
 import type { BobRossData } from './types';
 import './BobRossGallery.css';
 

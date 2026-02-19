@@ -82,3 +82,48 @@
   .watch-btn:hover {
     border-bottom-color: #e50914;
   }
+
+  .canvas-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: #f0f0f0; /* Backdrop for the whole setup */
+  }
+  
+  .painting-window {
+    display: grid;
+    position: relative;
+    width: auto;
+    max-width: 600px; /* Adjust based on your overlay's size */
+    aspect-ratio: 3 / 4; /* Matches standard Bob Ross canvas size */
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+  
+  /* Both layers occupy the same space */
+  .painting-layer,
+  .overlay-layer {
+    grid-area: 1 / 1;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Ensure the painting is strictly behind */
+  .painting-layer {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    
+    /* Keep your scale to make it fit the hole */
+    transform: scale(0.725) translate(-15%, -26.5%);
+  }
+  
+  /* Ensure Bob Ross is strictly on top */
+  .overlay-layer {
+    z-index: 2;
+    pointer-events: none; /* Allows you to still click the painting if needed */
+  }
