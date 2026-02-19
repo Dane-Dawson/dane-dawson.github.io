@@ -1,0 +1,84 @@
+.detail-view {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .back-btn {
+    background: none;
+    border: 1px solid #d2b48c;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #8b7355;
+    margin-bottom: 30px;
+  }
+  
+  .frame-container {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  }
+  
+  .wood-frame {
+    border: 18px solid #3d2b1f; /* Dark wood frame */
+    border-style: inset;
+    background: #000;
+  }
+  
+  .wood-frame img {
+    width: 100%;
+    display: block;
+  }
+  
+  .content-section {
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .detail-title {
+    font-size: 2.5rem;
+    color: #3d2b1f;
+    margin-bottom: 5px;
+  }
+  
+  .swatch-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .swatch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+  }
+  
+  .color-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+  }
+  
+  .swatch-item span {
+    font-size: 0.7rem;
+    color: #666;
+  }
+  
+  .watch-btn {
+    display: inline-block;
+    margin-top: 40px;
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .watch-btn:hover {
+    border-bottom-color: #e50914;
+  }

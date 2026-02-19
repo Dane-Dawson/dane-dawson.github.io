@@ -1,0 +1,42 @@
+.gallery-container {
+    padding: 40px 20px;
+    background-color: #fdfaf5; /* Creamy canvas background */
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+  }
+  
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .gallery-header h1 {
+    font-size: 2.8rem;
+    color: #3d2b1f;
+    margin-bottom: 25px;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .search-input, .season-select {
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid #d2b48c;
+    font-size: 1rem;
+    outline: none;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .search-input { width: 320px; }
+  
+  .results-count {
+    color: #8b7355;
+    font-style: italic;
+  }

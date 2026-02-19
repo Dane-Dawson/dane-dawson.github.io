@@ -1,0 +1,48 @@
+.painting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .painting-card {
+    cursor: pointer;
+    background-color: white;
+    border: 10px solid white; /* Matte look */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .painting-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .image-wrapper {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .card-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.15rem;
+    color: #2c1e14;
+  }
+  
+  .episode-tag {
+    font-size: 0.8rem;
+    color: #9b8e7c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
