@@ -1,129 +1,173 @@
 .detail-view {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .back-btn {
-    background: none;
-    border: 1px solid #d2b48c;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    color: #8b7355;
-    margin-bottom: 30px;
-  }
-  
-  .frame-container {
-    padding: 20px;
-    background: white;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-  }
-  
-  .wood-frame {
-    border: 18px solid #3d2b1f; /* Dark wood frame */
-    border-style: inset;
-    background: #000;
-  }
-  
-  .wood-frame img {
-    width: 100%;
-    display: block;
-  }
-  
-  .content-section {
-    padding: 40px 0;
-    text-align: center;
-  }
-  
-  .detail-title {
-    font-size: 2.5rem;
-    color: #3d2b1f;
-    margin-bottom: 5px;
-  }
-  
-  .swatch-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .swatch-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80px;
-  }
-  
-  .color-circle {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    margin-bottom: 5px;
-  }
-  
-  .swatch-item span {
-    font-size: 0.7rem;
-    color: #666;
-  }
-  
-  .watch-btn {
-    display: inline-block;
-    margin-top: 40px;
-    color: #e50914;
-    text-decoration: none;
-    font-weight: bold;
-    border-bottom: 2px solid transparent;
-  }
-  
-  .watch-btn:hover {
-    border-bottom-color: #e50914;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #3d2b1f; /* Explicit base color for all text */
+}
+
+.detail-main-content {
+  display: flex;
+  flex-direction: column; /* Stacked on mobile */
+  gap: 30px;
+  align-items: center;
+}
+
+.canvas-wrapper {
+  width: 100%;
+  max-width: 500px; /* Limits image size on mobile */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.content-section {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds space between elements */
+}
+
+
+/* Maintain your existing specific element styles below */
+.painting-window {
+  display: grid;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.painting-layer,
+.overlay-layer {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.painting-layer {
+  z-index: 1;
+  transform: scale(0.725) translate(-15%, -26.5%) rotate(3deg);
+}
+
+.overlay-layer {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.back-btn {
+  background: none;
+  border: 1px solid #d2b48c;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #8b7355;
+  margin-bottom: 30px;
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #2c1e14;
+}
+
+.detail-meta {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8b7355; /* Earthy brown to ensure visibility */
+  margin: 0;
+}
+
+.palette-section h3 {
+  font-size: 1.1rem;
+  border-bottom: 2px solid #d2b48c;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.swatch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.swatch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+}
+
+.swatch-item span {
+  font-size: 0.75rem;
+  color: #555; /* Dark gray for the color names */
+  margin-top: 4px;
+  text-align: center;
+}
+
+.watch-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #e50914; /* YouTube Red */
+  color: white !important; /* Ensure text is white */
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  align-self: center;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+}
+
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .detail-main-content {
+    flex-direction: row; /* Side-by-side on desktop */
+    align-items: flex-start;
+    gap: 50px;
   }
 
   .canvas-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    background: #f0f0f0; /* Backdrop for the whole setup */
+    flex: 1.2; /* Give the image slightly more space */
   }
-  
-  .painting-window {
-    display: grid;
-    position: relative;
-    width: auto;
-    max-width: 600px; /* Adjust based on your overlay's size */
-    aspect-ratio: 3 / 4; /* Matches standard Bob Ross canvas size */
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+  .content-section {
+    flex: 1;
+    text-align: left; /* Align text to the left when side-by-side */
+    padding-top: 20px;
   }
-  
-  /* Both layers occupy the same space */
-  .painting-layer,
-  .overlay-layer {
-    grid-area: 1 / 1;
-    width: auto;
-    height: 100%;
-    object-fit: contain;
+
+  .swatch-grid {
+    justify-content: flex-start; /* Align swatches to the left on desktop */
   }
-  
-  /* Ensure the painting is strictly behind */
-  .painting-layer {
-    grid-area: 1 / 1;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: 1;
-    
-    /* Keep your scale to make it fit the hole */
-    transform: scale(0.725) translate(-15%, -26.5%);
-  }
-  
-  /* Ensure Bob Ross is strictly on top */
-  .overlay-layer {
-    z-index: 2;
-    pointer-events: none; /* Allows you to still click the painting if needed */
-  }
+
+}
