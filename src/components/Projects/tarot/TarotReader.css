@@ -211,3 +211,48 @@
     0%, 100% { opacity: 0.4; }
     50% { opacity: 1; text-shadow: 0 0 10px rgba(212, 175, 55, 0.6); }
 }
+
+/* Mystic Error Styling */
+.mystic-error {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Faded Gold */
+    background: rgba(20, 10, 30, 0.8); /* Deep Purple/Black */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+  }
+  
+  .mystic-error__text {
+    color: #d4af37; /* Gold */
+    font-family: 'Cinzel', serif; /* Or your preferred mystic font */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 0.8s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Button overrides for error dismissal */
+  .btn--text {
+    background: transparent;
+    border: none;
+    color: rgba(212, 175, 55, 0.6);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .btn--text:hover {
+    color: #d4af37;
+  }
