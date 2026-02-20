@@ -125,10 +125,14 @@
     background: rgba(212, 175, 55, 0.1);
     margin-bottom: 150px;
     margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .btn--secondary {
     margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Animations */
