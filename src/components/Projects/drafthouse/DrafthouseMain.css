@@ -6,15 +6,22 @@
     --alamo-white: #ffffff;
   }
   
+
+
   .main-container-div {
-    position: fixed;
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100vh;
-    z-index: 100000;
+    height: 100vh;
+    
+    z-index: 9999; 
     background-color: var(--alamo-bg);
-  }
+    overflow-y: auto; 
+    overflow-x: hidden;
+    
+    -webkit-overflow-scrolling: touch;
+}
   
   .container {
     /* max-width: 1200px; */
