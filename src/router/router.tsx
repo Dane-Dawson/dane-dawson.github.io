@@ -9,6 +9,7 @@ import Terminal from "../components/Projects/terminal/Terminal";
 import MonsterCompendium from "../components/Projects/dnd/MonsterCompendium.tsx";
 import BobRossGallery from "../components/Projects/bobross/BobRossGallery.tsx";
 import TarotReader from "../components/Projects/tarot/TarotReader.tsx";
+import DrafthouseMain from "../components/Projects/drafthouse/DrafthouseMain.tsx";
 
 const routes: RouteObject[] = [
   {
@@ -50,6 +51,10 @@ const routes: RouteObject[] = [
       {
         path: "/tarotreader",
         element: <TarotReader />,
+      },
+      {
+        path: "/drafthouse",
+        element: <DrafthouseMain />,
       },
     ],
   },

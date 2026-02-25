@@ -1,0 +1,361 @@
+:root {
+  --alamo-red: #ed1c24;
+  --alamo-black: #111111;
+  --alamo-white: #ffffff;
+  --alamo-gray: #f4f4f4;
+}
+
+.theatre-page {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; min-height: 100vh;
+  background-color: var(--alamo-white);
+  z-index: 1000;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Hero Section */
+.theatre-hero {
+  background: var(--alamo-black);
+  color: white;
+  padding: 60px 20px 40px;
+  text-transform: uppercase;
+}
+
+.theatre-hero h1 {
+  font-size: 3.5rem;
+  margin: 10px 0;
+  line-height: 1;
+}
+
+.back-link {
+  color: var(--alamo-red);
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+/* Accordion Headers */
+.day-section {
+  margin-bottom: 4px;
+}
+
+.date-header {
+  background: var(--alamo-black);
+  color: white;
+  padding: 15px 25px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.date-header:hover, .date-header.active {
+  background: var(--alamo-red);
+}
+
+.accordion-icon {
+  font-size: 1.8rem;
+}
+
+/* Film Grid & Cards */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 30px 0 50px;
+}
+
+.film-card {
+  background: white;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.film-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* Ticket Stub Placeholder */
+.film-poster-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 6/3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.ticket-punch-hole {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  background-color: var(--alamo-white);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ticket-punch-hole.left { left: -17px; }
+.ticket-punch-hole.right { right: -17px; }
+
+.placeholder-content {
+  border: 2px solid rgba(255,255,255,0.4);
+  padding: 15px;
+  height: 90%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-title {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.film-card-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.film-card-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  min-height: 3.3rem;
+}
+
+.film-meta {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 12px;
+}
+
+.rating-badge {
+  background: var(--alamo-black);
+  color: white;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.runtime-text {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 700;
+}
+
+.session-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.show-times-buttons {
+  padding: 8px 12px;
+  background: white;
+  color: var(--alamo-black);
+  border: 2px solid var(--alamo-black);
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.show-times-buttons:hover, .show-times-buttons.selected {
+  background: var(--alamo-black);
+  color: white;
+}
+
+.show-times-buttons.selected {
+  background: var(--alamo-red);
+  border-color: var(--alamo-red);
+}
+
+/* Seat Availability Display */
+.seat-alert-container {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px dashed #ddd;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.seat-count-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--alamo-black);
+  color: white;
+  padding: 8px 12px;
+}
+
+.seat-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.seat-number {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #4caf50;
+}
+
+.seat-number.low-stock {
+  color: var(--alamo-red);
+}
+
+/* Preshow / Loading Styles */
+.preshow-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: var(--alamo-black);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10000;
+}
+
+.film-grain-static {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.preshow-content { text-align: center; color: white; z-index: 10; }
+
+.countdown-circle {
+  width: 100px; height: 100px;
+  border: 4px solid white;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.countdown-number::after {
+  content: "3";
+  font-size: 4rem;
+  font-weight: 900;
+  animation: safe-countdown 6s infinite ease-in-out;
+}
+
+@keyframes safe-countdown {
+  0%, 30% { content: "3"; opacity: 1; }
+  33%, 63% { content: "2"; opacity: 1; }
+  66%, 96% { content: "1"; opacity: 1; }
+  31%, 64%, 97% { opacity: 0.2; }
+}
+
+.preshow-text { color: var(--alamo-red); text-transform: uppercase; font-size: 2.2rem; }
+
+/* Update these sections in TheatreMain.css */
+
+.error-card {
+  position: relative;
+  background-color: #000;
+  color: var(--alamo-white);
+  padding: 10px;
+  border: 1px solid #333;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 50px rgba(0,0,0,0.5);
+  z-index: 20;
+}
+
+.error-card-border {
+  border: 4px double #444; /* Classic silent film title card border */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.error-header {
+  margin-bottom: 20px;
+}
+
+.marquee-text {
+  background-color: var(--alamo-red);
+  color: white;
+  padding: 4px 15px;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.error-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin: 10px 0;
+  line-height: 1;
+  color: var(--alamo-white);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.error-message {
+  font-family: serif; /* Serifs often look more "vintage cinematic" */
+  font-style: italic;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 20px auto;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.error-details {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.error-details code {
+  color: var(--alamo-red);
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+/* Specific button styling for the error page */
+.error-btn {
+  background-color: transparent;
+  border: 2px solid var(--alamo-white);
+  box-shadow: none; /* Clean up the look for a professional feel */
+  font-size: 1rem;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+}
+
+.error-btn:hover {
+  background-color: var(--alamo-white);
+  color: var(--alamo-black);
+  transform: scale(1); /* No jumping, just color change */
+}

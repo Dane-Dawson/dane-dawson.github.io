@@ -1,0 +1,146 @@
+:root {
+    --alamo-red: #ed1c24;
+    --alamo-black: #111111;
+    --alamo-gray: #333333;
+    --alamo-bg: #f8f8f8;
+    --alamo-white: #ffffff;
+  }
+  
+  .main-container-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 100000;
+    background-color: var(--alamo-bg);
+  }
+  
+  .container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* New Header Styles */
+  .alamo-header {
+    margin-bottom: 40px;
+    border-bottom: 4px solid var(--alamo-black);
+    padding-bottom: 20px;
+  }
+  
+  .marquee-badge {
+    display: inline-block;
+    background-color: var(--alamo-red);
+    color: white;
+    padding: 4px 12px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  .main-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--alamo-black);
+    margin: 0;
+    letter-spacing: -2px;
+    line-height: 0.9;
+  }
+  
+  .header-subtitle {
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: var(--alamo-gray);
+    margin-top: 10px;
+    opacity: 0.7;
+  }
+  
+  /* Filter Bar */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .filter-chip {
+    background: var(--alamo-white);
+    border: 2px solid var(--alamo-black);
+    color: var(--alamo-black);
+    padding: 8px 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+  
+  .filter-chip:hover {
+    background: var(--alamo-black);
+    color: var(--alamo-white);
+  }
+  
+  .filter-chip.active {
+    background: var(--alamo-red);
+    border-color: var(--alamo-red);
+    color: var(--alamo-white);
+  }
+  
+  /* Theater Grid & Cards */
+  .theatre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .theatre-card {
+    background: var(--alamo-white);
+    border: 1px solid #ddd;
+    padding: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+  }
+  
+  .theatre-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--alamo-red);
+  }
+  
+  .market-label {
+    color: var(--alamo-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .theatre-name {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--alamo-gray);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .view-showtimes-link {
+    margin-top: 25px;
+    font-weight: 800;
+    color: var(--alamo-red);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }

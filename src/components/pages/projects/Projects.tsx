@@ -33,6 +33,13 @@ const Projects = () => {
       tech: ["React", "TypeScript", "Vite", "CSS Animation", "tsParticles", "Gemini API", "ReactMarkdown", "html-to-image"],
       demoUrl: "/tarotreader",
     },
+    // {
+    //   title: "Alamo Drafthouse Display",
+    //   description:
+    //     "Playing with API data from Alamo Drafthouse to display what movies are available and where!",
+    //   tech: ["React", "TypeScript", "Vite"],
+    //   demoUrl: "/drafthouse",
+    // },
     {
       title: "Devquarium",
       description:
