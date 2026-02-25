@@ -33,13 +33,13 @@ const Projects = () => {
       tech: ["React", "TypeScript", "Vite", "CSS Animation", "tsParticles", "Gemini API", "ReactMarkdown", "html-to-image"],
       demoUrl: "/tarotreader",
     },
-    // {
-    //   title: "Alamo Drafthouse Display",
-    //   description:
-    //     "Playing with API data from Alamo Drafthouse to display what movies are available and where!",
-    //   tech: ["React", "TypeScript", "Vite"],
-    //   demoUrl: "/drafthouse",
-    // },
+    {
+      title: "Alamo Drafthouse Display",
+      description:
+        "Playing with API data from Alamo Drafthouse to display what movies are available and where, as well as checking remaining seats for each showing! Designed with lazy loading, graceful fails, and keeping the Austin and Alamo vibe!",
+      tech: ["React", "TypeScript", "Vite"],
+      demoUrl: "/drafthouse",
+    },
     {
       title: "Devquarium",
       description:
