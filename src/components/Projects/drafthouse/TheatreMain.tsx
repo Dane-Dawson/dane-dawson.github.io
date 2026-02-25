@@ -91,6 +91,7 @@ const TheatreMain: React.FC<TheatreMainProps> = ({ theatreId, onBack }) => {
   }
 
   if (error) {
+    console.log(error)
     return (
       <div className="preshow-container error-state">
         <div className="film-grain-static"></div>
@@ -104,9 +105,9 @@ const TheatreMain: React.FC<TheatreMainProps> = ({ theatreId, onBack }) => {
               <p className="error-message">
                 We encountered a technical snag while threading the reels for this cinema.
               </p>
-              <div className="error-details">
+              {/* <div className="error-details">
                 <code>{error}</code>
-              </div>
+              </div> */}
             </div>
             <div className="error-footer">
               <button className="alamo-btn error-btn" onClick={onBack}>
